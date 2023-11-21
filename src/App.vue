@@ -6,7 +6,6 @@ import TheHero from './components/The-Hero.vue';
 <template>
   <div>
     <section>
-    <h1>HALLO</h1>
       <TheHero />
     </section>
   </div>
