@@ -1,13 +1,11 @@
 <script setup>
-import {RouterView } from 'vue-router'
-import TheHero from './components/The-Hero.vue';
+import { RouterView } from 'vue-router'
+import TheHero from '@/components/TheHero.vue';
 </script>
 
 <template>
   <div>
-    <section>
-      <TheHero />
-    </section>
+    <TheHero />
   </div>
   <RouterView />
 </template>

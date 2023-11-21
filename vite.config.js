@@ -14,5 +14,8 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  }
+  },
+  link: [
+    { rel: 'stylesheet', href:'https://fonts.googleapis.com/css2?family=Merriweather&display=swap'},
+  ]
 })
