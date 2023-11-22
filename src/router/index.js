@@ -8,8 +8,8 @@ const router = createRouter({
       name: 'home',
     },
     {
-      path: '/about',
-      name: 'about',
+      path: 'instagram',
+      name: 'instagram',
     }
   ]
 })

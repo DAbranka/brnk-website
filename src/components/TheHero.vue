@@ -19,19 +19,29 @@ import HeroBgVideo from '@/components/HeroBgVideo.vue'
             <section>
                 <ul list-none flex items-center invert opacity-80 >
                     <li scale-50>
-                        <img src="@/assets/img/icons/instagram.svg" alt="svg/instagram">
+                        <a href="https://www.instagram.com/brnkill/" target="_blank">
+                            <img src="@/assets/img/icons/instagram.svg" alt="Instagram">
+                        </a>
                     </li>
                     <li scale-50>
-                        <img src="@/assets/img/icons/twitter.svg" alt="svg/twitter">
+                        <a href="https://twitter.com/__BRNK__" target="_blank">
+                            <img src="@/assets/img/icons/twitter.svg" alt="Twitter">
+                        </a>
                     </li>
                     <li scale-50>
-                        <img src="@/assets/img/icons/youtube.svg" alt="svg/youtube">
+                        <a href="https://www.youtube.com/channel/UCkVtFn_SuLY3FF_jLGFX2GQ" target="_blank">
+                            <img src="@/assets/img/icons/youtube.svg" alt="Youtube">
+                        </a>
                     </li>
                     <li scale-90>
-                        <img src="@/assets/img/icons/github.svg" alt="svg/github">
+                    <a href="https://github.com/DAbranka" target="_blank">
+                        <img src="@/assets/img/icons/github.svg" alt="Github">
+                    </a>
                     </li>
                     <li scale-50>
-                        <img src="@/assets/img/icons/linkedin.svg" alt="svg/linkedin">
+                    <a href="https://www.linkedin.com/in/david-abranka/" target="_blank">
+                        <img src="@/assets/img/icons/linkedin.svg" alt="Linkedin">
+                    </a>
                     </li>
                 </ul>
             </section>
