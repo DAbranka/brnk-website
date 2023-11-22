@@ -1,5 +1,6 @@
 <script setup>
-import HeroBgVideo from '@/components/HeroBgVideo.vue'
+    import HeroBgVideo from '@/components/HeroBgVideo.vue'
+    import SocialLinks from '@/components/SocialLinks.vue'
 </script>
 
 <template>
@@ -7,45 +8,16 @@ import HeroBgVideo from '@/components/HeroBgVideo.vue'
 
         <!-- NAVBAR -->
         <nav w-full>
-            <div class="wrapper flex flex-row items-center justify-between mx-40 py-6">
-                <!-- LOGO -->
-            <section>
-                <div>
-                    <img h-3 src="@/assets/img/BRNK_LOGO_WHT_PNG_NOBG.png" alt="png/logo">
-                </div>
-            </section>
+            <section class="wrapper flex flex-row items-center justify-between mx-40 py-6">
 
-            <!-- SOCIAL MEDIA -->
-            <section>
-                <ul list-none flex items-center invert opacity-80 >
-                    <li scale-50>
-                        <a href="https://www.instagram.com/brnkill/" target="_blank">
-                            <img src="@/assets/img/icons/instagram.svg" alt="Instagram">
-                        </a>
-                    </li>
-                    <li scale-50>
-                        <a href="https://twitter.com/__BRNK__" target="_blank">
-                            <img src="@/assets/img/icons/twitter.svg" alt="Twitter">
-                        </a>
-                    </li>
-                    <li scale-50>
-                        <a href="https://www.youtube.com/channel/UCkVtFn_SuLY3FF_jLGFX2GQ" target="_blank">
-                            <img src="@/assets/img/icons/youtube.svg" alt="Youtube">
-                        </a>
-                    </li>
-                    <li scale-90>
-                    <a href="https://github.com/DAbranka" target="_blank">
-                        <img src="@/assets/img/icons/github.svg" alt="Github">
-                    </a>
-                    </li>
-                    <li scale-50>
-                    <a href="https://www.linkedin.com/in/david-abranka/" target="_blank">
-                        <img src="@/assets/img/icons/linkedin.svg" alt="Linkedin">
-                    </a>
-                    </li>
-                </ul>
+                <!-- LOGO -->
+                <RouterLink to="/">
+                    <img h-3 src="@/assets/img/BRNK_LOGO_WHT_PNG_NOBG.png" alt="png/logo">
+                </RouterLink>
+
+                <!-- SOCIAL MEDIA -->
+                <SocialLinks />
             </section>
-            </div>
         </nav>
 
         <!-- BG VIDEO -->
@@ -73,11 +45,5 @@ import HeroBgVideo from '@/components/HeroBgVideo.vue'
     @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
     *{
         color: white;
-    }
-    li{
-        
-        font-family:monospace;
-        font-size: 2rem;
-        color: #bbbbbbd4;
     }
 </style>
