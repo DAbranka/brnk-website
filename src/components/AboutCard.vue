@@ -1,7 +1,7 @@
 <script setup>
     import { defineProps, withDefaults } from 'vue'
     import { useRouter } from 'vue-router'
-    import SocialLinks from '@/components/SocialLinks.vue'
+    import AboutContent from '@/components/AboutContent.vue'
     
     const props = withDefaults(defineProps(), {
         onClose: { type: Function, default: () => {} }
@@ -24,17 +24,11 @@
                 
                 <!-- Close Button -->
                 <div class="absolute top--5 right--5">
-                    <button class="text-1rem w-9 py-2 rounded-2 text-black cursor-pointer" @click.prevent="props.onClose; router.push('/')">X</button>
+                    <button class="closeButton border-none text-1rem w-9 py-2 rounded-2 text-black cursor-pointer" @click.prevent="props.onClose; router.push('/')">X</button>
                 </div>
                 
                 <!-- TEXT -->
-                <article flex flex-col justify-center items-center>
-                    <p class="text-4xl text-white">BRNK®</p>
-                    <p class="text-4xl text-white">DIGITAL CREATOR & WEB DEVELOPER</p>
-                </article>
-
-                <!-- SOCIAL MEDIA -->
-                <SocialLinks />
+                <AboutContent overflow-hidden />
             </section>
         </section>
     </div>
@@ -58,10 +52,8 @@
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 
-    .aboutCard p {
-        font-family: sans-serif;
-        font-size: 16px;
-        font-weight: bolder;
-        opacity: 70%;
-    }
+.closeButton:hover {
+    background-color: #41ecc7;
+    border: none;
+}
 </style>

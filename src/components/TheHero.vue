@@ -40,7 +40,7 @@ const showAboutCard = ref(false)
                 </p>
                 <!-- put a white line in tailwindcss -->
                 <div w-full>
-                    <hr class="border-1 border-slate-500">
+                    <hr class="border-1">
                 </div>
                 <p w-20rem flex justify-end text-4xl>
                     WEB DEVELOPER
@@ -74,7 +74,11 @@ p {
 
 .about:hover {
     color: rgb(20, 20, 20);
-    background-color: #cef3eb;
-    border: 1px solid #cef3eb;
+    background-color: #41ecc7;
+    border: 1px solid #41ecc7;
+}
+
+hr {
+    border: 1px solid #41ecc7;
 }
 </style>
