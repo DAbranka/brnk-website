@@ -1,32 +1,28 @@
-<script setup>
-
-</script>
-
 <template>
     <div>
         <section>
                 <ul list-none flex items-center invert opacity-80 >
-                    <li scale-50>
+                    <li scale-40>
                         <a href="https://www.instagram.com/brnkill/" target="_blank">
                             <img src="@/assets/img/icons/instagram.svg" alt="Instagram">
                         </a>
                     </li>
-                    <li scale-50>
+                    <li scale-40>
                         <a href="https://twitter.com/__BRNK__" target="_blank">
                             <img src="@/assets/img/icons/twitter.svg" alt="Twitter">
                         </a>
                     </li>
-                    <li scale-50>
+                    <li scale-40>
                         <a href="https://www.youtube.com/channel/UCkVtFn_SuLY3FF_jLGFX2GQ" target="_blank">
                             <img src="@/assets/img/icons/youtube.svg" alt="Youtube">
                         </a>
                     </li>
-                    <li scale-90>
+                    <li scale-70>
                     <a href="https://github.com/DAbranka" target="_blank">
                         <img src="@/assets/img/icons/github.svg" alt="Github">
                     </a>
                     </li>
-                    <li scale-50>
+                    <li scale-40>
                     <a href="https://www.linkedin.com/in/david-abranka/" target="_blank">
                         <img src="@/assets/img/icons/linkedin.svg" alt="Linkedin">
                     </a>
@@ -42,5 +38,9 @@
         font-family:monospace;
         font-size: 2rem;
         color: #bbbbbbd4;
+        width: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>
