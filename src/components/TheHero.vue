@@ -1,13 +1,13 @@
 <script setup>
 import HeroBgVideo from '@/components/HeroBgVideo.vue'
-import SocialLinks from '@/components/SocialLinks.vue'
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
     <header class="w-screen h-screen">
 
         <!-- NAVBAR -->
-        <nav class="w-full">
+        <nav class="w-full pt-6">
             <section class="wrapper flex flex-row items-center justify-between mx-40 py-6">
 
                 <!-- LOGO -->
@@ -15,8 +15,10 @@ import SocialLinks from '@/components/SocialLinks.vue'
                     <img class="h-3 opacity-70" src="@/assets/img/BRNK_LOGO_WHT_PNG_NOBG.png" alt="png/logo">
                 </RouterLink>
 
-                <!-- SOCIAL MEDIA -->
-                <SocialLinks />
+                <!-- About -->
+                <RouterLink no-underline to="/about">
+                    <p class=" about text-2xl opacity-70">ABOUT</p>
+                </RouterLink>
             </section>
         </nav>
 
@@ -28,13 +30,16 @@ import SocialLinks from '@/components/SocialLinks.vue'
         <!-- Sub title -->
         <section class="w-full flex items-end absolute top-0 h-full -z-10">
             <div flex items-center w-full px-40>
-                <h2 class="w-30rem text-4xl font-bold py-10">
-                    DIGITAL CREATOR & WEB DEVELOPER
-                </h2>
+                <p class="w-20rem text-4xl py-10">
+                    DIGITAL CREATOR
+                </p>
                 <!-- put a white line in tailwindcss -->
                 <div w-full>
                     <hr class="border-1 border-slate-500">
                 </div>
+                <p w-20rem flex justify-end text-4xl>
+                    WEB DEVELOPER
+                </p>
             </div>
         </section>
     </header>
@@ -42,14 +47,25 @@ import SocialLinks from '@/components/SocialLinks.vue'
 
 
 <style scoped>
-* {
+
+p {
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    opacity: 70%;
     color: white;
 }
 
-h2 {
-    font-family: sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    opacity: 70%;
+.about {
+    color: white;
+    border: 1px solid white;
+    padding: 5px 20px;
+    font-weight: 600;
+}
+
+.about:hover {
+    color: white;
+    background-color: rgb(36, 203, 195);
+    border: 1px solid rgb(36, 203, 195);
 }
 </style>
