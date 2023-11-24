@@ -26,7 +26,7 @@ import SocialLinks from '@/components/SocialLinks.vue'
         </section>
 
         <!-- Sub title -->
-        <section class="w-full flex items-end absolute top-0 h-full">
+        <section class="w-full flex items-end absolute top-0 h-full -z-10">
             <div flex items-center w-full px-40>
                 <h2 class="w-30rem text-4xl font-bold py-10">
                     DIGITAL CREATOR & WEB DEVELOPER
@@ -44,10 +44,6 @@ import SocialLinks from '@/components/SocialLinks.vue'
 <style scoped>
 * {
     color: white;
-}
-
-header {
-    background-color: #0000002c;
 }
 
 h2 {
