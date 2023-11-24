@@ -1,20 +1,41 @@
 <script setup>
+    import { defineProps, withDefaults } from 'vue'
+    import { useRouter } from 'vue-router'
     import SocialLinks from '@/components/SocialLinks.vue'
+    
+    const props = withDefaults(defineProps(), {
+        onClose: { type: Function, default: () => {} }
+    })
+
+    const router = useRouter()
 </script>
 
 <template>
     <div>
-        <!-- SOCIAL MEDIA -->
-        <!-- <SocialLinks /> -->
+        
+        
 
-        <!-- ABOUT PAGE -->
+        <!-- ABOUT CARD -->
         <section class="aboutSection" w-full h-full absolute top-0 left-0 flex justify-center items-center>
-            <div rounded-2xl flex justify-center items-center>
-                <article class="aboutCard flex flex-col justify-center items-center">
-                    <p class="text-4xl text-white">BRNK</p>
-                    <p class="text-4xl text-white">WEB DEVELOPER</p>
+
+
+            <!-- Card Container -->
+            <section class="aboutCard flex flex-col justify-center items-center">
+                
+                <!-- Close Button -->
+                <div class="absolute top--5 right--5">
+                    <button class="text-1rem w-9 py-2 rounded-2 text-black cursor-pointer" @click.prevent="props.onClose; router.push('/')">X</button>
+                </div>
+                
+                <!-- TEXT -->
+                <article flex flex-col justify-center items-center>
+                    <p class="text-4xl text-white">BRNK®</p>
+                    <p class="text-4xl text-white">DIGITAL CREATOR & WEB DEVELOPER</p>
                 </article>
-            </div>
+
+                <!-- SOCIAL MEDIA -->
+                <SocialLinks />
+            </section>
         </section>
     </div>
 </template>

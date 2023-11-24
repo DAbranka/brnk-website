@@ -2,6 +2,10 @@
 import HeroBgVideo from '@/components/HeroBgVideo.vue'
 import AboutCard from '@/components/AboutCard.vue'
 import { RouterLink } from 'vue-router'
+import { ref } from 'vue'
+
+const showAboutCard = ref(false)
+
 </script>
 
 <template>
@@ -17,7 +21,7 @@ import { RouterLink } from 'vue-router'
                 </RouterLink>
 
                 <!-- About -->
-                <RouterLink no-underline to="/about">
+                <RouterLink no-underline  @click.prevent="showAboutCard.value = true" to="/about">
                     <p class=" about text-2xl opacity-70">ABOUT</p>
                 </RouterLink>
             </section>
@@ -45,7 +49,8 @@ import { RouterLink } from 'vue-router'
         </section>
 
         <!-- About Card -->
-        <AboutCard />
+        <AboutCard v-if="showAboutCard.value" :onClose="() => showAboutCard.value = false" />
+        
     </header>
 </template>
 
