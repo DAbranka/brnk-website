@@ -50,7 +50,6 @@ const showAboutCard = ref(false)
 
         <!-- About Card -->
         <AboutCard v-if="showAboutCard.value" :onClose="() => showAboutCard.value = false" />
-        
     </header>
 </template>
 
@@ -78,7 +77,14 @@ p {
     border: 1px solid #41ecc7;
 }
 
+@keyframes border-color-change {
+    0% { border-color: rgb(15, 244, 233)}
+    100% { border-color: #41ecc7; }
+}
+
 hr {
-    border: 1px solid #41ecc7;
+    border-width: 1px;
+    border-style: solid;
+    animation: border-color-change 5s infinite alternate linear;
 }
 </style>

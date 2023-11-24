@@ -26,7 +26,7 @@
                 </p>
 
                 <p>
-                    He is also a passionate web developer and has been creating websites since 2022. He is currently working on many projects such as 3D fashion design.
+                    He is also a passionate web developer and has been creating websites since 2022. He is currently working on a number of 3D projects as well as his own clothing brand.
                 </p>
             </article>
             
