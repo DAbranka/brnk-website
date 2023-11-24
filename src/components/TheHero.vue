@@ -1,5 +1,6 @@
 <script setup>
 import HeroBgVideo from '@/components/HeroBgVideo.vue'
+import AboutCard from '@/components/AboutCard.vue'
 import { RouterLink } from 'vue-router'
 </script>
 
@@ -42,6 +43,9 @@ import { RouterLink } from 'vue-router'
                 </p>
             </div>
         </section>
+
+        <!-- About Card -->
+        <AboutCard />
     </header>
 </template>
 
@@ -64,8 +68,8 @@ p {
 }
 
 .about:hover {
-    color: white;
-    background-color: rgb(36, 203, 195);
-    border: 1px solid rgb(36, 203, 195);
+    color: rgb(20, 20, 20);
+    background-color: #cef3eb;
+    border: 1px solid #cef3eb;
 }
 </style>
