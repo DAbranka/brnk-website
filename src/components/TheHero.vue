@@ -9,11 +9,11 @@ const showAboutCard = ref(false)
 </script>
 
 <template>
-    <header class="w-screen h-screen">
+    <header>
 
         <!-- NAVBAR -->
-        <nav class="w-full pt-6">
-            <section class="wrapper flex flex-row items-center justify-between mx-40 py-6">
+        <nav class="navbBar w-full pt-6">
+            <section class="navBar__content wrapper flex flex-row items-center justify-between mx-40 py-6">
 
                 <!-- LOGO -->
                 <RouterLink to="/">
@@ -22,19 +22,19 @@ const showAboutCard = ref(false)
 
                 <!-- About -->
                 <RouterLink no-underline  @click.prevent="showAboutCard.value = true" to="/about">
-                    <p class=" about text-2xl opacity-70">ABOUT</p>
+                    <p class="about text-2xl opacity-70">ABOUT</p>
                 </RouterLink>
             </section>
         </nav>
 
         <!-- BG VIDEO -->
         <section>
-            <HeroBgVideo />
+            <!-- <HeroBgVideo /> -->
         </section>
 
         <!-- Sub title -->
-        <section class="w-full flex items-end absolute top-0 h-full -z-10">
-            <div flex items-center w-full px-40>
+        <section class="subTitle w-full flex items-end absolute top-0 h-full -z-10">
+            <div class="subTitle__content" flex items-center w-full px-40>
                 <p class="w-20rem text-4xl py-10">
                     DIGITAL CREATOR
                 </p>
@@ -86,5 +86,41 @@ hr {
     border-width: 1px;
     border-style: solid;
     animation: border-color-change 5s infinite alternate linear;
+}
+
+@media (max-width: 600px) {
+    /* CSS for mobile screens */
+    header {
+        /* background-color: red; */
+    }
+
+    .navbBar {
+        padding: 0px;
+    }
+
+    .navBar__content {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .about {
+        font-size: 12px;
+        padding: 0;
+        margin: 0;
+    }
+    .subTitle {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+    }
+    .subTitle__content{
+        padding: 0;
+    }
+    .subTitle__content p {
+        font-size: 12px;
+        padding: 0;
+        margin: 0;
+    }
 }
 </style>
