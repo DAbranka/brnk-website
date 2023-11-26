@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import AboutCard from '../components/AboutCard.vue'
 import AboutTextEng from '../components/AboutTextEng.vue'
 import AboutTextFr from '../components/AboutTextFr.vue'
+import HomePage from '../views/HomePage.vue'
 
 
 const router = createRouter({
@@ -10,6 +11,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
+      views: HomePage
     },
     {
       path: '/about',
