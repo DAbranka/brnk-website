@@ -46,7 +46,7 @@
     }
     .mail{
         font-family:monospace;
-        font-size: 18px;
+        font-size: 16px;
         
     }
 

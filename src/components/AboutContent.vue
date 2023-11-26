@@ -48,7 +48,7 @@
 <style scoped>
     p {
         font-family: sans-serif;
-        font-size: 16px;
+        font-size: 14px;
         margin-bottom: 1rem;
         color: #e2e2e2ee;
         padding: 0 2px;

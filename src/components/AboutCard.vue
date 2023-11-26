@@ -36,7 +36,7 @@
 
 <style scoped>
     .aboutSection {
-        background-color: #00000071;
+        background-color: #0000009e;
     }
 
     .aboutCard {

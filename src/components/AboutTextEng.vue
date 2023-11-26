@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- TEXT ENG -->
-        <article p-5 text-white>
+        <article px-8  text-white>
                 <p>
                     David Abranka, the creative mind behind BRNK®, is a digital creator and web developer based in Liège, Belgium.
                 </p>
@@ -29,7 +29,7 @@
 <style scoped>
     p {
         font-family: sans-serif;
-        font-size: 16px;
+        font-size: 14px;
         margin-bottom: 1rem;
         color: #e2e2e2ee;
     }
