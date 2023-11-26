@@ -24,14 +24,14 @@
 
             <!-- Language switch -->
             <article flex justify-end pr-5 pt-5>
-                <p @click="setLanguage('fr')" cursor-pointer :class="{ active: currentLanguage === 'fr' }">
-                    FR
+                <p @click="setLanguage('eng')" cursor-pointer :class="{ active: currentLanguage === 'eng' }">
+                    ENG
                 </p>
                 <p>
                     -
                 </p>
-                <p @click="setLanguage('eng')" cursor-pointer :class="{ active: currentLanguage === 'eng' }">
-                    ENG
+                <p @click="setLanguage('fr')" cursor-pointer :class="{ active: currentLanguage === 'fr' }">
+                    FR
                 </p>
             </article>
             

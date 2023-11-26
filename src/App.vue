@@ -1,11 +1,11 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import TheHero from '@/components/TheHero.vue';
+import HomePage from './views/HomePage.vue';
 </script>
 
 <template>
   <div>
-    <TheHero />
+    <HomePage />
   </div>
   <RouterView />
 </template>
