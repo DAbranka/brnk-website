@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import AboutCard from '../components/AboutCard.vue'
+import AboutTextEng from '../components/AboutTextEng.vue'
+import AboutTextFr from '../components/AboutTextFr.vue'
 
 
 const router = createRouter({
@@ -12,7 +14,19 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      component: AboutCard
+      component: AboutCard,
+      children: [
+        {
+          path: 'eng',
+          name: 'about-eng',
+          component: AboutTextEng
+        },
+        {
+          path: 'fr',
+          name: 'about-fr',
+          component: AboutTextFr
+        }
+      ]
     }
   ]
 })

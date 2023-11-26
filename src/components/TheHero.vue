@@ -72,7 +72,7 @@ p {
 }
 
 .about:hover {
-    color: rgb(20, 20, 20);
+    color: rgb(0, 0, 0);
     background-color: #41ecc7;
     border: 1px solid #41ecc7;
 }
