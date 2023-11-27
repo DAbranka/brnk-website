@@ -33,7 +33,7 @@ const currentComponent = computed(() => (windowWidth.value <= 600 ? MobileHeroBg
 
                 <!-- LOGO -->
                 <RouterLink to="/">
-                    <img class="h-3 opacity-70" src="@/assets/img/BRNK_LOGO_WHT_PNG_NOBG.png" alt="png/logo">
+                    <img class="logo h-3 opacity-70" src="@/assets/img/BRNK_LOGO_WHT_PNG_NOBG.png" alt="png/logo">
                 </RouterLink>
 
                 <!-- About -->
@@ -110,7 +110,6 @@ hr {
     header {
         /* background-color: red; */
         height: 100vh;
-
     }
 
     .navbBar {
@@ -118,24 +117,31 @@ hr {
     }
 
     .navBar__content {
-        padding: 0px;
+        padding: 2rem;
         margin: 0px;
+    }
+
+    .logo {
+        height: 8px;
     }
 
     .about {
         font-size: 12px;
         padding: 0;
         margin: 0;
+        border: none;
     }
+
+    .about:hover {
+        background-color: none;
+        border: none;
+    }
+
     .subTitle {
-        max-width: 100%;
-        display: flex;
-        justify-content: center;
-        align-content: center;
     }
     .subTitle__content{
-        padding: 0px;
-        width: 80%;
+        padding-left: 40px;
+        padding-right: 40px;
         display: flex;
         justify-content: center;
         align-content: center;

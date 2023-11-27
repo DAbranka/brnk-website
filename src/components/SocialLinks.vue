@@ -53,4 +53,11 @@
     .mail:hover {
         color: #41ecc7;
     }
+
+    @media screen and (max-width: 600px) {
+        .mail{
+            font-size: 12px;
+            padding: 0;
+        }
+    }
 </style>

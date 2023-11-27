@@ -12,15 +12,15 @@
 </script>
 
 <template>
-    <div flex flex-row w-full h-full>
+    <div class="wrap" flex flex-row w-full h-full>
 
         <!-- Photo -->
-        <section class="rounded-3 w-full h-full flex justify-center items-center overflow-hidden">
+        <section class="wrap__photo rounded-3 w-full h-full flex justify-center items-center overflow-hidden">
             <img class="w-full object-cover" src="@/assets/img/selfportrait.png" alt="Photo">
         </section>
 
         <!-- Text -->
-        <section w-full flex flex-col justify-between>
+        <section class="wrap__text" w-full flex flex-col justify-between>
 
             <!-- Language switch -->
             <article flex justify-end pr-5 pt-5>
@@ -56,6 +56,30 @@
     }
     .active {
         color: #41ecc7; /* Change this to the color you want */
+    }
+
+    @media screen and (max-width: 600px) {
+        p {
+            font-size: 12px;
+        }
+
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrap__photo {
+            width: 100px;
+            height: 100px;
+        }
+
+        .wrap__photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 </style>
 
