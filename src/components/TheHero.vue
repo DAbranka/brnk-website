@@ -1,11 +1,27 @@
 <script setup>
-import HeroBgVideo from '@/components/HeroBgVideo.vue'
-import AboutCard from '@/components/AboutCard.vue'
 import { RouterLink } from 'vue-router'
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+
+import HeroBgVideo from '@/components/HeroBgVideo.vue'
+import MobileHeroBgVideo from '@/components/MobileHeroBgVideo.vue'
+import AboutCard from '@/components/AboutCard.vue'
 
 const showAboutCard = ref(false)
 
+const windowWidth = ref(window.innerWidth)
+const updateWidth = () => {
+    windowWidth.value = window.innerWidth
+}
+
+onMounted(() => {
+    window.addEventListener('resize', updateWidth)
+})
+
+onUnmounted(() => {
+    window.removeEventListener('resize', updateWidth)
+})
+
+const currentComponent = computed(() => (windowWidth.value <= 600 ? MobileHeroBgVideo : HeroBgVideo))
 </script>
 
 <template>
@@ -29,20 +45,20 @@ const showAboutCard = ref(false)
 
         <!-- BG VIDEO -->
         <section>
-            <!-- <HeroBgVideo /> -->
+            <component :is="currentComponent"></component>
         </section>
 
         <!-- Sub title -->
         <section class="subTitle w-full flex items-end absolute top-0 h-full -z-10">
             <div class="subTitle__content" flex items-center w-full px-40>
-                <p class="w-20rem text-4xl py-10">
+                <p class="w-20rem py-10">
                     DIGITAL CREATOR
                 </p>
                 <!-- put a white line in tailwindcss -->
                 <div w-full>
                     <hr class="border-1">
                 </div>
-                <p w-20rem flex justify-end text-4xl>
+                <p w-20rem flex justify-end>
                     WEB DEVELOPER
                 </p>
             </div>
@@ -78,7 +94,7 @@ p {
 }
 
 @keyframes border-color-change {
-    0% { border-color: rgb(15, 244, 233)}
+    0% { border-color: rgb(16, 96, 200)}
     100% { border-color: #41ecc7; }
 }
 
@@ -88,10 +104,13 @@ hr {
     animation: border-color-change 5s infinite alternate linear;
 }
 
+/* RESPONSIVE */
 @media (max-width: 600px) {
     /* CSS for mobile screens */
     header {
         /* background-color: red; */
+        height: 100vh;
+
     }
 
     .navbBar {
@@ -109,18 +128,32 @@ hr {
         margin: 0;
     }
     .subTitle {
-        width: 100%;
-        height: 100%;
-        position: relative;
+        max-width: 100%;
         display: flex;
+        justify-content: center;
+        align-content: center;
     }
     .subTitle__content{
-        padding: 0;
+        padding: 0px;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
     }
     .subTitle__content p {
-        font-size: 12px;
-        padding: 0;
-        margin: 0;
+        font-size: 11px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
     }
+
+    hr {
+    border-width: 1px;
+    border-style: solid;
+    width: 50%;
+}
 }
 </style>
