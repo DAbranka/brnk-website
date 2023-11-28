@@ -56,4 +56,14 @@
     background-color: #41ecc7;
     border: none;
 }
+
+@media screen and (max-width: 600px) {
+    .aboutCard {
+        transform: scale(0.8);
+    }
+
+    .aboutSection {
+        height: 100vh;
+    }
+}
 </style>

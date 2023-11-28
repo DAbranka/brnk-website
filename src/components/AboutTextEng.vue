@@ -33,4 +33,10 @@
         margin-bottom: 1rem;
         color: #e2e2e2ee;
     }
+
+    @media screen and (max-width: 600px) {
+        p {
+            font-size: 12px;
+        }
+    }
 </style>
