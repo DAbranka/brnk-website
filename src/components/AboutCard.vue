@@ -61,5 +61,9 @@
     .aboutCard {
         transform: scale(0.8);
     }
+
+    .aboutSection {
+        height: 100vh;
+    }
 }
 </style>

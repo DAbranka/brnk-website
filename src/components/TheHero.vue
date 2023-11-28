@@ -55,7 +55,7 @@ const currentComponent = computed(() => (windowWidth.value <= 600 ? MobileHeroBg
                     DIGITAL CREATOR
                 </p>
                 <!-- put a white line in tailwindcss -->
-                <div w-full>
+                <div id="hr-wrap" w-full>
                     <hr class="border-1">
                 </div>
                 <p w-20rem flex justify-end>
@@ -114,9 +114,13 @@ hr {
 
     .navbBar {
         padding: 0px;
+        display: flex;
+        background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0));
     }
 
     .navBar__content {
+        /* background-color: blue; */
+        width: 100%;
         padding: 2rem;
         margin: 0px;
     }
@@ -126,30 +130,27 @@ hr {
     }
 
     .about {
-        font-size: 12px;
+        font-size: 14px;
+        font-weight: bolder;
         padding: 0;
         margin: 0;
         border: none;
     }
 
     .about:hover {
-        background-color: none;
+        color: white;
+        background-color: #41ecc700;
         border: none;
     }
 
-    .subTitle {
-        /* background-color: red; */
-    }
     .subTitle__content{
         padding-left: 40px;
         padding-right: 40px;
-        margin-bottom: 9rem;
-        display: flex;
-        justify-content: center;
-        align-content: center;
+        margin-bottom: 0.5rem;
     }
     .subTitle__content p {
-        font-size: 11px;
+        font-size: 18px;
+        font-weight: bold;
         padding-top: 0px;
         padding-bottom: 0px;
         width: 100%;
@@ -158,10 +159,20 @@ hr {
         flex-direction: row;
     }
 
+    .subTitle__content p:nth-child(3) {
+        display: flex;
+        justify-content: flex-end;
+        text-align: right;
+    }
+
     hr {
-    border-width: 1px;
-    border-style: solid;
-    width: 50%;
-}
+        border-width: 1px;
+        border-style: solid;
+        width: 20%;
+    }
+
+    #hr-wrap{
+        display: none;
+    }
 }
 </style>

@@ -15,8 +15,10 @@
     <div class="wrap" flex flex-row w-full h-full>
 
         <!-- Photo -->
-        <section class="wrap__photo rounded-3 w-full h-full flex justify-center items-center overflow-hidden">
-            <img class="w-full object-cover" src="@/assets/img/selfportrait.png" alt="Photo">
+        <section class="wrap__photoSection rounded-3 w-full h-full flex justify-center items-center overflow-hidden">
+            <div class="wrap__photoContainer">
+                <img class="w-full object-cover" src="@/assets/img/selfportrait.png" alt="Photo">
+            </div>
         </section>
 
         <!-- Text -->
@@ -63,6 +65,10 @@
             font-size: 12px;
         }
 
+        article{
+            padding: 0 1.25rem;
+        }
+
         .wrap {
             display: flex;
             flex-direction: column;
@@ -70,15 +76,19 @@
             align-items: center;
         }
 
-        .wrap__photo {
-            width: 100px;
-            height: 100px;
+        .wrap__photoSection {
+            width: 100%;
+        }
+        .wrap__photoContainer {
+            width: 140px;
+            height: 140px;
         }
 
-        .wrap__photo img {
+        .wrap__photoContainer img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 50%; 
         }
     }
 </style>

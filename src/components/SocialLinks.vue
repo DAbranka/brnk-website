@@ -3,9 +3,11 @@
         <section flex flex-col>
             
             <!-- mail to -->
-            <a href="mailto:davidabranka@gmail.com" class="mail opacity-80 text-xl no-underline w-full flex justify-end text-white">davidabranka@gmail.com</a>
+            <a href="mailto:davidabranka@gmail.com" class="mail opacity-80 text-xl no-underline w-full flex justify-end text-white">
+                davidabranka@gmail.com
+            </a>
 
-            <ul list-none flex justify-end items-center invert opacity-80 >
+            <ul list-none flex justify-end items-center invert>
                 <li scale-40>
                     <a href="https://www.instagram.com/brnkill/" target="_blank">
                         <img src="@/assets/img/icons/instagram.svg" alt="Instagram">
@@ -22,14 +24,14 @@
                     </a>
                 </li>
                 <li scale-70>
-                <a href="https://github.com/DAbranka" target="_blank">
-                    <img src="@/assets/img/icons/github.svg" alt="Github">
-                </a>
+                    <a href="https://github.com/DAbranka" target="_blank">
+                        <img src="@/assets/img/icons/github.svg" alt="Github">
+                    </a>
                 </li>
                 <li scale-40>
-                <a href="https://www.linkedin.com/in/david-abranka/" target="_blank">
-                    <img src="@/assets/img/icons/linkedin.svg" alt="Linkedin">
-                </a>
+                    <a href="https://www.linkedin.com/in/david-abranka/" target="_blank">
+                        <img src="@/assets/img/icons/linkedin.svg" alt="Linkedin">
+                    </a>
                 </li>
             </ul>
         </section>
@@ -59,5 +61,18 @@
             font-size: 12px;
             padding: 0;
         }
+
+        ul {
+            margin: 0;
+        }
+
+        .mail {
+            color: #41ecc7;
+        }
+        .mail:hover {
+            color: #41ecc700;
+        }
     }
+
+    
 </style>
