@@ -81,7 +81,7 @@ p {
 }
 
 .about {
-    color: white;
+    color: #41ecc7;
     border: 1px solid white;
     padding: 5px 20px;
     font-weight: 600;
@@ -132,15 +132,13 @@ hr {
     .about {
         font-size: 14px;
         font-weight: bolder;
-        padding: 0;
+        padding: 2px 10px;
         margin: 0;
-        border: none;
     }
 
     .about:hover {
         color: white;
         background-color: #41ecc700;
-        border: none;
     }
 
     .subTitle__content{
