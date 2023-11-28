@@ -13,10 +13,5 @@
 </template>
 
 <style scoped>
-    @media (max-width: 600px) {
-    /* CSS for mobile screens */
-    .fixed-video {
-        display: flex;
-    }
-}
+    
 </style>

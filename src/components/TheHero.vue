@@ -94,14 +94,14 @@ p {
 }
 
 @keyframes border-color-change {
-    0% { border-color: rgb(16, 96, 200)}
+    0% { border-color: rgb(16, 160, 200)}
     100% { border-color: #41ecc7; }
 }
 
 hr {
     border-width: 1px;
     border-style: solid;
-    animation: border-color-change 5s infinite alternate linear;
+    animation: border-color-change 3s infinite alternate linear;
 }
 
 /* RESPONSIVE */
@@ -138,10 +138,12 @@ hr {
     }
 
     .subTitle {
+        /* background-color: red; */
     }
     .subTitle__content{
         padding-left: 40px;
         padding-right: 40px;
+        margin-bottom: 9rem;
         display: flex;
         justify-content: center;
         align-content: center;
