@@ -5,6 +5,7 @@ import { ref, onMounted, onUnmounted, computed } from 'vue'
 import HeroBgVideo from '@/components/HeroBgVideo.vue'
 import MobileHeroBgVideo from '@/components/MobileHeroBgVideo.vue'
 import AboutCard from '@/components/AboutCard.vue'
+import WorkInProgress from './WorkInProgress.vue'
 
 const showAboutCard = ref(false)
 
@@ -42,6 +43,10 @@ const currentComponent = computed(() => (windowWidth.value <= 600 ? MobileHeroBg
                 </RouterLink>
             </section>
         </nav>
+
+        <section>
+            <WorkInProgress />
+        </section>
 
         <!-- BG VIDEO -->
         <section>
