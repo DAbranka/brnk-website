@@ -3,7 +3,7 @@
         <section flex flex-col>
             
             <!-- mail to -->
-            <a href="mailto:davidabranka@gmail.com" class="mail opacity-80 text-xl no-underline w-full flex justify-end text-white">
+            <a href="mailto:davidabranka@gmail.com" class="mail opacity-80 text-xl no-underline w-full flex justify-end">
                 davidabranka@gmail.com
             </a>
 
@@ -49,7 +49,7 @@
     .mail{
         font-family:monospace;
         font-size: 16px;
-        
+        color: #41ecc7;
     }
 
     .mail:hover {
