@@ -1,7 +1,6 @@
 {
-    "fallback": {
-        "rewrites": [
-            { "source": "/404", "destination": "/" }
-        ]
-    }
-}
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/404.html" }
+    ]
+  }
+  
