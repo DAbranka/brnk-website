@@ -29,6 +29,10 @@ const router = createRouter({
           component: AboutTextFr
         }
       ]
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: '/'
     }
   ]
 })
