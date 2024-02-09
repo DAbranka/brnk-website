@@ -45,7 +45,7 @@ const currentComponent = computed(() => (windowWidth.value <= 600 ? MobileHeroBg
         </nav>
 
         <section>
-            <WorkInProgress />
+            <!-- <WorkInProgress /> -->
         </section>
 
         <!-- BG VIDEO -->
