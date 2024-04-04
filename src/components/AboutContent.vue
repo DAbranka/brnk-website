@@ -17,7 +17,7 @@
         <!-- Photo -->
         <section class="wrap__photoSection rounded-3 w-full h-full flex justify-center items-center overflow-hidden">
             <div class="wrap__photoContainer">
-                <img class="w-full object-cover" src="@/assets/img/selfportrait.png" alt="Photo">
+                <img class="w-full object-cover" src="@/assets/img/selfportrait.jpg" alt="Photo">
             </div>
         </section>
 
