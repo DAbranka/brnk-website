@@ -34,18 +34,18 @@ const currentComponent = computed(() => (windowWidth.value <= 600 ? MobileHeroBg
 
                 <!-- LOGO -->
                 <RouterLink to="/">
-                    <img class="logo h-3 opacity-70" src="@/assets/img/BRNK_LOGO_WHT_PNG_NOBG.png" alt="png/logo">
+                    <!-- <img class="logo h-3 opacity-70" src="@/assets/img/BRNK_LOGO_WHT_PNG_NOBG.png" alt="png/logo"> -->
                 </RouterLink>
 
                 <!-- About -->
                 <RouterLink no-underline  @click.prevent="showAboutCard.value = true" to="/about">
-                    <p class="about text-2xl opacity-70">ABOUT</p>
+                    <!-- <p class="about text-2xl opacity-70">ABOUT</p> -->
                 </RouterLink>
             </section>
         </nav>
 
         <section>
-            <!-- <WorkInProgress /> -->
+            <WorkInProgress />
         </section>
 
         <!-- BG VIDEO -->
