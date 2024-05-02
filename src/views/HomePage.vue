@@ -1,13 +1,14 @@
 <script setup>
-    import TheHero from '@/components/TheHero.vue'
+import TheHero from "@/components/TheHero.vue";
 </script>
 
 <template>
-    <div>
-        <TheHero />
-    </div>
+  <div>
+    <header>
+      <nav></nav>
+      <TheHero />
+    </header>
+  </div>
 </template>
 
-
-<style scoped>
-</style>
+<style scoped></style>
