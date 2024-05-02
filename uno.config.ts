@@ -6,4 +6,7 @@ export default defineConfig({
     presetUno(),
     presetAttributify()
   ],
+  shortcuts: {
+    'navLink': 'text-sm font-700 mx-1 bg-gray-3 px-3 rounded-xl',
+  },
 })

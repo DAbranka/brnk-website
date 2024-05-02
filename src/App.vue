@@ -1,22 +1,23 @@
 <script setup>
-import { RouterView } from 'vue-router'
+import { RouterView } from 'vue-router';
 import HomePage from './views/HomePage.vue';
 </script>
 
 <template>
-  <div>
-    <HomePage />
-  </div>
-  <RouterView />
+    <div>
+        <HomePage />
+    </div>
+    <RouterView />
 </template>
 
 <style>
-
-body {
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #0f0f0f;
+}
+body {
+    font-family: sans-serif;
+    background-color: #f0f0f0;
 }
 </style>
