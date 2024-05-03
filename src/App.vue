@@ -18,6 +18,6 @@ import HomePage from './views/HomePage.vue';
 }
 body {
     font-family: sans-serif;
-    background-color: #f0f0f0;
+    background-color: #ededed;
 }
 </style>

@@ -2,6 +2,7 @@
 import SocialLinks from '@/components/SocialLinks.vue';
 import AboutTextEng from './AboutTextEng.vue';
 import AboutTextFr from './AboutTextFr.vue';
+import HomeAboutVideoVue from './HomeAboutVideo.vue';
 import { ref } from 'vue';
 
 const currentLanguage = ref('eng'); // default language
@@ -12,11 +13,16 @@ const setLanguage = (lang) => {
 </script>
 
 <template>
-    <div class="wrap" flex flex-row w-full h-full bg-black>
-        <!-- Photo -->
-        <section class="wrap__photoSection flex justify-center items-center overflow-hidden">
-            <div class="wrap__photoContainer">
-                <img class="w-full object-cover" src="@/assets/img/selfportrait.jpg" alt="Photo" />
+    <div class="wrap" h-screen flex flex-row bg-black>
+        <!-- Video -->
+        <section class="wrap__photoSection flex items-center justify-center w-full h-full">
+            <div class="wrap__photoContainer w-[800px] h-[800px] overflow-hidden rounded-5">
+                <!-- <img
+          class="object-cover w-full"
+          src="@/assets/img/selfportrait.jpg"
+          alt="Photo"
+        /> -->
+                <HomeAboutVideoVue />
             </div>
         </section>
 
