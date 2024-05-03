@@ -4,7 +4,7 @@ import NavLinkComponent from './NavLinkComponent.vue';
 <template>
     <div>
         <!-- NAVBAR -->
-        <nav class="navbBar">
+        <nav class="navbBar m-5">
             <section class="navBar__content flex items-center justify-between">
                 <!-- LOGO -->
                 <RouterLink to="/">

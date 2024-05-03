@@ -2,8 +2,8 @@
 
 <template>
     <div>
-        <section class="fixed-video" overflow-hidden>
-            <video autoplay muted loop>
+        <section overflow-clip h-full flex items-center justify-center>
+            <video autoplay muted loop w-full>
                 <source src="@/assets/video/brrrnk_hero_bg_video.mp4" type="video/mp4" />
             </video>
         </section>

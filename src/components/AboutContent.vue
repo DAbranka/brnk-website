@@ -12,11 +12,9 @@ const setLanguage = (lang) => {
 </script>
 
 <template>
-    <div class="wrap" flex flex-row w-full h-full>
+    <div class="wrap" flex flex-row w-full h-full bg-black>
         <!-- Photo -->
-        <section
-            class="wrap__photoSection rounded-3 w-full h-full flex justify-center items-center overflow-hidden"
-        >
+        <section class="wrap__photoSection flex justify-center items-center overflow-hidden">
             <div class="wrap__photoContainer">
                 <img class="w-full object-cover" src="@/assets/img/selfportrait.jpg" alt="Photo" />
             </div>
