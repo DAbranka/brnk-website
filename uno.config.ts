@@ -19,8 +19,8 @@ export default defineConfig({
       '3/4': '3 / 4',
     },
   },
+},
   shortcuts: {
     'navLink': 'text-sm font-700 mx-1 bg-gray-3 px-3 rounded-xl',
   },
-}
 })
