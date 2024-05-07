@@ -2,6 +2,7 @@
 import TheHero from '@/components/TheHero.vue';
 import TheNavBar from '../components/TheNavBar.vue';
 import HomepageAbout from '../components/HomepageAbout.vue';
+import HomeProjectsGrid from '../components/HomeProjectsGrid.vue';
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import HomepageAbout from '../components/HomepageAbout.vue';
         </header>
         <main>
             <HomepageAbout />
+            <HomeProjectsGrid />
         </main>
     </div>
 </template>

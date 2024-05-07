@@ -15,11 +15,12 @@
                         <img src="@/assets/img/icons/instagram.svg" alt="Instagram" />
                     </a>
                 </li>
-                <li scale-40>
+                <!-- todo: Replace this by Vimeo -->
+                <!-- <li scale-40>
                     <a href="https://twitter.com/__BRNK__" target="_blank">
                         <img src="@/assets/img/icons/twitter.svg" alt="Twitter" />
                     </a>
-                </li>
+                </li> -->
                 <li scale-40>
                     <a
                         href="https://www.youtube.com/channel/UCkVtFn_SuLY3FF_jLGFX2GQ"
