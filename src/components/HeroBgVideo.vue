@@ -1,17 +1,13 @@
-<script setup>
-    
-</script>
+<script setup></script>
 
 <template>
     <div>
-        <section class="fixed-video" w-screen h-screen overflow-hidden absolute top-0 left-0 z--10>
-            <video autoplay muted loop w-screen>
-                <source src="@/assets/video/brrrnk_hero_bg_video.mp4" type="video/mp4">
+        <section overflow-clip h-full flex items-center justify-center>
+            <video autoplay muted loop w-full>
+                <source src="@/assets/video/brrrnk_hero_bg_video.mp4" type="video/mp4" />
             </video>
         </section>
     </div>
 </template>
 
-<style scoped>
-    
-</style>
+<style scoped></style>
