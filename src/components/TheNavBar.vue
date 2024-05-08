@@ -1,5 +1,5 @@
 <script setup>
-import NavLinkComponent from './NavLinkComponent.vue';
+import NavLinkTemplate from './NavLinkTemplate.vue';
 </script>
 <template>
     <div>
@@ -19,9 +19,9 @@ import NavLinkComponent from './NavLinkComponent.vue';
                 <ul flex items-center justify-center list-none>
                     <li>
                         <RouterLink to="/work" no-underline>
-                            <NavLinkComponent>
+                            <NavLinkTemplate>
                                 <p>WORK</p>
-                            </NavLinkComponent>
+                            </NavLinkTemplate>
                         </RouterLink>
                     </li>
                     <li>
@@ -30,9 +30,9 @@ import NavLinkComponent from './NavLinkComponent.vue';
                             to="/about"
                             no-underline
                         >
-                            <NavLinkComponent>
+                            <NavLinkTemplate>
                                 <p>ABOUT</p>
-                            </NavLinkComponent>
+                            </NavLinkTemplate>
                         </RouterLink>
                     </li>
                 </ul>
