@@ -14,7 +14,9 @@ import SocialLinks from './SocialLinks.vue';
             <section>
                 <article>
                     <p>
-                        I'm a 3D artist and motion designer based in Liege. I specialize in 3D modeling, rendering, and animation. I'm passionate about creating visually stunning content that tells a story.
+                        I'm a 3D artist and motion designer based in Liege. I specialize in 3D
+                        modeling, rendering, and animation. I'm passionate about creating visually
+                        stunning content that tells a story.
                     </p>
                 </article>
             </section>

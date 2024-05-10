@@ -2,12 +2,14 @@
     <div>
         <section>
             <!-- mail to -->
-            <a href="mailto:davidabranka@gmail.com" text-white decoration-none> davidabranka@gmail.com </a>
+            <a href="mailto:davidabranka@gmail.com" text-white decoration-none>
+                davidabranka@gmail.com
+            </a>
 
             <!-- Social Links -->
             <ul list-none invert flex items-center>
                 <!-- INSTAGRAM -->
-                <li >
+                <li>
                     <a href="https://www.instagram.com/brnkill/" target="_blank">
                         <img src="@/assets/img/icons/instagram.svg" alt="Instagram" />
                     </a>
@@ -19,7 +21,7 @@
                     </a>
                 </li> -->
                 <!-- YOUTUBE -->
-                <li >
+                <li>
                     <a
                         href="https://www.youtube.com/channel/UCkVtFn_SuLY3FF_jLGFX2GQ"
                         target="_blank"
@@ -34,7 +36,7 @@
                     </a>
                 </li>
                 <!-- LINKEDIN -->
-                <li >
+                <li>
                     <a href="https://www.linkedin.com/in/david-abranka/" target="_blank">
                         <img src="@/assets/img/icons/linkedin.svg" alt="Linkedin" />
                     </a>

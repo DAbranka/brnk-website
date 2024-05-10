@@ -3,6 +3,20 @@ import ProjectCardTemplate from './ProjectCardTemplate.vue';
 import { useProjects } from '@/composables/useProjects';
 
 const { projects } = useProjects();
+
+const getImageClasses = (project) => {
+    const classes = [];
+    if (project.width > 100) {
+        classes.push('wide');
+    }
+    if (project.height > 100) {
+        classes.push('tall');
+    }
+    if (project.width > 100 && project.height > 100) {
+        classes.push('big');
+    }
+    return classes;
+};
 </script>
 
 <template>
@@ -27,14 +41,49 @@ const { projects } = useProjects();
         </section>
 
         <!-- Projects Grid Section -->
-        <section class="projectSection" flex justify-center>
-            <section class="projectSection--grid" grid grid-cols-3 gap-sm m-2xl>
-                <ProjectCardTemplate v-for="project in projects" :key="project.id">
-                    <img :src="project.image" alt="image/png" class="h-3xl" />
+        <section class="projectSection">
+            <section class="projectSection--grid" p-15>
+                <ProjectCardTemplate
+                    v-for="project in projects"
+                    :key="project.id"
+                    :class="getImageClasses(project)"
+                >
+                    <img :src="project.image" alt="image/png" />
                 </ProjectCardTemplate>
             </section>
         </section>
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.projectSection--grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+    grid-auto-rows: 100px;
+    grid-auto-flow: dense;
+}
+
+.projectSection--grid .wide {
+    grid-column: span 10;
+    grid-row: span 5;
+}
+
+.projectSection--grid .tall {
+    grid-column: span 5;
+    grid-row: span 6;
+}
+
+.projectSection--grid .big {
+    grid-column: span 5;
+    grid-row: span 5;
+}
+
+.projectSection--grid img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+    object-fit: cover;
+}
+</style>
