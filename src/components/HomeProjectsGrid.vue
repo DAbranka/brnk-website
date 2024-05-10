@@ -9,10 +9,11 @@ const { projects } = useProjects();
     <div>
         <!-- Projects Section Categories -->
         <section mx-18>
+            <h2 text-6xl font-900 mt-6>Latest Work</h2>
             <!-- Top Line -->
             <div w-full h-1px rounded-10 bg-blueGray-4 mt-3></div>
 
-            <!-- Categories -->
+            <!-- Categories Titles -->
             <div mt-2 w-2xl>
                 <ul font-300 text-xs text-blueGray-5 flex justify-between decoration-none list-none>
                     <li>All</li>
@@ -25,7 +26,7 @@ const { projects } = useProjects();
             </div>
         </section>
 
-        <!-- Projects Section -->
+        <!-- Projects Grid Section -->
         <section class="projectSection" flex justify-center>
             <section class="projectSection--grid" grid grid-cols-3 gap-sm m-2xl>
                 <ProjectCardTemplate v-for="project in projects" :key="project.id">

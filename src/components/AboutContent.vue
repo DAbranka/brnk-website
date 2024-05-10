@@ -49,9 +49,6 @@ const setLanguage = (lang) => {
 
             <!-- DYNAMIC COMPONENT -->
             <component :is="currentLanguage === 'eng' ? AboutTextEng : AboutTextFr"></component>
-
-            <!-- SOCIAL MEDIA -->
-            <SocialLinks pr-5 />
         </section>
     </div>
 </template>
