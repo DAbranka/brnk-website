@@ -3,6 +3,7 @@ import TheHero from '@/components/TheHero.vue';
 import TheNavBar from '../components/TheNavBar.vue';
 import HomepageAbout from '../components/HomepageAbout.vue';
 import HomeProjectsGrid from '../components/HomeProjectsGrid.vue';
+import TheFooter from '../components/TheFooter.vue';
 </script>
 
 <template>
@@ -15,6 +16,9 @@ import HomeProjectsGrid from '../components/HomeProjectsGrid.vue';
             <HomepageAbout />
             <HomeProjectsGrid />
         </main>
+        <footer>
+            <TheFooter />
+        </footer>
     </div>
 </template>
 
