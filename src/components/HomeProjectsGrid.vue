@@ -42,7 +42,6 @@ const getImageClasses = (project) => {
         <!-- Projects Grid Section -->
         <section class="projectSection">
             <section class="projectSection--grid" my-5 px-15>
-                
                 <div
                     v-for="project in projects"
                     :key="project.id"

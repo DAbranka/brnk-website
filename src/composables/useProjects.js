@@ -65,7 +65,7 @@ export function useProjects() {
             video: '/videos/0224 - 004 - HAPPY 30.mp4',
             width: '601',
             height: '601'
-        },
+        }
     ]);
     return { projects };
 }

@@ -1,5 +1,4 @@
 <script setup>
-import SocialLinks from '@/components/SocialLinks.vue';
 import AboutTextEng from './AboutTextEng.vue';
 import AboutTextFr from './AboutTextFr.vue';
 import HomeAboutVideoVue from './HomeAboutVideo.vue';
@@ -27,7 +26,7 @@ const setLanguage = (lang) => {
         </section>
 
         <!-- Text -->
-        <section class="wrap__text" w-full flex flex-col justify-between>
+        <section class="wrap__text" w-full bg-gray flex flex-col>
             <!-- Language switch -->
             <article flex justify-end pr-5 pt-5>
                 <p
@@ -48,7 +47,12 @@ const setLanguage = (lang) => {
             </article>
 
             <!-- DYNAMIC COMPONENT -->
-            <component :is="currentLanguage === 'eng' ? AboutTextEng : AboutTextFr"></component>
+            <component
+                h-full
+                flex
+                items-center
+                :is="currentLanguage === 'eng' ? AboutTextEng : AboutTextFr"
+            ></component>
         </section>
     </div>
 </template>
@@ -63,7 +67,7 @@ p {
     font-weight: 600;
 }
 .active {
-    color: #41ecc7; /* Change this to the color you want */
+    color: #ffe601; /* Change this to the color you want */
 }
 
 @media screen and (max-width: 600px) {
