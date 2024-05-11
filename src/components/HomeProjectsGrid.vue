@@ -1,18 +1,17 @@
 <script setup>
-import ProjectCardTemplate from './ProjectCardTemplate.vue';
 import { useProjects } from '@/composables/useProjects';
 
 const { projects } = useProjects();
 
 const getImageClasses = (project) => {
     const classes = [];
-    if (project.width > 100) {
+    if (project.width > 600) {
         classes.push('wide');
     }
-    if (project.height > 100) {
+    if (project.height > 600) {
         classes.push('tall');
     }
-    if (project.width > 100 && project.height > 100) {
+    if (project.width > 600 && project.height > 600) {
         classes.push('big');
     }
     return classes;
@@ -42,14 +41,20 @@ const getImageClasses = (project) => {
 
         <!-- Projects Grid Section -->
         <section class="projectSection">
-            <section class="projectSection--grid" p-15>
-                <ProjectCardTemplate
+            <section class="projectSection--grid" my-5 px-15>
+                
+                <div
                     v-for="project in projects"
                     :key="project.id"
                     :class="getImageClasses(project)"
                 >
-                    <img :src="project.image" alt="image/png" />
-                </ProjectCardTemplate>
+                    <img v-if="project.type === 'image'" :src="project.image" alt="Image" />
+                    <video
+                        v-else-if="project.type === 'video'"
+                        :src="project.video"
+                        controls
+                    ></video>
+                </div>
             </section>
         </section>
     </div>
@@ -58,32 +63,33 @@ const getImageClasses = (project) => {
 <style scoped>
 .projectSection--grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     gap: 1rem;
-    grid-auto-rows: 100px;
+    grid-auto-rows: 600px;
     grid-auto-flow: dense;
 }
 
 .projectSection--grid .wide {
-    grid-column: span 10;
-    grid-row: span 5;
+    grid-column: span 2;
 }
 
 .projectSection--grid .tall {
-    grid-column: span 5;
-    grid-row: span 6;
+    grid-row: span 2;
 }
 
 .projectSection--grid .big {
-    grid-column: span 5;
-    grid-row: span 5;
+    grid-column: span 1;
+    grid-row: span 1;
 }
 
-.projectSection--grid img {
-    max-width: 100%;
-    height: auto;
+.projectSection--grid img,
+video {
+    width: 100%;
+    height: 100%;
     vertical-align: middle;
     display: inline-block;
     object-fit: cover;
+    overflow: hidden;
+    border-radius: 10px;
 }
 </style>
