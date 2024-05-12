@@ -1,6 +1,5 @@
 <script setup>
 import TheHero from '@/components/TheHero.vue';
-import TheNavBar from '../components/TheNavBar.vue';
 import HomepageAbout from '../components/HomepageAbout.vue';
 import HomeProjectsGrid from '../components/HomeProjectsGrid.vue';
 </script>
@@ -8,7 +7,6 @@ import HomeProjectsGrid from '../components/HomeProjectsGrid.vue';
 <template>
     <div>
         <header>
-            <nav><TheNavBar /></nav>
             <TheHero />
         </header>
         <main>

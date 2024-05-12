@@ -1,11 +1,19 @@
 <script setup>
 import { RouterView } from 'vue-router';
+import TheNavBar from './components/TheNavBar.vue';
 import HomePage from './views/HomePage.vue';
+import TheFooter from './components/TheFooter.vue';
 </script>
 
 <template>
     <div>
-        <HomePage />
+        <nav><TheNavBar /></nav>
+        <main>
+            <HomePage />
+        </main>
+        <footer>
+            <TheFooter />
+        </footer>
     </div>
     <RouterView />
 </template>
@@ -16,8 +24,10 @@ import HomePage from './views/HomePage.vue';
     margin: 0;
     padding: 0;
 }
-body {
+body,
+html {
     font-family: sans-serif;
     background-color: #ededed;
+    scroll-behavior: smooth;
 }
 </style>
