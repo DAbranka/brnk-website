@@ -3,7 +3,7 @@
         <section class="contactLinks--grid" mx-5>
             <!-- mail to -->
             <section flex flex-col justify-center>
-                <h3 text-2xl mb-3>MAIL</h3>
+                <h3 text-2xl mb-2>CONTACT</h3>
                 <a href="mailto:davidabranka@gmail.com" text-white decoration-none>
                     <img src="@/assets/img/icons/mail.svg" alt="mail/svg" w-7 />
                 </a>
@@ -11,7 +11,7 @@
 
             <!-- Social Links -->
             <section>
-                <h3 uppercase mb-3 text-2xl>Follow Me</h3>
+                <h3 uppercase mb-2 text-2xl>Follow Me</h3>
 
                 <!-- ICONS -->
                 <section class="socialIcons" w-40>
