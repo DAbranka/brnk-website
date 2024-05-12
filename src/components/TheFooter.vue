@@ -1,30 +1,45 @@
 <script setup>
 import SocialLinks from './SocialLinks.vue';
+import TheFooterForm from './TheFooterForm.vue';
 </script>
 
 <template>
     <div>
-        <section bg-black text-white>
-            <!-- LOGO -->
-            <div>
-                <img src="@/assets/img/BRNK_LOGO_WHT_PNG_NOBG.png" alt="logo" h-12 />
-            </div>
-
-            <!-- About -->
-            <section>
-                <article>
-                    <p>
-                        I'm a 3D artist and motion designer based in Liege. I specialize in 3D
-                        modeling, rendering, and animation. I'm passionate about creating visually
-                        stunning content that tells a story.
-                    </p>
-                </article>
+        <section class="footerWrap" bg-black text-white>
+            <section bg-gray-4>
+                <!-- Tell me about your project -->
+                <TheFooterForm />
             </section>
-            <!-- Contact -->
-            <SocialLinks />
-            <!-- Tell me about your project -->
+
+            <section class="footerWrap--grid">
+                <!-- LOGO && ABOUT -->
+                <section mx-5>
+                    <!-- LOGO -->
+                    <div mb-1>
+                        <img src="@/assets/img/BRNK_LOGO_WHT_PNG_NOBG.png" alt="logo" h-11 />
+                    </div>
+
+                    <!-- About -->
+                    <section>
+                        <article>
+                            <p text-xl font-500>_3D ARTIST & MOTION DESIGNER.</p>
+                        </article>
+                    </section>
+                </section>
+
+                <!-- Follow me on -->
+
+                <SocialLinks />
+            </section>
         </section>
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.footerWrap--grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+</style>

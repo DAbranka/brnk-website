@@ -8,7 +8,9 @@ import TheFooter from './components/TheFooter.vue';
 <template>
     <div>
         <nav><TheNavBar /></nav>
-        <HomePage />
+        <main>
+            <HomePage />
+        </main>
         <footer>
             <TheFooter />
         </footer>
@@ -22,8 +24,10 @@ import TheFooter from './components/TheFooter.vue';
     margin: 0;
     padding: 0;
 }
-body {
+body,
+html {
     font-family: sans-serif;
     background-color: #ededed;
+    scroll-behavior: smooth;
 }
 </style>
