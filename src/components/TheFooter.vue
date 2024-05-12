@@ -6,11 +6,14 @@ import TheFooterForm from './TheFooterForm.vue';
 <template>
     <div>
         <section class="footerWrap" bg-black text-white>
-            <section bg-gray-4>
+            <section>
                 <!-- Tell me about your project -->
                 <TheFooterForm />
             </section>
 
+            <div flex justify-center px-12 rounded-10>
+                <hr border-none bg-white w-full h-0.2>
+            </div>
             <section class="footerWrap--grid">
                 <!-- LOGO && ABOUT -->
                 <section mx-5>
