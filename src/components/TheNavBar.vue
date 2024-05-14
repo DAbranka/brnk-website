@@ -1,5 +1,6 @@
 <script setup>
 import NavLinkTemplate from './NavLinkTemplate.vue';
+import { RouterLink } from 'vue-router';
 </script>
 <template>
     <div>
@@ -18,7 +19,7 @@ import NavLinkTemplate from './NavLinkTemplate.vue';
                 <!-- NAVBAR LINKS -->
                 <ul flex items-center justify-center list-none>
                     <li>
-                        <RouterLink to="/work" no-underline>
+                        <RouterLink to="HomepageProjectGrid" no-underline>
                             <NavLinkTemplate>
                                 <p>WORK</p>
                             </NavLinkTemplate>

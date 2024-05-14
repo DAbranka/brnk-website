@@ -26,7 +26,7 @@ const setLanguage = (lang) => {
         </section>
 
         <!-- Text -->
-        <section class="wrap__text" w-full bg-gray flex flex-col>
+        <section class="wrap__text" w-full flex flex-col>
             <!-- Language switch -->
             <article flex justify-end pr-5 pt-5>
                 <p

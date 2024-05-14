@@ -6,13 +6,9 @@ import HomeProjectsGrid from '../components/HomeProjectsGrid.vue';
 
 <template>
     <div>
-        <header>
-            <TheHero />
-        </header>
-        <main>
-            <HomepageAbout />
-            <HomeProjectsGrid />
-        </main>
+        <TheHero />
+        <HomepageAbout />
+        <HomeProjectsGrid :id="HomepageProjectGrid" />
     </div>
 </template>
 
