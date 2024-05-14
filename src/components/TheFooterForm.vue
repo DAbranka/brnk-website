@@ -78,7 +78,7 @@
                     ></textarea>
                 </div>
                 <div w-full>
-                    <button  type="submit">Submit</button>
+                    <button type="submit">Submit</button>
                 </div>
             </form>
         </section>
@@ -112,7 +112,7 @@ textarea {
     font:
         1.5rem 'Poppins',
         sans-serif;
-        color: rgb(208, 208, 208);
+    color: rgb(208, 208, 208);
 }
 
 input,
@@ -134,6 +134,5 @@ button {
 button:hover {
     color: rgb(255, 255, 255);
     transition: all 0.3s ease-in-out 0.1s;
-
 }
 </style>

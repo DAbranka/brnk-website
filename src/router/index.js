@@ -9,7 +9,6 @@ const router = createRouter({
             name: 'home',
             views: HomePage
         },
-
         {
             path: '/:pathMatch(.*)*',
             redirect: '/'

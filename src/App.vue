@@ -7,7 +7,9 @@ import TheFooter from './components/TheFooter.vue';
 
 <template>
     <div>
-        <nav><TheNavBar /></nav>
+        <header>
+            <nav><TheNavBar /></nav>
+        </header>
         <main>
             <HomePage />
         </main>

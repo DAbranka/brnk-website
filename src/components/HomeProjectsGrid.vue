@@ -21,13 +21,13 @@ const getImageClasses = (project) => {
 <template>
     <div my-6xl>
         <!-- Projects Section Categories -->
-        <section mx-18 >
-            <h2 text-6xl font-900 mt-6>Latest Work</h2>
+        <section mx-18>
+            <h2 text-6xl font-900 uppercase>Latest Work</h2>
             <!-- Top Line -->
             <div w-full h-1px rounded-10 bg-blueGray-4 mt-3></div>
 
             <!-- Categories Titles -->
-            <div mt-2 w-2xl>
+            <!-- <div mt-2 w-2xl>
                 <ul font-300 text-xs text-blueGray-5 flex justify-between decoration-none list-none>
                     <li>All</li>
                     <li>Modélisation 3D</li>
@@ -36,7 +36,7 @@ const getImageClasses = (project) => {
                     <li>Motion Graphics</li>
                     <li>Products Promotion</li>
                 </ul>
-            </div>
+            </div> -->
         </section>
 
         <!-- Projects Grid Section -->
