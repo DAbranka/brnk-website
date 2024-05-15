@@ -35,9 +35,31 @@ const scrollToTop = () => {
         <main>
             <HomePage />
             <!-- Scroll back up to top button -->
-            <button @click="scrollToTop" class="scrollToTopBtn" w20 h20 bg-black>
-                <i class="fas fa-arrow-up"></i>
-            </button>
+            <div flex justify-end>
+                <button
+                    @click="scrollToTop"
+                    class="scrollToTopBtn"
+                    w18
+                    h18
+                    cursor-pointer
+                    border-none
+                    bg-amber
+                    rounded-10
+                    p-3
+                    m-5
+                >
+                    <svg fill="none" viewBox="0 0 24 24" rounded-3>
+                        <path
+                            d="M 12 7 L 5 17, M 12 7 L 19 17"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke="black"
+                            stroke-width="4"
+                            fill="none"
+                        />
+                    </svg>
+                </button>
+            </div>
         </main>
 
         <footer>
