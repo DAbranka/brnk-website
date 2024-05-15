@@ -7,7 +7,6 @@ import HomeProjectsGrid from '../components/HomeProjectsGrid.vue';
 
 const HomepageProjectGrid = ref(['HomepageProjectGrid']);
 const HomepageAboutSection = ref(['HomepageAboutSection']);
-
 </script>
 
 <template>
@@ -18,6 +17,4 @@ const HomepageAboutSection = ref(['HomepageAboutSection']);
     </div>
 </template>
 
-<style scoped>
-    
-</style>
+<style scoped></style>

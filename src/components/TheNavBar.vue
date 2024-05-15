@@ -26,12 +26,7 @@ import { RouterLink } from 'vue-router';
                         </RouterLink>
                     </li>
                     <li>
-                        <RouterLink
-                        @click="$emit('ScrollToHAS')"
-                            @click.prevent="showAboutCard.value = true"
-                            to="/about"
-                            no-underline
-                        >
+                        <RouterLink @click="$emit('ScrollToHAS')" to="" no-underline>
                             <NavLinkTemplate>
                                 <p>ABOUT</p>
                             </NavLinkTemplate>
