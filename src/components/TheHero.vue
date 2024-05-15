@@ -29,7 +29,7 @@ const currentComponent = computed(() =>
             <article class="hero-text__content px-[19rem] py-[10rem]">
                 <h1 class="hero-text__title text-8xl font-900">
                     Hey there, I'm a passionate 3D artist and motion designer based in Liège,
-                    Belgium.👋
+                    Belgium.
                 </h1>
             </article>
         </section>

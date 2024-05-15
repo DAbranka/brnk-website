@@ -3,6 +3,9 @@ import { RouterView } from 'vue-router';
 import TheNavBar from './components/TheNavBar.vue';
 import HomePage from './views/HomePage.vue';
 import TheFooter from './components/TheFooter.vue';
+// import { mounted } from 'vue';
+import { onUnmounted } from 'vue';
+import { ref } from 'vue';
 
 const ScrollToHGP = () => {
     window.scrollTo({
@@ -24,19 +27,35 @@ const scrollToTop = () => {
         behavior: 'smooth'
     });
 };
+
+const showScrollToTopBtn = ref(false);
+
+const handleScroll = () => {
+    if (window.scrollY > 100) {
+        showScrollToTopBtn.value = true;
+    } else {
+        showScrollToTopBtn.value = false;
+    }
+};
+window.addEventListener('scroll', handleScroll);
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll);
+});
 </script>
 
 <template>
     <div>
         <header>
-            <nav><TheNavBar @ScrollToHGP="ScrollToHGP" @ScrollToHAS="ScrollToHAS" /></nav>
+            <nav class="bg-[#ededed]" fixed left-0 top-0 right-0 z-10><TheNavBar @ScrollToHGP="ScrollToHGP" @ScrollToHAS="ScrollToHAS" /></nav>
         </header>
 
         <main>
             <HomePage />
             <!-- Scroll back up to top button -->
-            <div flex justify-end>
+            <div flex justify-end py-4 sticky bottom-0>
                 <button
+                    v-show="showScrollToTopBtn"
                     @click="scrollToTop"
                     class="scrollToTopBtn"
                     w18
@@ -46,7 +65,7 @@ const scrollToTop = () => {
                     bg-amber
                     rounded-10
                     p-3
-                    m-5
+                    mr-15
                 >
                     <svg fill="none" viewBox="0 0 24 24" rounded-3>
                         <path

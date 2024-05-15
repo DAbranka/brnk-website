@@ -12,8 +12,8 @@ const HomepageAboutSection = ref(['HomepageAboutSection']);
 <template>
     <div>
         <TheHero />
-        <HomepageAbout :id="HomepageAboutSection" />
         <HomeProjectsGrid :id="HomepageProjectGrid" />
+        <HomepageAbout :id="HomepageAboutSection" />
     </div>
 </template>
 
