@@ -3,12 +3,27 @@ import { RouterView } from 'vue-router';
 import TheNavBar from './components/TheNavBar.vue';
 import HomePage from './views/HomePage.vue';
 import TheFooter from './components/TheFooter.vue';
+
+
+const ScrollToHGP = () => {
+    window.scrollTo({
+        top: document.getElementById('HomepageProjectGrid').offsetTop,
+        behavior: 'smooth',
+    });
+};
+
+const ScrollToHAS = () => {
+    window.scrollTo({
+        top: document.getElementById('HomepageAboutSection').offsetTop,
+        behavior: 'smooth',
+    });
+};
 </script>
 
 <template>
     <div>
         <header>
-            <nav><TheNavBar /></nav>
+            <nav><TheNavBar @ScrollToHGP="ScrollToHGP" @ScrollToHAS="ScrollToHAS"/></nav>
         </header>
         <main>
             <HomePage />
