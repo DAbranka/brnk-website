@@ -2,7 +2,7 @@
 
 <template>
     <div navLink>
-        <div first:text-black>
+        <div>
             <slot></slot>
         </div>
     </div>

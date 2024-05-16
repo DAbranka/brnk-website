@@ -3,8 +3,7 @@ import { RouterView } from 'vue-router';
 import TheNavBar from './components/TheNavBar.vue';
 import HomePage from './views/HomePage.vue';
 import TheFooter from './components/TheFooter.vue';
-
-// import { mounted } from 'vue';
+import { onMounted } from 'vue';
 import { onUnmounted } from 'vue';
 import { ref } from 'vue';
 
@@ -43,12 +42,32 @@ window.addEventListener('scroll', handleScroll);
 onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll);
 });
+
+const lastScrollTop = ref(0);
+let navbar;
+
+onMounted(() => {
+    navbar = document.getElementById('navbar');
+    console.log('the navbar: ', navbar);
+});
+
+window.addEventListener('scroll', function () {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop.value) {
+        navbar.style.top = '-100px';
+    } else {
+        navbar.style.top = '0';
+    }
+    lastScrollTop.value = scrollTop;
+});
 </script>
 
 <template>
     <div>
         <header>
             <nav
+                id="navbar"
+                :class="{ hidden: isScrollingDown }"
                 bg-white
                 fixed
                 left-0
@@ -74,7 +93,7 @@ onUnmounted(() => {
                     cursor-pointer
                     border-none
                     rounded-10
-                    p-3
+                    p-2
                     mr-15
                     opacity-95
                 >
@@ -84,7 +103,7 @@ onUnmounted(() => {
                             stroke-linecap="round"
                             stroke-linejoin="round"
                             stroke="black"
-                            stroke-width="4"
+                            stroke-width="2"
                             fill="none"
                         />
                     </svg>
@@ -110,5 +129,13 @@ html {
     font-family: sans-serif;
     background-color: #ebebeb;
     scroll-behavior: smooth;
+}
+
+#navbar {
+    transition: top 0.3s ease-in-out 0.1s;
+}
+
+.scrollToTopBtn {
+    transition: all 0.3s ease-in-out 0.3s;
 }
 </style>
