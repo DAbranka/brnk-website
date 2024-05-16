@@ -7,9 +7,12 @@ export default defineConfig({
     presetAttributify()
   ],
   theme: {
-    extend: {
-      colors: {
-        'gray-3': '#f1f5f9',
+    colors: {
+        'prime': '#f1f875',
+        'second': '#f1f5f9',
+        'white': '#e2e2e2ee',
+        'black': '#000000',
+
       },
       fontFamily: {
         'sans': ['Inter', 'sans-serif'],
@@ -19,7 +22,6 @@ export default defineConfig({
       '3/4': '3 / 4',
     },
   },
-},
   shortcuts: {
     'navLink': 'text-sm font-700 mx-1 bg-gray-3 px-3 rounded-xl',
   },

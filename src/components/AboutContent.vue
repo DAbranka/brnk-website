@@ -67,7 +67,7 @@ p {
     font-weight: 600;
 }
 .active {
-    color: #ffe601; /* Change this to the color you want */
+    color: #f1f875; /* Change this to the color you want */
 }
 
 @media screen and (max-width: 600px) {

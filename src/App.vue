@@ -3,6 +3,7 @@ import { RouterView } from 'vue-router';
 import TheNavBar from './components/TheNavBar.vue';
 import HomePage from './views/HomePage.vue';
 import TheFooter from './components/TheFooter.vue';
+
 // import { mounted } from 'vue';
 import { onUnmounted } from 'vue';
 import { ref } from 'vue';
@@ -47,25 +48,28 @@ onUnmounted(() => {
 <template>
     <div>
         <header>
-            <nav class="bg-[#ededed]" fixed left-0 top-0 right-0 z-10><TheNavBar @ScrollToHGP="ScrollToHGP" @ScrollToHAS="ScrollToHAS" /></nav>
+            <nav class="bg-[#ededed]" fixed left-0 top-0 right-0 z-10>
+                <TheNavBar @ScrollToHGP="ScrollToHGP" @ScrollToHAS="ScrollToHAS" />
+            </nav>
         </header>
 
         <main>
             <HomePage />
             <!-- Scroll back up to top button -->
-            <div flex justify-end py-4 sticky bottom-0>
+            <div flex justify-end py-12 fixed bottom-0 right-0 left-0 >
                 <button
                     v-show="showScrollToTopBtn"
                     @click="scrollToTop"
                     class="scrollToTopBtn"
+                    bg-prime
                     w18
                     h18
                     cursor-pointer
                     border-none
-                    bg-amber
                     rounded-10
                     p-3
                     mr-15
+                    opacity-95
                 >
                     <svg fill="none" viewBox="0 0 24 24" rounded-3>
                         <path
