@@ -48,7 +48,14 @@ onUnmounted(() => {
 <template>
     <div>
         <header>
-            <nav class="bg-[#ededed]" fixed left-0 top-0 right-0 z-10>
+            <nav
+                bg-white
+                fixed
+                left-0
+                top-0
+                right-0
+                z-10
+            >
                 <TheNavBar @ScrollToHGP="ScrollToHGP" @ScrollToHAS="ScrollToHAS" />
             </nav>
         </header>
@@ -56,7 +63,7 @@ onUnmounted(() => {
         <main>
             <HomePage />
             <!-- Scroll back up to top button -->
-            <div flex justify-end py-12 fixed bottom-0 right-0 left-0 >
+            <div flex justify-end py-12 fixed bottom-0 right-0 left-0>
                 <button
                     v-show="showScrollToTopBtn"
                     @click="scrollToTop"
@@ -101,7 +108,7 @@ onUnmounted(() => {
 body,
 html {
     font-family: sans-serif;
-    background-color: #ededed;
+    background-color: #ebebeb;
     scroll-behavior: smooth;
 }
 </style>
