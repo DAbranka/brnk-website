@@ -19,18 +19,14 @@ import { RouterLink } from 'vue-router';
                 <!-- NAVBAR LINKS -->
                 <ul flex items-center justify-center list-none>
                     <li>
-                        <RouterLink to="HomepageProjectGrid" no-underline>
+                        <RouterLink @click="$emit('ScrollToHGP')" to="" no-underline>
                             <NavLinkTemplate>
                                 <p>WORK</p>
                             </NavLinkTemplate>
                         </RouterLink>
                     </li>
                     <li>
-                        <RouterLink
-                            @click.prevent="showAboutCard.value = true"
-                            to="/about"
-                            no-underline
-                        >
+                        <RouterLink @click="$emit('ScrollToHAS')" to="" no-underline>
                             <NavLinkTemplate>
                                 <p>ABOUT</p>
                             </NavLinkTemplate>
