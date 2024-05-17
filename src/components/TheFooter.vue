@@ -17,15 +17,15 @@ import TheFooterForm from './TheFooterForm.vue';
             </div>
             <section class="footerWrap--grid">
                 <!-- LOGO && ABOUT -->
-                <section mx-5>
+                <section class="logoSection" mx-5>
                     <!-- LOGO -->
                     <div mb-1>
                         <img src="@/assets/img/BRNK_LOGO_WHT_PNG_NOBG.png" alt="logo" h-11 />
                     </div>
 
-                    <!-- About -->
+                    <!-- JOB TITLE -->
                     <section>
-                        <article>
+                        <article class="jobTitle">
                             <p text-xl font-500>_3D ARTIST & MOTION DESIGNER.</p>
                         </article>
                     </section>
@@ -45,5 +45,25 @@ import TheFooterForm from './TheFooterForm.vue';
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     padding: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    .footerWrap--grid {
+        display: flex;
+        flex-direction: column;
+    }
+    .logoSection {
+        margin: 0;
+        padding: 0;
+    }
+
+    .logoSection img {
+        height: 2rem;
+    }
+
+    .jobTitle p {
+        font-size: 1rem;
+        line-height: 0.5rem;
+    }
 }
 </style>

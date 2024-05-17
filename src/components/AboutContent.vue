@@ -79,6 +79,7 @@ p {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: auto;
     }
 
     .wrap__photoSection {
@@ -88,7 +89,6 @@ p {
         width: 140px;
         height: 140px;
     }
-
 }
 @media screen and (min-width: 600px) and (max-width: 1600px) {
     .wrap {

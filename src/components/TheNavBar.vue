@@ -38,4 +38,7 @@ import { RouterLink } from 'vue-router';
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+@media screen and (max-width: 600px) {
+}
+</style>

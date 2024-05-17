@@ -4,7 +4,7 @@
             <!-- mail to -->
             <section flex flex-col justify-center>
                 <h3 text-2xl mb-2>CONTACT</h3>
-                <a href="mailto:davidabranka@gmail.com" text-white decoration-none>
+                <a href="mailto:davidabranka@gmail.com" w="28px" cursor-pointer z-10>
                     <img src="@/assets/img/icons/mail.svg" alt="mail/svg" w-7 />
                 </a>
             </section>
@@ -63,20 +63,10 @@
     gap: 1rem;
 }
 @media screen and (max-width: 600px) {
-    .mail {
-        font-size: 12px;
-        padding: 0;
-    }
-
-    ul {
+    .contactLinks--grid {
+        display: block;
         margin: 0;
-    }
-
-    .mail {
-        color: #41ecc7;
-    }
-    .mail:hover {
-        color: #41ecc700;
+        padding: 0;
     }
 }
 </style>

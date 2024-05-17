@@ -44,42 +44,18 @@ const currentComponent = computed(() =>
 /* RESPONSIVE */
 @media (max-width: 600px) {
     /* CSS for mobile screens */
-    header {
-        /* background-color: red; */
-        height: 100vh;
+
+    h1 {
+        font-size: 2rem;
     }
 
-    .navbBar {
-        padding: 0px;
-        display: flex;
-        background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0));
-    }
-
-    .navBar__content {
-        width: 100%;
-        padding: 2rem;
-        margin: 0px;
-    }
-
-    .logo {
-        height: 8px;
-    }
-
-    .about {
-        font-size: 14px;
-        font-weight: bolder;
-        padding: 2px 10px;
-        margin: 0;
-    }
-
-    .about:hover {
-        color: white;
-        background-color: #41ecc700;
+    .hero-text__content {
+        padding: 0;
     }
 }
 
 @media (min-width: 600px) and (max-width: 1600px) {
-    h1{
+    h1 {
         font-size: 4rem;
     }
 }

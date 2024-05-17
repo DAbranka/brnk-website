@@ -81,19 +81,17 @@ window.addEventListener('scroll', function () {
 
         <main>
             <HomePage />
-            
+
             <!-- Scroll back up to top button -->
-            <div flex justify-end py-12 fixed bottom-0 right-0 left-0>
+            <div class="scrollToTopBtn" flex justify-end py-12 fixed bottom-0 right-0 left-0>
                 <button
                     v-show="showScrollToTopBtn"
                     @click="scrollToTop"
-                    class="scrollToTopBtn"
                     bg-prime
                     w18
                     h18
                     cursor-pointer
                     border-none
-                    rounded-10
                     p-2
                     mr-15
                     opacity-95
@@ -136,7 +134,19 @@ html {
     transition: top 0.3s ease-in-out 0.1s;
 }
 
-.scrollToTopBtn {
-    transition: all 0.3s ease-in-out 0.3s;
+@media screen and (max-width: 600px) {
+    .scrollToTopBtn {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+    .scrollToTopBtn :nth-child(1) {
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 </style>
