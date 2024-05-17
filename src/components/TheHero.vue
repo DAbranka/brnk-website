@@ -77,4 +77,10 @@ const currentComponent = computed(() =>
         background-color: #41ecc700;
     }
 }
+
+@media (min-width: 600px) and (max-width: 1600px) {
+    h1{
+        font-size: 4rem;
+    }
+}
 </style>

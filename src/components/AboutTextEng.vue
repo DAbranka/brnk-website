@@ -43,4 +43,10 @@ p {
         font-size: 12px;
     }
 }
+
+@media screen and (min-width: 600px) and (max-width: 1600px) {
+    p {
+        font-size: 18px;
+    }
+}
 </style>

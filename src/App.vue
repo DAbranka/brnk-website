@@ -81,6 +81,7 @@ window.addEventListener('scroll', function () {
 
         <main>
             <HomePage />
+            
             <!-- Scroll back up to top button -->
             <div flex justify-end py-12 fixed bottom-0 right-0 left-0>
                 <button

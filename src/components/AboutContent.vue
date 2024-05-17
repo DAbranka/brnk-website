@@ -16,11 +16,6 @@ const setLanguage = (lang) => {
         <!-- Video -->
         <section class="wrap__photoSection flex items-center justify-center w-full h-full">
             <div class="wrap__photoContainer w-[800px] h-[800px] overflow-hidden rounded-5">
-                <!-- <img
-          class="object-cover w-full"
-          src="@/assets/img/selfportrait.jpg"
-          alt="Photo"
-        /> -->
                 <HomeAboutVideoVue />
             </div>
         </section>
@@ -94,11 +89,22 @@ p {
         height: 140px;
     }
 
-    .wrap__photoContainer img {
+}
+@media screen and (min-width: 600px) and (max-width: 1600px) {
+    .wrap {
+        flex-direction: row;
+    }
+
+    .wrap__photoSection {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
+        height: auto;
+    }
+
+    .wrap__photoContainer {
+        width: 100%;
+        height: auto;
+        max-width: 620px;
+        max-height: 620px;
     }
 }
 </style>
