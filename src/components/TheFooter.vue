@@ -1,6 +1,6 @@
 <script setup>
 import SocialLinks from './SocialLinks.vue';
-import TheFooterForm from './TheFooterForm.vue';
+// import TheFooterForm from './TheFooterForm.vue';
 </script>
 
 <template>
@@ -62,6 +62,7 @@ import TheFooterForm from './TheFooterForm.vue';
 
     .jobTitle p {
         font-size: 1rem;
+        font-weight: 300;
         line-height: 0.5rem;
     }
 

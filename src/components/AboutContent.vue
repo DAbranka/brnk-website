@@ -12,7 +12,8 @@ const setLanguage = (lang) => {
 </script>
 
 <template>
-    <div class="wrap" h-screen flex flex-row bg-black>
+    <div bg-black>
+        <div class="wrap" h-screen flex flex-row bg-black>
         <!-- Video -->
         <section class="wrap__photoSection flex items-center justify-center w-full h-full">
             <div class="wrap__photoContainer w-[800px] h-[800px] overflow-hidden rounded-5">
@@ -51,6 +52,7 @@ const setLanguage = (lang) => {
             ></component>
         </section>
     </div>
+    </div>
 </template>
 
 <style scoped>
@@ -65,11 +67,11 @@ p {
     color: #f1f875; /* Change this to the color you want */
 }
 
+/* CSS FOR PHONE SCREEN */
 @media screen and (max-width: 600px) {
     p {
         font-size: 16px;
         font-weight: 900;
-
     }
 
     article {
@@ -89,12 +91,13 @@ p {
         position: relative;
         height: 400px;
         overflow: hidden;
+        border-radius: 0 0 20px 20px; 
+        
     }
 
     .wrap__photoSection {
-        width: 100%;
-        height: 100%;
-        transform: scale(1.1);
+        width: 100vw;
+        transform: scale(2);
         overflow: hidden;
         position: absolute;
         top: 0;
@@ -107,6 +110,8 @@ p {
         height: 400px;
     }
 }
+
+/* CSS FOR LAPTOP SCREEN */
 @media screen and (min-width: 600px) and (max-width: 1600px) {
     .wrap {
         flex-direction: row;

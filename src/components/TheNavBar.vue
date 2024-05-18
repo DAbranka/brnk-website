@@ -40,5 +40,8 @@ import { RouterLink } from 'vue-router';
 
 <style scoped>
 @media screen and (max-width: 600px) {
+    .logo {
+        height: 1rem;
+    }
 }
 </style>

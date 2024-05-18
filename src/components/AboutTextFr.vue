@@ -29,7 +29,7 @@
 <style scoped>
 p {
     font-size: 1.5rem;
-    font-weight: 800;
+    font-weight: 300;
     /* margin-bottom: 1rem; */
     color: #ebebeb;
     padding: 0 8rem;

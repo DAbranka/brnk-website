@@ -75,7 +75,7 @@ window.addEventListener('scroll', function () {
                 left-0
                 top-0
                 right-0
-                z-10
+                z-20
             >
                 <TheNavBar @ScrollToHGP="ScrollToHGP" @ScrollToHAS="ScrollToHAS" />
             </nav>
@@ -126,7 +126,7 @@ window.addEventListener('scroll', function () {
 }
 body,
 html {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #ebebeb;
     scroll-behavior: smooth;
     scroll-padding-top: var(--navbar-height, 3rem);
