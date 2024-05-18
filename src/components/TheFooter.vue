@@ -12,7 +12,7 @@ import TheFooterForm from './TheFooterForm.vue';
             </section>
 
             <!-- Top Line -->
-            <div flex justify-center px-12 rounded-10>
+            <div class="topLine" flex justify-center px-12 rounded-10>
                 <hr border-none bg-white w-full h-0.2 />
             </div>
             <section class="footerWrap--grid">
@@ -32,7 +32,6 @@ import TheFooterForm from './TheFooterForm.vue';
                 </section>
 
                 <!-- Follow me on -->
-
                 <SocialLinks />
             </section>
         </section>
@@ -64,6 +63,10 @@ import TheFooterForm from './TheFooterForm.vue';
     .jobTitle p {
         font-size: 1rem;
         line-height: 0.5rem;
+    }
+
+    .topLine {
+        display: none;
     }
 }
 </style>

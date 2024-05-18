@@ -2,9 +2,9 @@
     <div>
         <section class="contactLinks--grid" mx-5>
             <!-- mail to -->
-            <section flex flex-col justify-center>
+            <section flex flex-col justify-center >
                 <h3 text-2xl mb-2>CONTACT</h3>
-                <a href="mailto:davidabranka@gmail.com" w="28px" cursor-pointer z-10>
+                <a href="mailto:davidabranka@gmail.com" w="28px" cursor-pointer z-20>
                     <img src="@/assets/img/icons/mail.svg" alt="mail/svg" w-7 />
                 </a>
             </section>
@@ -15,11 +15,11 @@
 
                 <!-- ICONS -->
                 <section class="socialIcons" w-40>
-                    <ul list-none invert flex justify-between items-center w-full>
+                    <ul list-none invert flex justify-between items-center w-full >
                         <!-- INSTAGRAM -->
                         <li>
                             <a href="https://www.instagram.com/brnkill/" target="_blank">
-                                <img src="@/assets/img/icons/instagram.svg" w-7 alt="Instagram" />
+                                <img src="@/assets/img/icons/instagram.svg" alt="Instagram" w-7 />
                             </a>
                         </li>
                         <!-- todo: Replace this by Vimeo -->
@@ -61,6 +61,11 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+}
+
+.socialIcons{
+    position: relative;
+    z-index: 20;
 }
 @media screen and (max-width: 600px) {
     .contactLinks--grid {

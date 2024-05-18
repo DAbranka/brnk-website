@@ -43,6 +43,7 @@ const setLanguage = (lang) => {
 
             <!-- DYNAMIC COMPONENT -->
             <component
+            class="aboutTxt_content"
                 h-full
                 flex
                 items-center
@@ -54,7 +55,6 @@ const setLanguage = (lang) => {
 
 <style scoped>
 p {
-    font-family: sans-serif;
     font-size: 14px;
     margin-bottom: 1rem;
     color: #ebebeb;
@@ -67,27 +67,44 @@ p {
 
 @media screen and (max-width: 600px) {
     p {
-        font-size: 12px;
+        font-size: 16px;
+        font-weight: 900;
+
     }
 
     article {
-        padding: 0 1.25rem;
+        padding-top: 1rem;
+    }
+
+    .aboutTxt_content {
+        display: block;
+        padding-top: 5rem;
+    }
+
+    .wrap__text {
+        z-index: 1;
     }
 
     .wrap {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: auto;
+        position: relative;
+        height: 400px;
+        overflow: hidden;
     }
 
     .wrap__photoSection {
         width: 100%;
+        height: 100%;
+        transform: scale(1.1);
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        opacity: 30%;
     }
     .wrap__photoContainer {
-        width: 140px;
-        height: 140px;
+        width: 400px;
+        height: 400px;
     }
 }
 @media screen and (min-width: 600px) and (max-width: 1600px) {

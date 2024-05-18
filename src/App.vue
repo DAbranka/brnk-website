@@ -8,10 +8,12 @@ import { onUnmounted } from 'vue';
 import { ref } from 'vue';
 
 const ScrollToHGP = () => {
+    const navbarHeight = document.getElementById('navbar').offsetHeight
+    document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`)
     window.scrollTo({
         top: document.getElementById('HomepageProjectGrid').offsetTop,
-        behavior: 'smooth'
-    });
+        behavior: 'smooth',
+    })
 };
 
 const ScrollToHAS = () => {
@@ -83,7 +85,7 @@ window.addEventListener('scroll', function () {
             <HomePage />
 
             <!-- Scroll back up to top button -->
-            <div class="scrollToTopBtn" flex justify-end py-12 fixed bottom-0 right-0 left-0>
+            <div class="scrollToTopBtn" flex justify-end py-12 fixed bottom-0 right-0 left-0 z-2>
                 <button
                     v-show="showScrollToTopBtn"
                     @click="scrollToTop"
@@ -94,7 +96,6 @@ window.addEventListener('scroll', function () {
                     border-none
                     p-2
                     mr-15
-                    opacity-95
                 >
                     <svg fill="none" viewBox="0 0 24 24" rounded-3>
                         <path
@@ -128,6 +129,7 @@ html {
     font-family: sans-serif;
     background-color: #ebebeb;
     scroll-behavior: smooth;
+    scroll-padding-top: var(--navbar-height, 3rem);
 }
 
 #navbar {
@@ -141,12 +143,13 @@ html {
         right: 0;
         left: 0;
     }
-    .scrollToTopBtn :nth-child(1) {
+    .scrollToTopBtn button {
         width: 4rem;
         height: 4rem;
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-right: 3rem;
     }
 }
 </style>
