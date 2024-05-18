@@ -136,6 +136,7 @@ html {
     transition: top 0.3s ease-in-out 0.1s;
 }
 
+/* CSS FOR PHONE SCREEN */
 @media screen and (max-width: 600px) {
     .scrollToTopBtn {
         position: fixed;
@@ -144,12 +145,12 @@ html {
         left: 0;
     }
     .scrollToTopBtn button {
-        width: 4rem;
-        height: 4rem;
+        width: 3.5rem;
+        height: 3.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 3rem;
+        margin-right: 2.8rem;
     }
 }
 </style>

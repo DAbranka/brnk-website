@@ -52,16 +52,16 @@ import SocialLinks from './SocialLinks.vue';
         flex-direction: column;
     }
     .logoSection {
-        margin: 0;
+        margin: 5rem 3rem;
         padding: 0;
     }
 
     .logoSection img {
-        height: 2rem;
+        height: 1.6rem;
     }
 
     .jobTitle p {
-        font-size: 1rem;
+        font-size: 0.85rem;
         font-weight: 300;
         line-height: 0.5rem;
     }

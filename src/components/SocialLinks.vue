@@ -76,6 +76,7 @@
 
     .followMe h3, .contactMe h3 {
         font-size: 1.2rem;
+        font-weight: 300;
         margin: 0;
         padding: 0;
     }
