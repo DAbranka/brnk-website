@@ -8,6 +8,8 @@ import { onUnmounted } from 'vue';
 import { ref } from 'vue';
 
 const ScrollToHGP = () => {
+    const navbarHeight = document.getElementById('navbar').offsetHeight;
+    document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`);
     window.scrollTo({
         top: document.getElementById('HomepageProjectGrid').offsetTop,
         behavior: 'smooth'
@@ -73,7 +75,7 @@ window.addEventListener('scroll', function () {
                 left-0
                 top-0
                 right-0
-                z-10
+                z-20
             >
                 <TheNavBar @ScrollToHGP="ScrollToHGP" @ScrollToHAS="ScrollToHAS" />
             </nav>
@@ -81,21 +83,19 @@ window.addEventListener('scroll', function () {
 
         <main>
             <HomePage />
+
             <!-- Scroll back up to top button -->
-            <div flex justify-end py-12 fixed bottom-0 right-0 left-0>
+            <div class="scrollToTopBtn" flex justify-end py-12 fixed bottom-0 right-0 left-0 z-2>
                 <button
                     v-show="showScrollToTopBtn"
                     @click="scrollToTop"
-                    class="scrollToTopBtn"
                     bg-prime
                     w18
                     h18
                     cursor-pointer
                     border-none
-                    rounded-10
                     p-2
                     mr-15
-                    opacity-95
                 >
                     <svg fill="none" viewBox="0 0 24 24" rounded-3>
                         <path
@@ -129,13 +129,28 @@ html {
     font-family: sans-serif;
     background-color: #ebebeb;
     scroll-behavior: smooth;
+    scroll-padding-top: var(--navbar-height, 3rem);
 }
 
 #navbar {
     transition: top 0.3s ease-in-out 0.1s;
 }
 
-.scrollToTopBtn {
-    transition: all 0.3s ease-in-out 0.3s;
+/* CSS FOR PHONE SCREEN */
+@media screen and (max-width: 600px) {
+    .scrollToTopBtn {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+    .scrollToTopBtn button {
+        width: 3.5rem;
+        height: 3.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 2.8rem;
+    }
 }
 </style>

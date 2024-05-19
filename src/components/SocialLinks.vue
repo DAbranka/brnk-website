@@ -2,15 +2,15 @@
     <div>
         <section class="contactLinks--grid" mx-5>
             <!-- mail to -->
-            <section flex flex-col justify-center>
+            <section class="contactMe" flex flex-col justify-center>
                 <h3 text-2xl mb-2>CONTACT</h3>
-                <a href="mailto:davidabranka@gmail.com" text-white decoration-none>
+                <a href="mailto:davidabranka@gmail.com" w="28px" cursor-pointer z-20>
                     <img src="@/assets/img/icons/mail.svg" alt="mail/svg" w-7 />
                 </a>
             </section>
 
             <!-- Social Links -->
-            <section>
+            <section class="followMe">
                 <h3 uppercase mb-2 text-2xl>Follow Me</h3>
 
                 <!-- ICONS -->
@@ -19,7 +19,7 @@
                         <!-- INSTAGRAM -->
                         <li>
                             <a href="https://www.instagram.com/brnkill/" target="_blank">
-                                <img src="@/assets/img/icons/instagram.svg" w-7 alt="Instagram" />
+                                <img src="@/assets/img/icons/instagram.svg" alt="Instagram" w-7 />
                             </a>
                         </li>
                         <!-- todo: Replace this by Vimeo -->
@@ -62,21 +62,24 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 }
+
+.socialIcons {
+    position: relative;
+    z-index: 20;
+}
 @media screen and (max-width: 600px) {
-    .mail {
-        font-size: 12px;
+    .contactLinks--grid {
+        display: block;
+        margin: 0;
         padding: 0;
     }
 
-    ul {
+    .followMe h3,
+    .contactMe h3 {
+        font-size: 1.2rem;
+        font-weight: 300;
         margin: 0;
-    }
-
-    .mail {
-        color: #41ecc7;
-    }
-    .mail:hover {
-        color: #41ecc700;
+        padding: 0;
     }
 }
 </style>

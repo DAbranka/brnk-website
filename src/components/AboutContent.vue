@@ -6,29 +6,25 @@ import { ref } from 'vue';
 
 const currentLanguage = ref('eng'); // default language
 
-const setLanguage = (lang) => {
-    currentLanguage.value = lang;
-};
+// const setLanguage = (lang) => {
+//     currentLanguage.value = lang;
+// };
 </script>
 
 <template>
-    <div class="wrap" h-screen flex flex-row bg-black>
-        <!-- Video -->
-        <section class="wrap__photoSection flex items-center justify-center w-full h-full">
-            <div class="wrap__photoContainer w-[800px] h-[800px] overflow-hidden rounded-5">
-                <!-- <img
-          class="object-cover w-full"
-          src="@/assets/img/selfportrait.jpg"
-          alt="Photo"
-        /> -->
-                <HomeAboutVideoVue />
-            </div>
-        </section>
+    <div bg-black>
+        <div class="wrap" h-screen flex flex-row bg-black>
+            <!-- Video -->
+            <section class="wrap__photoSection flex items-center justify-center w-full h-full">
+                <div class="wrap__photoContainer w-[800px] h-[800px] overflow-hidden rounded-5">
+                    <HomeAboutVideoVue />
+                </div>
+            </section>
 
-        <!-- Text -->
-        <section class="wrap__text" w-full flex flex-col>
-            <!-- Language switch -->
-            <article flex justify-end pr-5 pt-5>
+            <!-- Text -->
+            <section class="wrap__text" w-full flex flex-col>
+                <!-- Language switch -->
+                <!-- <article flex justify-end pr-5 pt-5>
                 <p
                     @click="setLanguage('eng')"
                     cursor-pointer
@@ -44,22 +40,23 @@ const setLanguage = (lang) => {
                 >
                     FR
                 </p>
-            </article>
+            </article> -->
 
-            <!-- DYNAMIC COMPONENT -->
-            <component
-                h-full
-                flex
-                items-center
-                :is="currentLanguage === 'eng' ? AboutTextEng : AboutTextFr"
-            ></component>
-        </section>
+                <!-- DYNAMIC COMPONENT -->
+                <component
+                    class="aboutTxt_content"
+                    h-full
+                    flex
+                    items-center
+                    :is="currentLanguage === 'eng' ? AboutTextEng : AboutTextFr"
+                ></component>
+            </section>
+        </div>
     </div>
 </template>
 
 <style scoped>
 p {
-    font-family: sans-serif;
     font-size: 14px;
     margin-bottom: 1rem;
     color: #ebebeb;
@@ -70,35 +67,65 @@ p {
     color: #f1f875; /* Change this to the color you want */
 }
 
+/* CSS FOR PHONE SCREEN */
 @media screen and (max-width: 600px) {
     p {
-        font-size: 12px;
+        font-size: 16px;
+        font-weight: 900;
     }
 
     article {
-        padding: 0 1.25rem;
+        padding-top: 1rem;
+    }
+
+    .aboutTxt_content {
+        display: block;
+        padding-top: 8rem;
+    }
+
+    .wrap__text {
+        z-index: 1;
     }
 
     .wrap {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        position: relative;
+        height: 400px;
+        overflow: hidden;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .wrap__photoSection {
+        width: 100vw;
+        transform: scale(2);
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        opacity: 30%;
+    }
+    .wrap__photoContainer {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+/* CSS FOR LAPTOP SCREEN */
+@media screen and (min-width: 600px) and (max-width: 1600px) {
+    .wrap {
+        flex-direction: row;
     }
 
     .wrap__photoSection {
         width: 100%;
-    }
-    .wrap__photoContainer {
-        width: 140px;
-        height: 140px;
+        height: auto;
     }
 
-    .wrap__photoContainer img {
+    .wrap__photoContainer {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
+        height: auto;
+        max-width: 620px;
+        max-height: 620px;
     }
 }
 </style>

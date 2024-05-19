@@ -1,6 +1,6 @@
 <script setup>
 import SocialLinks from './SocialLinks.vue';
-import TheFooterForm from './TheFooterForm.vue';
+// import TheFooterForm from './TheFooterForm.vue';
 </script>
 
 <template>
@@ -12,27 +12,26 @@ import TheFooterForm from './TheFooterForm.vue';
             </section>
 
             <!-- Top Line -->
-            <div flex justify-center px-12 rounded-10>
+            <div class="topLine" flex justify-center px-12 rounded-10>
                 <hr border-none bg-white w-full h-0.2 />
             </div>
             <section class="footerWrap--grid">
                 <!-- LOGO && ABOUT -->
-                <section mx-5>
+                <section class="logoSection" mx-20>
                     <!-- LOGO -->
                     <div mb-1>
                         <img src="@/assets/img/BRNK_LOGO_WHT_PNG_NOBG.png" alt="logo" h-11 />
                     </div>
 
-                    <!-- About -->
+                    <!-- JOB TITLE -->
                     <section>
-                        <article>
+                        <article class="jobTitle">
                             <p text-xl font-500>_3D ARTIST & MOTION DESIGNER.</p>
                         </article>
                     </section>
                 </section>
 
                 <!-- Follow me on -->
-
                 <SocialLinks />
             </section>
         </section>
@@ -45,5 +44,32 @@ import TheFooterForm from './TheFooterForm.vue';
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     padding: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    .footerWrap--grid {
+        display: flex;
+        flex-direction: column;
+    }
+    .logoSection {
+        margin: 5rem 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logoSection img {
+        height: 1.6rem;
+    }
+
+    .jobTitle p {
+        font-size: 0.85rem;
+        font-weight: 300;
+        line-height: 0.5rem;
+    }
+
+    .topLine {
+        display: none;
+    }
 }
 </style>

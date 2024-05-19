@@ -19,12 +19,19 @@ const getImageClasses = (project) => {
 </script>
 
 <template>
-    <div my-6xl>
+    <div>
         <!-- Projects Section Categories -->
-        <section mx-18>
-            <h2 text-6xl font-900 uppercase>Latest Work</h2>
-            <!-- Top Line -->
-            <div w-full h-1px rounded-10 bg-blueGray-4 mt-3></div>
+        <section >
+            <!-- LATEST WORKS TITLE -->
+            <div class="latestWorkTitle" pt-5>
+                <div class="latestWorkTitle--slide">
+                    <p text-18rem font-700 uppercase whitespace-nowrap>Latest Work•</p>
+                </div>
+                <div class="latestWorkTitle--slide">
+                    <p text-18rem font-700 uppercase whitespace-nowrap>Latest Work•</p>
+                </div>
+            </div>
+
 
             <!-- Categories Titles -->
             <!-- <div mt-2 w-2xl>
@@ -90,5 +97,40 @@ video {
     object-fit: cover;
     overflow: hidden;
     border-radius: 10px;
+}
+
+.latestWorkTitle {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+.latestWorkTitle--slide {
+    display: flex;
+    flex-direction: row;
+    animation: slide 10s linear infinite;
+}
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .projectSection--grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-auto-rows: 300px;
+        justify-content: center;
+    }
+
+    .latestWorkTitle--slide p {
+        font-size: 5rem;
+        font-weight: 900;
+    }
 }
 </style>

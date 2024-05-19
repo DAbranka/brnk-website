@@ -23,7 +23,7 @@ const currentComponent = computed(() =>
 </script>
 
 <template>
-    <div>
+    <div class="heroWrap">
         <!-- HERO TEXT -->
         <section class="hero-text">
             <article class="hero-text__content px-[19rem] py-[10rem]">
@@ -34,47 +34,53 @@ const currentComponent = computed(() =>
             </article>
         </section>
         <!-- BG VIDEO -->
-        <section>
+        <section class="heroBgVideo">
             <component :is="currentComponent"></component>
         </section>
     </div>
 </template>
 
 <style scoped>
-/* RESPONSIVE */
+/* CSS FOR PHONE SCREEN */
 @media (max-width: 600px) {
-    /* CSS for mobile screens */
-    header {
-        /* background-color: red; */
-        height: 100vh;
+    .heroWrap {
+        position: relative;
+        overflow: hidden;
+        background: #000;
     }
 
-    .navbBar {
-        padding: 0px;
-        display: flex;
-        background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0));
-    }
-
-    .navBar__content {
+    .heroBgVideo {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        padding: 2rem;
-        margin: 0px;
+        height: 100vh;
+        object-fit: cover;
+        opacity: 50%;
     }
 
-    .logo {
-        height: 8px;
+    .hero-text {
+        padding: 15rem 0;
+        position: relative;
+        z-index: 10;
     }
 
-    .about {
-        font-size: 14px;
-        font-weight: bolder;
-        padding: 2px 10px;
-        margin: 0;
+    .hero-text__content {
+        padding: 0 2rem 0 2rem; /* top right bottom left */
+        z-index: 10;
     }
-
-    .about:hover {
+    .hero-text__content h1 {
         color: white;
-        background-color: #41ecc700;
+        font-size: 2.5rem;
+        font-weight: 300;
+        text-align: center;
+    }
+}
+
+/* CSS FOR LAPTOP SCREEN */
+@media (min-width: 600px) and (max-width: 1600px) {
+    h1 {
+        font-size: 4rem;
     }
 }
 </style>
