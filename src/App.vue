@@ -126,7 +126,7 @@ window.addEventListener('scroll', function () {
 }
 body,
 html {
-    font-family: 'Roboto', sans-serif;
+    font-family: sans-serif;
     background-color: #ebebeb;
     scroll-behavior: smooth;
     scroll-padding-top: var(--navbar-height, 3rem);

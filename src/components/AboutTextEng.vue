@@ -3,9 +3,9 @@
         <!-- TEXT ENG -->
         <article class="aboutTxt--grid" text-white>
             <p>
-                David Abranka, the creative mind behind BRNK®, is a digital creator and web
+                David Abranka, the creative <br> mind behind BRNK®, is a <br> digital creator and web
                 developer based in Liège, Belgium.
-                He is a self-taught artist who has been creating digital content since 2013.
+                He is a <br> self-taught artist who has been creating digital content since 2013.
             </p>
 
             <!-- <p>He is a self-taught artist who has been creating digital content since 2013.</p> -->
@@ -31,8 +31,8 @@
 
 <style scoped>
 p {
-    font-size: 1.5rem;
-    font-weight: 300;
+    font-size: 3rem;
+    font-weight: 600;
     /* margin-bottom: 1rem; */
     color: #ebebeb;
     padding: 0 8rem;

@@ -17,7 +17,7 @@ import SocialLinks from './SocialLinks.vue';
             </div>
             <section class="footerWrap--grid">
                 <!-- LOGO && ABOUT -->
-                <section class="logoSection" mx-5>
+                <section class="logoSection" mx-20>
                     <!-- LOGO -->
                     <div mb-1>
                         <img src="@/assets/img/BRNK_LOGO_WHT_PNG_NOBG.png" alt="logo" h-11 />
@@ -53,7 +53,9 @@ import SocialLinks from './SocialLinks.vue';
     }
     .logoSection {
         margin: 5rem 3rem;
-        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .logoSection img {

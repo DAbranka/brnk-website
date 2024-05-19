@@ -6,9 +6,9 @@ import { ref } from 'vue';
 
 const currentLanguage = ref('eng'); // default language
 
-const setLanguage = (lang) => {
-    currentLanguage.value = lang;
-};
+// const setLanguage = (lang) => {
+//     currentLanguage.value = lang;
+// }; 
 </script>
 
 <template>
@@ -24,7 +24,7 @@ const setLanguage = (lang) => {
         <!-- Text -->
         <section class="wrap__text" w-full flex flex-col>
             <!-- Language switch -->
-            <article flex justify-end pr-5 pt-5>
+            <!-- <article flex justify-end pr-5 pt-5>
                 <p
                     @click="setLanguage('eng')"
                     cursor-pointer
@@ -40,7 +40,7 @@ const setLanguage = (lang) => {
                 >
                     FR
                 </p>
-            </article>
+            </article> -->
 
             <!-- DYNAMIC COMPONENT -->
             <component
@@ -80,7 +80,7 @@ p {
 
     .aboutTxt_content {
         display: block;
-        padding-top: 5rem;
+        padding-top: 8rem;
     }
 
     .wrap__text {
