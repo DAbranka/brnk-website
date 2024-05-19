@@ -8,23 +8,23 @@ const currentLanguage = ref('eng'); // default language
 
 // const setLanguage = (lang) => {
 //     currentLanguage.value = lang;
-// }; 
+// };
 </script>
 
 <template>
     <div bg-black>
         <div class="wrap" h-screen flex flex-row bg-black>
-        <!-- Video -->
-        <section class="wrap__photoSection flex items-center justify-center w-full h-full">
-            <div class="wrap__photoContainer w-[800px] h-[800px] overflow-hidden rounded-5">
-                <HomeAboutVideoVue />
-            </div>
-        </section>
+            <!-- Video -->
+            <section class="wrap__photoSection flex items-center justify-center w-full h-full">
+                <div class="wrap__photoContainer w-[800px] h-[800px] overflow-hidden rounded-5">
+                    <HomeAboutVideoVue />
+                </div>
+            </section>
 
-        <!-- Text -->
-        <section class="wrap__text" w-full flex flex-col>
-            <!-- Language switch -->
-            <!-- <article flex justify-end pr-5 pt-5>
+            <!-- Text -->
+            <section class="wrap__text" w-full flex flex-col>
+                <!-- Language switch -->
+                <!-- <article flex justify-end pr-5 pt-5>
                 <p
                     @click="setLanguage('eng')"
                     cursor-pointer
@@ -42,16 +42,16 @@ const currentLanguage = ref('eng'); // default language
                 </p>
             </article> -->
 
-            <!-- DYNAMIC COMPONENT -->
-            <component
-            class="aboutTxt_content"
-                h-full
-                flex
-                items-center
-                :is="currentLanguage === 'eng' ? AboutTextEng : AboutTextFr"
-            ></component>
-        </section>
-    </div>
+                <!-- DYNAMIC COMPONENT -->
+                <component
+                    class="aboutTxt_content"
+                    h-full
+                    flex
+                    items-center
+                    :is="currentLanguage === 'eng' ? AboutTextEng : AboutTextFr"
+                ></component>
+            </section>
+        </div>
     </div>
 </template>
 
@@ -91,8 +91,7 @@ p {
         position: relative;
         height: 400px;
         overflow: hidden;
-        border-radius: 0 0 20px 20px; 
-        
+        border-radius: 0 0 20px 20px;
     }
 
     .wrap__photoSection {

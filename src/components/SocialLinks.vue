@@ -2,7 +2,7 @@
     <div>
         <section class="contactLinks--grid" mx-5>
             <!-- mail to -->
-            <section class="contactMe" flex flex-col justify-center >
+            <section class="contactMe" flex flex-col justify-center>
                 <h3 text-2xl mb-2>CONTACT</h3>
                 <a href="mailto:davidabranka@gmail.com" w="28px" cursor-pointer z-20>
                     <img src="@/assets/img/icons/mail.svg" alt="mail/svg" w-7 />
@@ -11,11 +11,11 @@
 
             <!-- Social Links -->
             <section class="followMe">
-                <h3  uppercase mb-2 text-2xl>Follow Me</h3>
+                <h3 uppercase mb-2 text-2xl>Follow Me</h3>
 
                 <!-- ICONS -->
                 <section class="socialIcons" w-40>
-                    <ul list-none invert flex justify-between items-center w-full >
+                    <ul list-none invert flex justify-between items-center w-full>
                         <!-- INSTAGRAM -->
                         <li>
                             <a href="https://www.instagram.com/brnkill/" target="_blank">
@@ -63,7 +63,7 @@
     gap: 1rem;
 }
 
-.socialIcons{
+.socialIcons {
     position: relative;
     z-index: 20;
 }
@@ -74,7 +74,8 @@
         padding: 0;
     }
 
-    .followMe h3, .contactMe h3 {
+    .followMe h3,
+    .contactMe h3 {
         font-size: 1.2rem;
         font-weight: 300;
         margin: 0;

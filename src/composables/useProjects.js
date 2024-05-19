@@ -7,7 +7,7 @@ export function useProjects() {
             name: 'Project 1',
             type: 'video',
             video: '/videos/0324 - 007 - My bedroom table.mp4',
-            width: '',
+            width: '601',
             height: '601'
         },
         {

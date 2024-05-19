@@ -4,7 +4,11 @@
     <div>
         <section>
             <video class="mobileBgVideo" autoplay muted loop>
-                <source class="mobileBgVideo__source" src="@/assets/video/brrrnk_hero_bg_video.mp4" type="video/mp4" />
+                <source
+                    class="mobileBgVideo__source"
+                    src="@/assets/video/brrrnk_hero_bg_video.mp4"
+                    type="video/mp4"
+                />
             </video>
         </section>
     </div>

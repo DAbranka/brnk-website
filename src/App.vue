@@ -8,12 +8,12 @@ import { onUnmounted } from 'vue';
 import { ref } from 'vue';
 
 const ScrollToHGP = () => {
-    const navbarHeight = document.getElementById('navbar').offsetHeight
-    document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`)
+    const navbarHeight = document.getElementById('navbar').offsetHeight;
+    document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`);
     window.scrollTo({
         top: document.getElementById('HomepageProjectGrid').offsetTop,
-        behavior: 'smooth',
-    })
+        behavior: 'smooth'
+    });
 };
 
 const ScrollToHAS = () => {

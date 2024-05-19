@@ -47,7 +47,6 @@ const currentComponent = computed(() =>
         position: relative;
         overflow: hidden;
         background: #000;
-
     }
 
     .heroBgVideo {
@@ -61,7 +60,7 @@ const currentComponent = computed(() =>
     }
 
     .hero-text {
-        padding: 15rem 0; 
+        padding: 15rem 0;
         position: relative;
         z-index: 10;
     }
@@ -70,8 +69,7 @@ const currentComponent = computed(() =>
         padding: 0 2rem 0 2rem; /* top right bottom left */
         z-index: 10;
     }
-    .hero-text__content h1 
-    {   
+    .hero-text__content h1 {
         color: white;
         font-size: 2.5rem;
         font-weight: 300;
