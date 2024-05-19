@@ -56,7 +56,7 @@ p {
 
 @media screen and (min-width: 600px) and (max-width: 1600px) {
     p {
-        font-size: 18px;
+        font-size: 2.3rem;
     }
 }
 </style>
