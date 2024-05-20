@@ -67,6 +67,10 @@ const getImageClasses = (project) => {
 </template>
 
 <style scoped>
+
+.projectSection {
+    padding: 0 0 6rem 0;
+}
 .projectSection--grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
@@ -120,12 +124,17 @@ video {
     }
 }
 
+/* CSS FOR PHONE SCREEN */
 @media screen and (max-width: 600px) {
+    .projectSection{
+        padding: 0 0 2rem 0;
+    }
     .projectSection--grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         grid-auto-rows: 300px;
         justify-content: center;
+        margin: 0 auto ;
     }
 
     .latestWorkTitle--slide p {
@@ -133,4 +142,15 @@ video {
         font-weight: 900;
     }
 }
+
+/* CSS FOR LAPTOP SCREEN */
+@media screen and (min-width: 600px) and (max-width: 1600px) {
+        .projectSection--grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            grid-auto-rows: 450px;
+            justify-content: center;
+            margin: 0 auto ;
+        }
+    }
 </style>

@@ -4,6 +4,11 @@ import { ref, onMounted, onUnmounted, computed } from 'vue';
 import HeroBgVideo from '@/components/HeroBgVideo.vue';
 import MobileHeroBgVideo from '@/components/MobileHeroBgVideo.vue';
 
+// * Parralax effect composable function
+import Rellax from 'rellax';
+
+let rellax;
+
 const windowWidth = ref(window.innerWidth);
 const updateWidth = () => {
     windowWidth.value = window.innerWidth;
@@ -11,10 +16,21 @@ const updateWidth = () => {
 
 onMounted(() => {
     window.addEventListener('resize', updateWidth);
+    rellax  = new Rellax('.rellax', {
+    speed: -7,
+    center: true,
+    wrapper: null,
+    round: true,
+    vertical: true,
+    horizontal: false
+});
 });
 
 onUnmounted(() => {
     window.removeEventListener('resize', updateWidth);
+    if (rellax) {
+        rellax.destroy();
+    }
 });
 
 const currentComponent = computed(() =>
@@ -35,12 +51,16 @@ const currentComponent = computed(() =>
         </section>
         <!-- BG VIDEO -->
         <section class="heroBgVideo">
-            <component :is="currentComponent"></component>
+            <component class="rellax" :is="currentComponent"></component>
         </section>
     </div>
 </template>
 
 <style scoped>
+    .heroBgVideo {
+        overflow: hidden;
+    }
+
 /* CSS FOR PHONE SCREEN */
 @media (max-width: 600px) {
     .heroWrap {
@@ -80,7 +100,11 @@ const currentComponent = computed(() =>
 /* CSS FOR LAPTOP SCREEN */
 @media (min-width: 600px) and (max-width: 1600px) {
     h1 {
-        font-size: 4rem;
+        font-size: 4.5rem;
+    }
+
+    .hero-text__content{
+        padding: 10rem 15rem; 
     }
 }
 </style>

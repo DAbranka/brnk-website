@@ -4,6 +4,9 @@ dependencies:
   pinia:
     specifier: ^2.1.7
     version: 2.1.7(typescript@4.9.5)(vue@3.3.4)
+  rellax:
+    specifier: ^1.12.1
+    version: 1.12.1
   vercel:
     specifier: ^32.5.6
     version: 32.5.6
@@ -3277,6 +3280,10 @@ packages:
     dependencies:
       picomatch: 2.3.1
     dev: true
+
+  /rellax@1.12.1:
+    resolution: {integrity: sha512-XBIi0CDpW5FLTujYjYBn1CIbK2CJL6TsAg/w409KghP2LucjjzBjsujXDAjyBLWgsfupfUcL5WzdnIPcGfK7XA==}
+    dev: false
 
   /require-from-string@2.0.2:
     resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}

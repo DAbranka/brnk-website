@@ -1,8 +1,9 @@
 <script setup>
+import { ref } from 'vue';
 import AboutTextEng from './AboutTextEng.vue';
 import AboutTextFr from './AboutTextFr.vue';
 import HomeAboutVideoVue from './HomeAboutVideo.vue';
-import { ref } from 'vue';
+
 
 const currentLanguage = ref('eng'); // default language
 
