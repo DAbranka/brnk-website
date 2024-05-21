@@ -4,7 +4,6 @@ import AboutTextEng from './AboutTextEng.vue';
 import AboutTextFr from './AboutTextFr.vue';
 import HomeAboutVideoVue from './HomeAboutVideo.vue';
 
-
 const currentLanguage = ref('eng'); // default language
 
 // const setLanguage = (lang) => {

@@ -7,6 +7,7 @@ import { onMounted } from 'vue';
 import { onUnmounted } from 'vue';
 import { ref } from 'vue';
 
+// * Scroll to Homepage Project Grid
 const ScrollToHGP = () => {
     const navbarHeight = document.getElementById('navbar').offsetHeight;
     document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`);
@@ -16,6 +17,7 @@ const ScrollToHGP = () => {
     });
 };
 
+// * Scroll to Homepage About Section
 const ScrollToHAS = () => {
     window.scrollTo({
         top: document.getElementById('HomepageAboutSection').offsetTop,
@@ -23,6 +25,7 @@ const ScrollToHAS = () => {
     });
 };
 
+// * Scroll to top
 const scrollToTop = () => {
     window.scrollTo({
         top: 0,
@@ -30,8 +33,10 @@ const scrollToTop = () => {
     });
 };
 
+// * Show scroll to top button
 const showScrollToTopBtn = ref(false);
 
+// * Show scroll to top button when scrolling down
 const handleScroll = () => {
     if (window.scrollY > 100) {
         showScrollToTopBtn.value = true;
@@ -45,14 +50,17 @@ onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll);
 });
 
+// * Hide navbar on scroll down and show on scroll up
 const lastScrollTop = ref(0);
 let navbar;
 
 onMounted(() => {
+    // * Get the navbar
     navbar = document.getElementById('navbar');
     console.log('the navbar: ', navbar);
 });
 
+// * Hide navbar on scroll down and show on scroll up
 window.addEventListener('scroll', function () {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     if (scrollTop > lastScrollTop.value) {

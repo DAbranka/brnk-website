@@ -1,12 +1,12 @@
 <script setup>
 import { ref, onMounted, onUnmounted, computed } from 'vue';
+import gsap from 'gsap';
 
 import HeroBgVideo from '@/components/HeroBgVideo.vue';
 import MobileHeroBgVideo from '@/components/MobileHeroBgVideo.vue';
 
 // * Parralax effect composable function
 import Rellax from 'rellax';
-
 let rellax;
 
 const windowWidth = ref(window.innerWidth);
@@ -16,18 +16,60 @@ const updateWidth = () => {
 
 onMounted(() => {
     window.addEventListener('resize', updateWidth);
-    rellax  = new Rellax('.rellax', {
-    speed: -7,
-    center: true,
-    wrapper: null,
-    round: true,
-    vertical: true,
-    horizontal: false
-});
+
+    // * Parralax effect
+    rellax = new Rellax('.rellax', {
+        speed: -7,
+        center: true,
+        wrapper: null,
+        round: true,
+        vertical: true,
+        horizontal: false
+    });
+
+    // ----------------------------------------------//
+    // * Counter effect
+    const startLoader = () => {
+        const counter = document.querySelector('.preLoader__counter');
+        let count = 0;
+        /**
+         * * Starts a counter interval that increments the count variable by 1 every 50 milliseconds until it reaches 100.
+         * * Updates the content of the counter element with the current count.
+         * * Stops the counter interval when the count reaches 100.
+         */
+        let counterInterval = setInterval(() => {
+            if (count < 100) {
+                count++;
+                counter.textContent = count;
+            } else {
+                clearInterval(counterInterval);
+            }
+        }, 25);
+    };
+    startLoader();
+
+    // * GSAP Percent animation
+    gsap.to('.preLoader__img', {
+        duration: 0.25,
+        delay: 3,
+        opacity: 0,
+    });
+
+    // * GSAP PreLoader animation
+    gsap.to('.preLoader', {
+        duration: 1,
+        delay: 4,
+        top: '-100%',
+        ease: 'power2.inOut'
+    });
+
+    // ----------------------------------------------//
 });
 
 onUnmounted(() => {
     window.removeEventListener('resize', updateWidth);
+
+    // * Parralax effect
     if (rellax) {
         rellax.destroy();
     }
@@ -39,6 +81,20 @@ const currentComponent = computed(() =>
 </script>
 
 <template>
+    <!-- PreLoader Overlay -->
+    <div class="preLoader" overflow-hidden>
+        <div class="preLoader__content" flex>
+            <!-- <div class="preLoader__counter" text-9xl flex>
+                <p>0</p>
+            </div>
+            <div class="preLoader__percent" text-9xl flex>
+                <p>%</p>
+            </div> -->
+            <section class="preLoader__img">
+                <img src="/img/0324 - 004 - PINK SPRING.png" alt="png">
+            </section>
+        </div>
+    </div>
     <div class="heroWrap">
         <!-- HERO TEXT -->
         <section class="hero-text">
@@ -57,9 +113,27 @@ const currentComponent = computed(() =>
 </template>
 
 <style scoped>
-    .heroBgVideo {
-        overflow: hidden;
-    }
+.heroBgVideo {
+    overflow: hidden;
+}
+
+.preLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.preLoader__counter,
+.preLoader__percent {
+    color: white;
+}
 
 /* CSS FOR PHONE SCREEN */
 @media (max-width: 600px) {
@@ -103,8 +177,8 @@ const currentComponent = computed(() =>
         font-size: 4.5rem;
     }
 
-    .hero-text__content{
-        padding: 10rem 15rem; 
+    .hero-text__content {
+        padding: 10rem 15rem;
     }
 }
 </style>
