@@ -59,7 +59,7 @@ onMounted(() => {
     gsap.to('.preLoader', {
         duration: 1,
         delay: 4.3,
-        top: '-100%',
+        top: '-150%',
         ease: 'power2.inOut'
     });
 
@@ -84,23 +84,24 @@ const currentComponent = computed(() =>
     <!-- PreLoader Overlay -->
     <div class="preLoader" overflow-hidden>
         <div class="preLoader__content" flex justify-center overflow-hidden>
-
             <!-- PreLoader Counter -->
-            <!-- <div class="preLoader__counter" text-9xl flex>
-                <p>0</p>
-            </div>
-            <div class="preLoader__percent" text-9xl flex>
-                <p>%</p>
+            <!-- <div class="preLoader__counterContent" flex>
+                <div class="preLoader__counter" text-9xl flex>
+                    <p>0</p>
+                </div>
+                <div class="preLoader__percent" text-9xl flex>
+                    <p>%</p>
+                </div>
             </div> -->
 
             <!-- PreLoader Video -->
             <section class="preLoader__vdo">
                 <video autoplay muted loop>
-                <source
-                    src="@/assets/video/BRNK_LOGO_PreLoader_Animation.mp4"
-                    type="video/mp4"
-                />
-            </video>
+                    <source
+                        src="@/assets/video/BRNK_LOGO_PreLoader_Animation.mp4"
+                        type="video/mp4"
+                    />
+                </video>
             </section>
         </div>
     </div>
@@ -139,7 +140,7 @@ const currentComponent = computed(() =>
     z-index: 1000;
 }
 
-.preLoader__content{
+.preLoader__content {
     width: 40%;
 }
 
@@ -149,16 +150,25 @@ const currentComponent = computed(() =>
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 100;
 }
 
 .preLoader__vdo video {
     width: 100%;
 }
-.preLoader__counter,
-.preLoader__percent {
-    color: white;
+
+.preLoader__counterContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
+.preLoader__counter,
+.preLoader__percent {
+    color: rgb(51, 51, 51);
+    font-size: 36vw;
+}
 
 /* CSS FOR PHONE SCREEN */
 @media (max-width: 600px) {
@@ -193,6 +203,10 @@ const currentComponent = computed(() =>
         font-size: 2.5rem;
         font-weight: 300;
         text-align: center;
+    }
+
+    .preLoader__content {
+        width: 80%;
     }
 }
 
