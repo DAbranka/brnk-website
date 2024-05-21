@@ -1,7 +1,7 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import Rellax from 'rellax';
 
-export function useRellax(initialOptions={}) {
+export function useRellax(initialOptions = {}) {
     const rellaxInstance = ref(null);
 
     const createRellax = (options) => {
@@ -15,13 +15,13 @@ export function useRellax(initialOptions={}) {
             round: true,
             vertical: true,
             horizontal: false,
-            ...options,
+            ...options
         });
-    }
+    };
 
     const updateRellax = (newOptions) => {
         createRellax(newOptions);
-    }
+    };
 
     onMounted(() => {
         createRellax(initialOptions);

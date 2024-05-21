@@ -21,7 +21,7 @@ const getImageClasses = (project) => {
 <template>
     <div>
         <!-- Projects Section Categories -->
-        <section >
+        <section>
             <!-- LATEST WORKS TITLE -->
             <div class="latestWorkTitle" pt-5>
                 <div class="latestWorkTitle--slide">
@@ -31,7 +31,6 @@ const getImageClasses = (project) => {
                     <p text-18rem font-700 uppercase whitespace-nowrap>Latest Work•</p>
                 </div>
             </div>
-
 
             <!-- Categories Titles -->
             <!-- <div mt-2 w-2xl>
@@ -67,7 +66,6 @@ const getImageClasses = (project) => {
 </template>
 
 <style scoped>
-
 .projectSection {
     padding: 0 0 6rem 0;
 }
@@ -126,7 +124,7 @@ video {
 
 /* CSS FOR PHONE SCREEN */
 @media screen and (max-width: 600px) {
-    .projectSection{
+    .projectSection {
         padding: 0 0 2rem 0;
     }
     .projectSection--grid {
@@ -134,7 +132,7 @@ video {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         grid-auto-rows: 300px;
         justify-content: center;
-        margin: 0 auto ;
+        margin: 0 auto;
     }
 
     .latestWorkTitle--slide p {
@@ -145,12 +143,12 @@ video {
 
 /* CSS FOR LAPTOP SCREEN */
 @media screen and (min-width: 600px) and (max-width: 1600px) {
-        .projectSection--grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            grid-auto-rows: 450px;
-            justify-content: center;
-            margin: 0 auto ;
-        }
+    .projectSection--grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        grid-auto-rows: 450px;
+        justify-content: center;
+        margin: 0 auto;
     }
+}
 </style>

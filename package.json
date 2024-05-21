@@ -11,6 +11,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "gsap": "^3.12.5",
     "pinia": "^2.1.7",
     "rellax": "^1.12.1",
     "vercel": "^32.5.6",
