@@ -129,14 +129,31 @@ video {
     }
     .projectSection--grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        grid-auto-rows: 300px;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        grid-auto-rows: 350px;
         justify-content: center;
+        justify-items: center;
         margin: 0 auto;
     }
 
+    .projectSection--grid img,
+    video {
+        width: calc(100vw - 2em);
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+        object-fit: cover;
+        overflow: hidden;
+        border-radius: 10px;
+}
+
+    .latestWorkTitle {
+        padding: 0.5rem 0 ;
+    }
     .latestWorkTitle--slide p {
-        font-size: 5rem;
+        font-size: 7rem;
         font-weight: 900;
     }
 }
