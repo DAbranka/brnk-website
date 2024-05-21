@@ -48,7 +48,7 @@ onMounted(() => {
     };
     startLoader();
 
-    // * GSAP Video animation
+    // * GSAP Video Fade Out animation
     gsap.to('.preLoader__vdo', {
         duration: 0.25,
         delay: 4,
