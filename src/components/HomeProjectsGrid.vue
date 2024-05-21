@@ -98,7 +98,7 @@ video {
     display: inline-block;
     object-fit: cover;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .latestWorkTitle {
@@ -146,7 +146,7 @@ video {
         vertical-align: middle;
         object-fit: cover;
         overflow: hidden;
-        border-radius: 10px;
+        border-radius: 20px;
 }
 
     .latestWorkTitle {
