@@ -48,17 +48,17 @@ onMounted(() => {
     };
     startLoader();
 
-    // * GSAP Percent animation
-    gsap.to('.preLoader__img', {
+    // * GSAP Video animation
+    gsap.to('.preLoader__vdo', {
         duration: 0.25,
-        delay: 3,
+        delay: 4,
         opacity: 0,
     });
 
-    // * GSAP PreLoader animation
+    // * GSAP PreLoader Hide animation
     gsap.to('.preLoader', {
         duration: 1,
-        delay: 4,
+        delay: 4.3,
         top: '-100%',
         ease: 'power2.inOut'
     });
@@ -83,15 +83,24 @@ const currentComponent = computed(() =>
 <template>
     <!-- PreLoader Overlay -->
     <div class="preLoader" overflow-hidden>
-        <div class="preLoader__content" flex>
+        <div class="preLoader__content" flex justify-center overflow-hidden>
+
+            <!-- PreLoader Counter -->
             <!-- <div class="preLoader__counter" text-9xl flex>
                 <p>0</p>
             </div>
             <div class="preLoader__percent" text-9xl flex>
                 <p>%</p>
             </div> -->
-            <section class="preLoader__img">
-                <img src="/img/0324 - 004 - PINK SPRING.png" alt="png">
+
+            <!-- PreLoader Video -->
+            <section class="preLoader__vdo">
+                <video autoplay muted loop>
+                <source
+                    src="@/assets/video/BRNK_LOGO_PreLoader_Animation.mp4"
+                    type="video/mp4"
+                />
+            </video>
             </section>
         </div>
     </div>
@@ -130,10 +139,26 @@ const currentComponent = computed(() =>
     z-index: 1000;
 }
 
+.preLoader__content{
+    width: 40%;
+}
+
+.preLoader__vdo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preLoader__vdo video {
+    width: 100%;
+}
 .preLoader__counter,
 .preLoader__percent {
     color: white;
 }
+
 
 /* CSS FOR PHONE SCREEN */
 @media (max-width: 600px) {
