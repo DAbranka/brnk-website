@@ -49,6 +49,9 @@ const getImageClasses = (project) => {
         <section class="projectSection">
             <section class="projectSection--grid" my-5 px-15>
                 <div v-for="project in projects" :key="project.id" :class="getImageClasses(project)" class="projectSection__cardsWrap">
+                    <div class="projectSection__cardTitle" w-full h-full px-6xl  text-white font-bold flex items-center justify-center>
+                        <p text-center w-full>{{ project.name }}</p>
+                    </div>
                     <img :src="project.image" alt="Image" />
                 </div>
             </section>
@@ -60,6 +63,8 @@ const getImageClasses = (project) => {
 .projectSection {
     padding: 0 0 6rem 0;
 }
+
+/* CARDS GRID */
 .projectSection--grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
@@ -89,12 +94,13 @@ const getImageClasses = (project) => {
     border-radius: 20px;
 }
 
+/* CARDS WRAP */
 .projectSection__cardsWrap {
     position: relative;
     overflow: hidden;
     border-radius: 20px;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    background: black;
+    background: rgb(0, 0, 0);
 }
 
 .projectSection__cardsWrap:hover{
@@ -114,7 +120,32 @@ const getImageClasses = (project) => {
     opacity: 0.5;
 }
 
+/* CARDS TITLE */
+.projectSection__cardTitle p {
+    font-size: 4.5rem;
+}
 
+.projectSection__cardTitle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.projectSection__cardTitle:hover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+}
+
+/* LATEST WORK TITLE */
 .latestWorkTitle {
     width: 100%;
     height: 100%;
