@@ -100,7 +100,6 @@ const getImageClasses = (project) => {
     overflow: hidden;
     border-radius: 20px;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    background: rgb(0, 0, 0);
 }
 
 .projectSection__cardsWrap:hover{
@@ -112,14 +111,14 @@ const getImageClasses = (project) => {
 
 .projectSection__cardsWrap img {
     display: block;
-    z-index: 0;
-  opacity: 1; /* Default opacity for cards */
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition on hover and hover-out */
+    transform: scale(1.15);
+    z-index: -1;
+    opacity: 1; /* Default opacity for cards */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition on hover and hover-out */
 }
 
-.projectSection__cardsWrap img:hover {
-    transform: scale(1.1);
-    opacity: 0.5;
+.projectSection__cardsWrap:hover img {
+    transform: scale(1);
 }
 
 .projectSection__cardsWrap:active{
@@ -150,7 +149,7 @@ const getImageClasses = (project) => {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4);
     opacity: 1;
 }
 
@@ -213,6 +212,10 @@ const getImageClasses = (project) => {
         transform: translateY(0);
         transition: 0.3s ease-in-out;
     }
+
+    .projectSection__cardsWrap img {
+        transform: scale(1);
+}
 
     .projectSection__cardsWrap:active{
         transform: scale(0.9);
