@@ -48,17 +48,9 @@ const getImageClasses = (project) => {
         <!-- Projects Grid Section -->
         <section class="projectSection">
             <section class="projectSection--grid" my-5 px-15>
-                <div
-                    v-for="project in projects"
-                    :key="project.id"
-                    :class="getImageClasses(project)"
-                >
+                <div v-for="project in projects" :key="project.id" :class="getImageClasses(project)" class="projectSection--cardsWrap">
                     <img v-if="project.type === 'image'" :src="project.image" alt="Image" />
-                    <video
-                        v-else-if="project.type === 'video'"
-                        :src="project.video"
-                        controls
-                    ></video>
+                    <video v-else-if="project.type === 'video'" :src="project.video" controls></video>
                 </div>
             </section>
         </section>
@@ -97,8 +89,30 @@ video {
     vertical-align: middle;
     display: inline-block;
     object-fit: cover;
+    /* overflow: hidden; */
+    border-radius: 20px;
+}
+
+.projectSection--cardsWrap {
+    position: relative;
     overflow: hidden;
     border-radius: 20px;
+    
+}
+
+.projectSection--cardsWrap:hover{
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transform: translateY(-10px);
+    /* transform: scale(1.05); */
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    background: black;
+}
+
+.projectSection--cardsWrap img:hover{
+    transform: scale(1.1);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 50%;
 }
 
 .latestWorkTitle {
@@ -169,3 +183,4 @@ video {
     }
 }
 </style>
+style
