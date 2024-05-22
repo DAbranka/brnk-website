@@ -48,12 +48,12 @@ const getImageClasses = (project) => {
         <!-- Projects Grid Section -->
         <section class="projectSection">
             <section class="projectSection--grid" my-5 px-15>
-                <div v-for="project in projects" :key="project.id" :class="getImageClasses(project)" class="projectSection__cardsWrap">
+                <RouterLink to="/" v-for="project in projects" :key="project.id" :class="getImageClasses(project)" class="projectSection__cardsWrap">
                     <div class="projectSection__cardTitle" w-full h-full px-6xl  text-white font-bold flex items-center justify-center>
-                        <p text-center w-full>{{ project.name }}</p>
+                        <p text-center>{{ project.name }}</p>
                     </div>
                     <img :src="project.image" alt="Image" />
-                </div>
+                </RouterLink>
             </section>
         </section>
     </div>
@@ -111,6 +111,8 @@ const getImageClasses = (project) => {
 }
 
 .projectSection__cardsWrap img {
+    display: block;
+    z-index: 0;
   opacity: 1; /* Default opacity for cards */
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition on hover and hover-out */
 }
@@ -119,6 +121,11 @@ const getImageClasses = (project) => {
     transform: scale(1.1);
     opacity: 0.5;
 }
+
+.projectSection__cardsWrap:active{
+        transform: scale(0.9);
+        transition: transform 0.3s ease-in-out;
+    }
 
 /* CARDS TITLE */
 .projectSection__cardTitle p {
@@ -133,6 +140,8 @@ const getImageClasses = (project) => {
     bottom: 0;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+    /* pointer-events: none; */
 }
 
 .projectSection__cardTitle:hover{
@@ -194,9 +203,51 @@ const getImageClasses = (project) => {
         border-radius: 20px;
 }
 
+    /* CARDS WRAP */
+    .projectSection__cardsWrap{
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        transition: 0.3s ease-in-out;
+    }
+
+    .projectSection__cardsWrap:hover{
+        transform: translateY(0);
+        transition: 0.3s ease-in-out;
+    }
+
+    .projectSection__cardsWrap:active{
+        transform: scale(0.9);
+        transition: 0.3s ease-in-out;
+    }
+
+    /* CARDS TITLE */
+    .projectSection__cardTitle {
+        opacity: 1;
+        transition: none;
+        padding: 0;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .projectSection__cardTitle:hover {
+        background: none;
+    }
+
+    .projectSection__cardTitle p {
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        width: 100%;
+        height: 50%;
+        font-size: 2.3rem;
+        padding: 0 1rem 1.3rem 1rem;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.976));
+    }
+
+    /* LATEST WORK TITLE */
     .latestWorkTitle {
         padding: 0.5rem 0 ;
     }
+
     .latestWorkTitle--slide p {
         font-size: 7rem;
         font-weight: 900;
@@ -211,6 +262,14 @@ const getImageClasses = (project) => {
         grid-auto-rows: 450px;
         justify-content: center;
         margin: 0 auto;
+    }
+
+    .projectSection__cardTitle {
+        padding: 1rem 0;
+    }
+
+    .projectSection__cardTitle p {
+        font-size: 3.5rem;
     }
 }
 </style>
