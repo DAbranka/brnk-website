@@ -1,6 +1,6 @@
 <script setup>
 import { useProjectsImg } from '@/composables/useProjectsImg';
-import { ref, onUnmounted } from 'vue';
+import { ref, onUnmounted, computed } from 'vue';
 
 const { projects } = useProjectsImg();
 
@@ -37,6 +37,11 @@ const closeDetails = () => {
 onUnmounted(() => {
     document.body.classList.remove('no-scroll');
 });
+
+// * Check if the selected project has images less than 3
+const isFewImages = computed(() => {
+  return selectedProject.value?.image.length <= 3;
+});
 </script>
 
 <template>
@@ -58,7 +63,7 @@ onUnmounted(() => {
         <section class="projectSection">
             <section class="projectSection--grid" my-5 px-15>
                 <div v-for="project in projects" :key="project.id" :class="getImageClasses(project)" class="projectSection__cardsWrap" @click="showDetails(project)">
-                    <div class="projectSection__cardTitle" w-full h-full px-6xl  text-white font-bold flex items-center justify-center>
+                    <div class="projectSection__cardTitle" w-full h-full px-6xl text-white font-bold flex items-center justify-center>
                         <p text-center>{{ project.name }}</p>
                     </div>
                     <img :src="project.thumb" alt="Image" @contextmenu.prevent/>
@@ -69,11 +74,23 @@ onUnmounted(() => {
         <!-- Detailed Card Modal -->
         <section v-if="showDetailCard" class="modal" @click.self="closeDetails">
             <article class="modal-content" w-7xl z-20 @click.stop>
+
+                <!-- HEAD TITLE -->
                 <h2>{{ selectedProject.name }}</h2>
-                <video v-if="selectedProject.video" controls controlsList="nodownload" >
+
+                <!-- VIDEO -->
+                <video v-if="selectedProject.video" autoplay loop muted controls controlsList="nodownload" >
                     <source :src="selectedProject.video" type="video/mp4" @contextmenu.prevent/>
                 </video>
-                <img v-if="selectedProject.image" :src="selectedProject.image" alt="Image" @contextmenu.prevent/>
+
+                <!-- IMAGE GALLERY -->
+                <section class="modal-content__images--grid" :class="{'few-images': isFewImages, 'image-gallery': !isFewImages}" v-if="selectedProject.image && selectedProject.image.length > 0">
+                    <div v-for="(image, index) in selectedProject.image" :key="index">
+                        <img :src="image" alt="Image" @contextmenu.prevent/>
+                    </div>
+                </section>
+
+                <!-- DESCRIPTION -->
                 <p>{{ selectedProject.description }}</p>
             </article>
         </section>
@@ -199,10 +216,8 @@ onUnmounted(() => {
 
 /* MODAL */
 .modal {
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
     position: fixed;
+    padding-top: 3rem;
     z-index: 1000;
     left: 0;
     top: 0;
@@ -214,20 +229,57 @@ onUnmounted(() => {
 }
 
 .modal-content {
-    /* position: relative; */
-    background-color: white;
-    padding: 20px;
-    /* border-radius: 5px; */
-    /* width: calc(100vw - 30rem); */
+    position: relative;
+    background-color: rgb(0, 0, 0);
+    border-radius: 15px 15px 0 0;
+    width: calc(100vw - 30rem);
     margin: 0 auto;
+    color: white;
 }
 
-.modal-content img, video{
+.modal-content h2{
+    padding: 12rem 15rem 7rem 15rem;
+    font-size: 5rem;
+}
+
+.modal-content p{
+    padding: 12rem 15rem;
+    font-size: 2rem;
+}
+
+.modal-content img{
     width: 100%;
     height: 100%;
     vertical-align: middle;
     object-fit: cover;
     pointer-events: all;
+}
+
+.modal-content video{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2rem;
+    vertical-align: middle;
+    pointer-events: all;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    gap: 1rem;
+    grid-auto-rows: 700px;
+    grid-auto-flow: dense;
+    padding: 10rem 0 3rem 0;
+}
+
+.few-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.few-images :nth-child(1){
+    margin-bottom: 2rem;
 }
 
 /* CSS FOR PHONE SCREEN */
