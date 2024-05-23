@@ -1,5 +1,6 @@
 <script setup>
 import { useProjectsImg } from '@/composables/useProjectsImg';
+import { ref, onUnmounted } from 'vue';
 
 const { projects } = useProjectsImg();
 
@@ -16,6 +17,26 @@ const getImageClasses = (project) => {
     }
     return classes;
 };
+
+// * Show detailed card modal
+const showDetailCard = ref(false);
+const selectedProject = ref(null);
+
+const showDetails = (project) => {
+    selectedProject.value = project;
+    showDetailCard.value = true;
+    document.body.classList.add('no-scroll'); // Disable body scroll
+};
+
+const closeDetails = () => {
+    showDetailCard.value = false;
+    selectedProject.value = null;
+    document.body.classList.remove('no-scroll'); // Enable body scroll
+};
+
+onUnmounted(() => {
+    document.body.classList.remove('no-scroll');
+});
 </script>
 
 <template>
@@ -36,18 +57,31 @@ const getImageClasses = (project) => {
         <!-- Projects Grid Section -->
         <section class="projectSection">
             <section class="projectSection--grid" my-5 px-15>
-                <RouterLink to="/" v-for="project in projects" :key="project.id" :class="getImageClasses(project)" class="projectSection__cardsWrap">
+                <div v-for="project in projects" :key="project.id" :class="getImageClasses(project)" class="projectSection__cardsWrap" @click="showDetails(project)">
                     <div class="projectSection__cardTitle" w-full h-full px-6xl  text-white font-bold flex items-center justify-center>
                         <p text-center>{{ project.name }}</p>
                     </div>
                     <img :src="project.image" alt="Image" @contextmenu.prevent/>
-                </RouterLink>
+                </div>
             </section>
+        </section>
+
+        <!-- Detailed Card Modal -->
+        <section v-if="showDetailCard" class="modal" @click="closeDetails">
+            <article class="modal-content" w-7xl z-20 @click.stop>
+                <h2>{{ selectedProject.name }}</h2>
+                <video v-if="selectedProject.video" controls muted loop>
+                    <source :src="selectedProject.video" type="video/mp4" />
+                </video>
+                <img :src="selectedProject.image" alt="Image" @contextmenu.prevent/>
+                <p>{{ selectedProject.description }}</p>
+            </article>
         </section>
     </div>
 </template>
 
 <style scoped>
+
 .projectSection {
     padding: 0 0 6rem 0;
 }
@@ -163,6 +197,38 @@ const getImageClasses = (project) => {
     }
 }
 
+/* MODAL */
+.modal {
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: scroll; /* Enable scrolling within the modal */
+}
+
+.modal-content {
+    /* position: relative; */
+    background-color: white;
+    padding: 20px;
+    /* border-radius: 5px; */
+    /* width: calc(100vw - 30rem); */
+    margin: 0 auto;
+}
+
+.modal-content img, video{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
 /* CSS FOR PHONE SCREEN */
 @media screen and (max-width: 600px) {
     .projectSection {
@@ -243,6 +309,15 @@ const getImageClasses = (project) => {
         font-size: 7rem;
         font-weight: 900;
     }
+
+    /* MODAL */
+    .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: calc(100vw - 2rem);
+    margin: 0 auto;
+}
 }
 
 /* CSS FOR LAPTOP SCREEN */

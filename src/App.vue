@@ -77,6 +77,8 @@ document.addEventListener('dragstart', function(event) {
         event.preventDefault();
     }
 });
+
+
 </script>
 
 <template>
@@ -146,6 +148,10 @@ html {
     background-color: #ebebeb;
     scroll-behavior: smooth;
     scroll-padding-top: var(--navbar-height, 3rem);
+}
+
+body.no-scroll{
+    overflow: hidden;
 }
 
 #navbar {
