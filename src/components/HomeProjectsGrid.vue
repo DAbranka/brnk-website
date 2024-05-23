@@ -31,18 +31,6 @@ const getImageClasses = (project) => {
                     <p text-18rem font-700 uppercase whitespace-nowrap>Latest Work•</p>
                 </div>
             </div>
-
-            <!-- Categories Titles -->
-            <!-- <div mt-2 w-2xl>
-                <ul font-300 text-xs text-blueGray-5 flex justify-between decoration-none list-none>
-                    <li>All</li>
-                    <li>Modélisation 3D</li>
-                    <li>Visualisation Architecturale</li>
-                    <li>Animation 3D</li>
-                    <li>Motion Graphics</li>
-                    <li>Products Promotion</li>
-                </ul>
-            </div> -->
         </section>
 
         <!-- Projects Grid Section -->
@@ -52,7 +40,7 @@ const getImageClasses = (project) => {
                     <div class="projectSection__cardTitle" w-full h-full px-6xl  text-white font-bold flex items-center justify-center>
                         <p text-center>{{ project.name }}</p>
                     </div>
-                    <img :src="project.image" alt="Image" />
+                    <img :src="project.image" alt="Image" @contextmenu.prevent/>
                 </RouterLink>
             </section>
         </section>
