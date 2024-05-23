@@ -61,19 +61,19 @@ onUnmounted(() => {
                     <div class="projectSection__cardTitle" w-full h-full px-6xl  text-white font-bold flex items-center justify-center>
                         <p text-center>{{ project.name }}</p>
                     </div>
-                    <img :src="project.image" alt="Image" @contextmenu.prevent/>
+                    <img :src="project.thumb" alt="Image" @contextmenu.prevent/>
                 </div>
             </section>
         </section>
 
         <!-- Detailed Card Modal -->
-        <section v-if="showDetailCard" class="modal" @click="closeDetails">
+        <section v-if="showDetailCard" class="modal" @click.self="closeDetails">
             <article class="modal-content" w-7xl z-20 @click.stop>
                 <h2>{{ selectedProject.name }}</h2>
-                <video v-if="selectedProject.video" controls muted loop>
-                    <source :src="selectedProject.video" type="video/mp4" />
+                <video v-if="selectedProject.video" controls controlsList="nodownload" >
+                    <source :src="selectedProject.video" type="video/mp4" @contextmenu.prevent/>
                 </video>
-                <img :src="selectedProject.image" alt="Image" @contextmenu.prevent/>
+                <img v-if="selectedProject.image" :src="selectedProject.image" alt="Image" @contextmenu.prevent/>
                 <p>{{ selectedProject.description }}</p>
             </article>
         </section>
@@ -227,6 +227,7 @@ onUnmounted(() => {
     height: 100%;
     vertical-align: middle;
     object-fit: cover;
+    pointer-events: all;
 }
 
 /* CSS FOR PHONE SCREEN */
