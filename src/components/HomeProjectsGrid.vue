@@ -1,6 +1,7 @@
 <script setup>
 import { useProjectsImg } from '@/composables/useProjectsImg';
-import { ref, onUnmounted, computed } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
+import mediumZoom from 'medium-zoom';
 
 const { projects } = useProjectsImg();
 
@@ -21,6 +22,9 @@ const getImageClasses = (project) => {
 // * Show detailed card modal
 const showDetailCard = ref(false);
 const selectedProject = ref(null);
+const showFullscreenImage = ref(false);
+const selectedImage = ref(null);
+const isZoomedIn = ref(false);
 
 const showDetails = (project) => {
     selectedProject.value = project;
@@ -34,13 +38,37 @@ const closeDetails = () => {
     document.body.classList.remove('no-scroll'); // Enable body scroll
 };
 
+// * Open and close fullscreen image
+const openFullscreenImage = (image) => {
+    selectedImage.value = image;
+    showFullscreenImage.value = true;
+    document.body.classList.add('no-scroll'); // Disable body scroll
+};
+
+const closeFullscreenImage = () => {
+    showFullscreenImage.value = false;
+    selectedImage.value = null;
+    isZoomedIn.value = false;
+    // document.body.classList.remove('no-scroll'); // Enable body scroll
+};
+
+// * Toggle zoom
+const toggleZoom = () => {
+    isZoomedIn.value = !isZoomedIn.value;
+};
+
+// * Initialize medium-zoom
+onMounted(() => {
+    mediumZoom('.zoomable');
+});
+
 onUnmounted(() => {
     document.body.classList.remove('no-scroll');
 });
 
 // * Check if the selected project has images less than 3
 const isFewImages = computed(() => {
-  return selectedProject.value?.image.length <= 3;
+    return selectedProject.value?.image.length <= 3;
 });
 </script>
 
@@ -86,7 +114,7 @@ const isFewImages = computed(() => {
                 <!-- IMAGE GALLERY -->
                 <section class="modal-content__images--grid" :class="{'few-images': isFewImages, 'image-gallery': !isFewImages}" v-if="selectedProject.image && selectedProject.image.length > 0">
                     <div v-for="(image, index) in selectedProject.image" :key="index">
-                        <img :src="image" alt="Image" @contextmenu.prevent/>
+                        <img :src="image" alt="Image" class="zoomable" @click="openFullscreenImage(image)" @contextmenu.prevent/>
                     </div>
                 </section>
 
@@ -94,6 +122,13 @@ const isFewImages = computed(() => {
                 <p>{{ selectedProject.description }}</p>
             </article>
         </section>
+
+        <!-- Full-Screen Image Modal -->
+        <div v-if="showFullscreenImage" class="fullscreen-modal" @click.self="closeFullscreenImage">
+            <div class="fullscreen-content">
+                <img :src="selectedImage" alt="Full Screen Image" class="zoomable-image" :class="{'zoomed-in': isZoomedIn}" @click="toggleZoom" @contextmenu.prevent/>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -280,6 +315,55 @@ const isFewImages = computed(() => {
 
 .few-images :nth-child(1){
     margin-bottom: 2rem;
+}
+
+/* Medium-Zoom specific styles */
+.zoomable {
+    cursor: pointer;
+}
+
+/* Full-Screen Modal Styles */
+.fullscreen-modal {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-y: auto;
+}
+
+.fullscreen-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 100%;
+}
+
+.zoomable-image {
+    width: 100%;
+    height: 100%;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+    pointer-events: all;
+}
+
+.zoomed-in {
+    transform: scale(2); /* Adjust the scale as needed */
+    cursor: zoom-out;
+}
+
+.fullscreen-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 /* CSS FOR PHONE SCREEN */
