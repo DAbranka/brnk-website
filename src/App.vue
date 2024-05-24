@@ -70,6 +70,15 @@ window.addEventListener('scroll', function () {
     }
     lastScrollTop.value = scrollTop;
 });
+
+// * Prevent dragging of images and videos
+document.addEventListener('dragstart', function(event) {
+    if (event.target.nodeName === 'IMG' || event.target.nodeName === 'VIDEO') {
+        event.preventDefault();
+    }
+});
+
+
 </script>
 
 <template>
@@ -132,6 +141,7 @@ window.addEventListener('scroll', function () {
     margin: 0;
     padding: 0;
 }
+
 body,
 html {
     font-family: sans-serif;
@@ -140,8 +150,17 @@ html {
     scroll-padding-top: var(--navbar-height, 3rem);
 }
 
+body.no-scroll{
+    overflow: hidden;
+}
+
 #navbar {
     transition: top 0.3s ease-in-out 0.1s;
+}
+
+img, video {
+    -webkit-user-drag: none;
+    pointer-events: none; /* This will also prevent interactions with the elements */
 }
 
 /* CSS FOR PHONE SCREEN */
