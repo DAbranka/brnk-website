@@ -47,7 +47,7 @@ export function useProjectsImg() {
             width: '601',
             height: '601',
             date: '2024-03-11',
-            description: 'Description for: Abstract 3D Shapes.'
+            description: 'I made this serie of abstract object to practice my modeling skills in Blender and having a library of objects to use in future projects.'
         },
         {
             id: '4',
@@ -60,7 +60,7 @@ export function useProjectsImg() {
             width: '601',
             height: '601',
             date: '2024-02-27',
-            description: 'Description for: BRNK Abstract Objects.'
+            description: 'Made this render to practice some rigid body simulations in Blender.'
         },
         {
             id: '5',
@@ -87,7 +87,7 @@ export function useProjectsImg() {
             width: '601',
             height: '601',
             date: '2024-02-22',
-            description: 'Description for: Happy 30th Birthday!'
+            description: 'Made this for my 30th birthday. I wanted to make something that was a little bit abstract and surreal.'
         }
     ]);
     return { projects };
