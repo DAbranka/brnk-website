@@ -203,7 +203,7 @@ watch(selectedProject, () => {
         </section>
 
         <!-- Full-Screen Image Modal -->
-        <div v-if="showFullscreenImage" class="fullscreen-modal" >
+        <div v-if="showFullscreenImage" class="fullscreen-modal" @click.self="closeFullscreenImage">
             <div class="fullscreen-content" @click.self="closeFullscreenImage">
                 <button class="prev" @click="showPrevImage">&#10094;</button>
                 <img :src="selectedImage" alt="Full Screen Image" class="zoomable-image" :class="{'zoomed-in': isZoomedIn}" @click="toggleZoom" @contextmenu.prevent/>
