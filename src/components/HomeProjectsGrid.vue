@@ -176,9 +176,12 @@ watch(selectedProject, () => {
                 <h2>{{ selectedProject.name }}</h2>
 
                 <!-- VIDEO -->
-                <video class="modal-content__video" v-if="selectedProject.video" autoplay loop muted controls controlsList="nodownload" >
-                    <source :src="selectedProject.video" type="video/mp4" @contextmenu.prevent/>
+                <div v-if="selectedProject.video">
+
+                <video class="modal-content__video" v-for="(video, index) in selectedProject.video" :key="index"  autoplay loop muted controls controlsList="nodownload" >
+                    <source :src="video" type="video/mp4" @contextmenu.prevent/>
                 </video>
+                </div>
 
                 <!-- IMAGE GALLERY -->
                 <section class="modal-content__images--grid" :class="{'few-images': isFewImages, 'image-gallery': !isFewImages}" v-if="selectedProject.image && selectedProject.image.length > 0">
@@ -579,4 +582,3 @@ watch(selectedProject, () => {
     }
 }
 </style>
-style
