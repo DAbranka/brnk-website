@@ -19,7 +19,7 @@ export function useProjectsImg() {
             width: '601',
             height: '601',
             date: '2024-03-24',
-            description: 'Description for: My Bedroom Table.'
+            description: 'Modeled my bedroom table in Blender with surrealistic decoration.'
         },
         {
             id: '2',
@@ -32,7 +32,7 @@ export function useProjectsImg() {
             width: '601',
             height: '601',
             date: '2024-03-17',
-            description: 'Description for: Soborg Chair.'
+            description: 'Modeling this chair was a challenge, but I learned a lot. Thanks again to Andrew Price.'
         },
         {
             id: '3',
@@ -74,7 +74,7 @@ export function useProjectsImg() {
             width: '601',
             height: '601',
             date: '2024-01-18',
-            description: 'Description for: Inflated Rolling Cubes.'
+            description: ' I was trying some art direction with these inflated rolling cubes. Just practicing some stuff with these guys, Ash Thorp style was the inspiration here.'
         },
         {
             id: '6',

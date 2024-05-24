@@ -171,6 +171,12 @@ watch(selectedProject, () => {
         <section v-if="showDetailCard" class="modal" @click.self="closeDetails">
             <button class="prev" @click="showPrevProject">&#10094;</button>
             <article class="modal-content" w-7xl z-20 @click.stop>
+                <!-- Close -->
+                <span class="closeContainer" @click="closeDetails" >
+                    <span class="closeContent">
+                        &times;
+                    </span>
+                </span>
 
                 <!-- HEAD TITLE -->
                 <h2>{{ selectedProject.name }}</h2>
@@ -184,7 +190,7 @@ watch(selectedProject, () => {
                 </div>
 
                 <!-- IMAGE GALLERY -->
-                <section class="modal-content__images--grid" :class="{'few-images': isFewImages, 'image-gallery': !isFewImages}" v-if="selectedProject.image && selectedProject.image.length > 0">
+                <section :class="{'few-images': isFewImages, 'image-gallery': !isFewImages}" v-if="selectedProject.image && selectedProject.image.length > 0">
                     <div v-for="(image, index) in selectedProject.image" :key="index">
                         <img :src="image" alt="Image" class="zoomable" @click="openFullscreenImage(image)" @contextmenu.prevent/>
                     </div>
@@ -197,8 +203,8 @@ watch(selectedProject, () => {
         </section>
 
         <!-- Full-Screen Image Modal -->
-        <div v-if="showFullscreenImage" class="fullscreen-modal" @click.self="closeFullscreenImage">
-            <div class="fullscreen-content">
+        <div v-if="showFullscreenImage" class="fullscreen-modal" >
+            <div class="fullscreen-content" @click.self="closeFullscreenImage">
                 <button class="prev" @click="showPrevImage">&#10094;</button>
                 <img :src="selectedImage" alt="Full Screen Image" class="zoomable-image" :class="{'zoomed-in': isZoomedIn}" @click="toggleZoom" @contextmenu.prevent/>
                 <button class="next" @click="showNextImage">&#10095;</button>
@@ -327,8 +333,8 @@ watch(selectedProject, () => {
 /* MODAL */
 .modal {
     position: fixed;
-    padding-top: 3rem;
     z-index: 1000;
+    padding-top: 2rem;
     left: 0;
     top: 0;
     width: 100%;
@@ -336,6 +342,10 @@ watch(selectedProject, () => {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
     overflow-y: scroll; /* Enable scrolling within the modal */
+}
+
+.closeContainer {
+    display: none;
 }
 
 .modal-content {
@@ -354,7 +364,7 @@ watch(selectedProject, () => {
 
 .modal-content p{
     padding: 12rem 15rem;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 .modal-content img{
@@ -388,9 +398,9 @@ watch(selectedProject, () => {
     justify-content: center;
 }
 
-.few-images :nth-child(1){
+/* .few-images :nth-child(1){
     margin-bottom: 2rem;
-}
+} */
 
 /* Medium-Zoom specific styles */
 .zoomable {
@@ -496,7 +506,7 @@ watch(selectedProject, () => {
         vertical-align: middle;
         object-fit: cover;
         overflow: hidden;
-        border-radius: 20px;
+        /* border-radius: 20px; */
 }
 
     /* CARDS WRAP */
@@ -554,13 +564,74 @@ watch(selectedProject, () => {
     }
 
     /* MODAL */
+    .modal {
+        padding-top: 3rem;
+    }
+
     .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    width: calc(100vw - 2rem);
-    margin: 0 auto;
-}
+        /* position: fixed; */
+        bottom: 0;
+        width: 100%;
+        margin: 0;
+    }
+
+    .closeContainer {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 3rem;
+    }
+
+    .closeContent {
+        display: flex;
+        justify-content: center;
+        margin: 1rem 2rem 0 0;
+    }
+
+    .modal-content h2{
+        padding: 0 2rem 2rem 2rem;
+        font-size: 2rem;
+    }
+
+    .modal-content p{
+        padding: 5rem 3rem 5rem 3rem;
+        font-size: 1.3rem;
+    }
+    .modal-content img{
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+        object-fit: cover;
+        pointer-events: all;
+    }
+
+    .prev, .next {
+        display: none;
+    }
+
+    .fullscreen-content {
+        /* Layout */
+        display: flex;
+        align-items: center;
+        /* Spacing */
+        margin: 1rem;
+    }
+
+    .zoomable-image {
+        height: auto;
+    }
+
+    .image-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+        grid-auto-rows: 400px;
+        grid-auto-flow: dense;
+        padding: 0 0 0 0;
+    }
+
+    .few-images{
+        margin-bottom: 0;
+    }
 }
 
 /* CSS FOR LAPTOP SCREEN */
