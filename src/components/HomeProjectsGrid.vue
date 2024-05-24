@@ -1,6 +1,6 @@
 <script setup>
 import { useProjectsImg } from '@/composables/useProjectsImg';
-import { ref, onMounted, onUnmounted, computed } from 'vue';
+import { ref, onMounted, onUnmounted, computed, watch } from 'vue';
 import mediumZoom from 'medium-zoom';
 
 const { projects } = useProjectsImg();
@@ -19,19 +19,26 @@ const getImageClasses = (project) => {
     return classes;
 };
 
-// * Show detailed card modal
+// * State Management for Project Details
 const showDetailCard = ref(false);
 const selectedProject = ref(null);
 const showFullscreenImage = ref(false);
 const selectedImage = ref(null);
 const isZoomedIn = ref(false);
+const selectedIndex = ref(0);
+const selectedProjectIndex = ref(0);
 
+
+
+// * Function to show project details
 const showDetails = (project) => {
-    selectedProject.value = project;
     showDetailCard.value = true;
+    selectedProjectIndex.value = showDetailCard.value ? projects.value.findIndex((p) => p.id === project.id) : 0;
+    selectedProject.value = project;
     document.body.classList.add('no-scroll'); // Disable body scroll
 };
 
+// * Function to close project details
 const closeDetails = () => {
     showDetailCard.value = false;
     selectedProject.value = null;
@@ -49,7 +56,6 @@ const closeFullscreenImage = () => {
     showFullscreenImage.value = false;
     selectedImage.value = null;
     isZoomedIn.value = false;
-    // document.body.classList.remove('no-scroll'); // Enable body scroll
 };
 
 // * Toggle zoom
@@ -57,18 +63,80 @@ const toggleZoom = () => {
     isZoomedIn.value = !isZoomedIn.value;
 };
 
-// * Initialize medium-zoom
+/**
+ *  * Function to show the next image in the selected project.
+ */
+const showNextImage = () => {
+    if (selectedIndex.value < selectedProject.value.image.length - 1) {
+        selectedIndex.value++;
+        selectedImage.value = selectedProject.value.image[selectedIndex.value];
+    }
+};
+
+/**
+ *  * Function to show the previous image in the selected project.
+ */
+const showPrevImage = () => {
+    if (selectedIndex.value > 0) {
+        selectedIndex.value--;
+        selectedImage.value = selectedProject.value.image[selectedIndex.value];
+    }
+};
+
+// * Function to show the next project in the projects array.
+const showNextProject = () => {
+    if (selectedProjectIndex.value < projects.value.length - 1) {
+        selectedProjectIndex.value++;
+        selectedProject.value = projects.value[selectedProjectIndex.value];
+    };
+}
+
+// * Function to show the previous project in the projects array.
+const showPrevProject = () => {
+    if (selectedProjectIndex.value > 0) {
+        selectedProjectIndex.value--;
+        selectedProject.value = projects.value[selectedProjectIndex.value];
+    }
+};
+
+// * Handle keyboard navigation
+const handleKeydown = (event) => {
+    if (showFullscreenImage.value) {
+        if (event.key === 'ArrowRight') {
+            showNextImage();
+        } else if (event.key === 'ArrowLeft') {
+            showPrevImage();
+        }
+    } else if (showDetailCard.value) {
+        if (event.key === 'ArrowRight') {
+            showNextProject();
+        } else if (event.key === 'ArrowLeft') {
+            showPrevProject();
+        }
+    }
+};
+
 onMounted(() => {
     mediumZoom('.zoomable');
+    window.addEventListener('keydown', handleKeydown);
 });
 
 onUnmounted(() => {
     document.body.classList.remove('no-scroll');
+    window.removeEventListener('keydown', handleKeydown);
 });
 
 // * Check if the selected project has images less than 3
 const isFewImages = computed(() => {
     return selectedProject.value?.image.length <= 3;
+});
+
+// * Watch for changes in selectedProject and reset the video element
+watch(selectedProject, () => {
+    const video = document.querySelector('.modal-content__video');
+    if (video) {
+        video.load();
+    }
 });
 </script>
 
@@ -101,13 +169,14 @@ const isFewImages = computed(() => {
 
         <!-- Detailed Card Modal -->
         <section v-if="showDetailCard" class="modal" @click.self="closeDetails">
+            <button class="prev" @click="showPrevProject">&#10094;</button>
             <article class="modal-content" w-7xl z-20 @click.stop>
 
                 <!-- HEAD TITLE -->
                 <h2>{{ selectedProject.name }}</h2>
 
                 <!-- VIDEO -->
-                <video v-if="selectedProject.video" autoplay loop muted controls controlsList="nodownload" >
+                <video class="modal-content__video" v-if="selectedProject.video" autoplay loop muted controls controlsList="nodownload" >
                     <source :src="selectedProject.video" type="video/mp4" @contextmenu.prevent/>
                 </video>
 
@@ -121,12 +190,15 @@ const isFewImages = computed(() => {
                 <!-- DESCRIPTION -->
                 <p>{{ selectedProject.description }}</p>
             </article>
+            <button class="next" @click="showNextProject">&#10095;</button>
         </section>
 
         <!-- Full-Screen Image Modal -->
         <div v-if="showFullscreenImage" class="fullscreen-modal" @click.self="closeFullscreenImage">
             <div class="fullscreen-content">
+                <button class="prev" @click="showPrevImage">&#10094;</button>
                 <img :src="selectedImage" alt="Full Screen Image" class="zoomable-image" :class="{'zoomed-in': isZoomedIn}" @click="toggleZoom" @contextmenu.prevent/>
+                <button class="next" @click="showNextImage">&#10095;</button>
             </div>
         </div>
     </div>
@@ -341,6 +413,7 @@ const isFewImages = computed(() => {
     position: relative;
     max-width: 90%;
     max-height: 100%;
+    margin: 3rem;
 }
 
 .zoomable-image {
@@ -364,6 +437,36 @@ const isFewImages = computed(() => {
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    cursor: pointer;
+    position: fixed;
+    width: auto;
+    top: 50%;
+    padding: 12px 28px;
+    margin: 0 5rem;
+    color: white;
+    font-weight: bold;
+    font-size: 2.5rem;
+    transition: 0.6s ease;
+    border: none;
+    border-radius: 50px 0 0 50px;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.next {
+    right: 0;
+    border-radius: 0 50px 50px 0;
+}
+.prev {
+    left: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* CSS FOR PHONE SCREEN */

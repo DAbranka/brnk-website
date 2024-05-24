@@ -17,7 +17,7 @@ export function useProjectsImg() {
             width: '601',
             height: '601',
             date: '2024-03-24',
-            description: 'This is a 3D model of my bedroom table. I created this model using Blender 3D software. The table is made of wood and has a glass top. The table has a simple design with a rectangular shape and four legs. I used Blender to create the 3D model of the table and then rendered it to create this image. I also created a short animation of the table rotating to show it from different angles. I am happy with how the model turned out and I think it looks realistic. I enjoyed working on this project and I learned a lot about 3D modeling and rendering.'
+            description: 'Description for: My Bedroom Table.'
         },
         {
             id: '2',
@@ -30,7 +30,7 @@ export function useProjectsImg() {
             width: '601',
             height: '601',
             date: '2024-03-17',
-            description: 'This is a 3D model of the Soborg chair. I created this model using Blender 3D software. The chair has a simple design with a wooden frame and a fabric seat. I used Blender to create the 3D model of the chair and then rendered it to create this image. I am happy with how the model turned out and I think it looks realistic. I enjoyed working on this project and I learned a lot about 3D modeling and rendering.'
+            description: 'Description for: Soborg Chair.'
         },
         {
             id: '3',
@@ -45,7 +45,7 @@ export function useProjectsImg() {
             width: '601',
             height: '601',
             date: '2024-03-11',
-            description: 'This is a collection of abstract 3D shapes that I created using Blender 3D software. I used Blender to create the 3D models of the shapes and then rendered them to create these images. I experimented with different shapes, colors, and textures to create interesting and visually appealing compositions. I am happy with how the shapes turned out and I think they look vibrant and dynamic. I enjoyed working on this project and I learned a lot about 3D modeling and rendering.'
+            description: 'Description for: Abstract 3D Shapes.'
         },
         {
             id: '4',
@@ -56,7 +56,7 @@ export function useProjectsImg() {
             width: '601',
             height: '601',
             date: '2024-02-27',
-            description: 'This is a collection of abstract 3D objects that I created using Blender 3D software. I used Blender to create the 3D models of the objects and then rendered them to create these images. I experimented with different shapes, colors, and textures to create interesting and visually appealing compositions. I am happy with how the objects turned out and I think they look vibrant and dynamic. I enjoyed working on this project and I learned a lot about 3D modeling and rendering.'
+            description: 'Description for: BRNK Abstract Objects.'
         },
         {
             id: '5',
@@ -67,7 +67,7 @@ export function useProjectsImg() {
             width: '601',
             height: '601',
             date: '2024-01-18',
-            description: 'This is a collection of abstract 3D shapes that I created using Blender 3D software. I used Blender to create the 3D models of the shapes and then rendered them to create these images. I experimented with different shapes, colors, and textures to create interesting and visually appealing compositions. I am happy with how the shapes turned out and I think they look vibrant and dynamic. I enjoyed working on this project and I learned a lot about 3D modeling and rendering.'
+            description: 'Description for: Inflated Rolling Cubes.'
         },
         {
             id: '6',
@@ -78,7 +78,7 @@ export function useProjectsImg() {
             width: '601',
             height: '601',
             date: '2024-02-22',
-            description: 'This is a collection of abstract 3D shapes that I created using Blender 3D software. I used Blender to create the 3D models of the shapes and then rendered them to create these images. I experimented with different shapes, colors, and textures to create interesting and visually appealing compositions. I am happy with how the shapes turned out and I think they look vibrant and dynamic. I enjoyed working on this project and I learned a lot about 3D modeling and rendering.'
+            description: 'Description for: Happy 30th Birthday!'
         }
     ]);
     return { projects };

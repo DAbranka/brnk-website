@@ -60,7 +60,7 @@ onMounted(() => {
         duration: 1,
         delay: 4.3,
         top: '-150%',
-        ease: 'power2.inOut'
+        ease: 'power2.inOut',
     });
 
     // ----------------------------------------------//
