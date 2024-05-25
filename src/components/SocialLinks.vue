@@ -67,6 +67,11 @@
     position: relative;
     z-index: 20;
 }
+
+a {
+    display: block;
+    height: auto;
+}
 @media screen and (max-width: 600px) {
     .contactLinks--grid {
         display: block;
