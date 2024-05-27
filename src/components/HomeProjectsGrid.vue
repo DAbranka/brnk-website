@@ -159,7 +159,7 @@ watch(selectedProject, () => {
         <section class="projectSection">
             <section class="projectSection--grid" my-5 px-15>
                 <div v-for="project in projects" :key="project.id" :class="getImageClasses(project)" class="projectSection__cardsWrap" @click="showDetails(project)">
-                    <div class="projectSection__cardTitle" w-full h-full px-6xl text-white font-bold flex items-center justify-center>
+                    <div class="projectSection__cardTitle" w-full h-full px-6xl text-white font-bold flex items-center justify-center @contextmenu.prevent>
                         <p text-center>{{ project.name }}</p>
                     </div>
                     <img :src="project.thumb" alt="Image" @contextmenu.prevent/>
