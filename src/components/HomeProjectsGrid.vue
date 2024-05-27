@@ -184,8 +184,8 @@ watch(selectedProject, () => {
                 <!-- VIDEO -->
                 <div v-if="selectedProject.video">
 
-                <video class="modal-content__video" v-for="(video, index) in selectedProject.video" :key="index"  autoplay loop muted controls controlsList="nodownload" >
-                    <source :src="video" type="video/mp4" @contextmenu.prevent/>
+                <video class="modal-content__video" v-for="(video, index) in selectedProject.video" :key="index"  autoplay loop muted controls controlsList="nodownload" @contextmenu.prevent>
+                    <source :src="video" type="video/mp4" />
                 </video>
                 </div>
 
@@ -380,7 +380,7 @@ watch(selectedProject, () => {
     height: 100%;
     margin-bottom: 2rem;
     vertical-align: middle;
-    pointer-events: all;
+    /* pointer-events: all; */
 }
 
 .image-gallery {

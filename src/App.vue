@@ -158,7 +158,7 @@ body.no-scroll{
     transition: top 0.3s ease-in-out 0.1s;
 }
 
-img, video {
+img{
     -webkit-user-drag: none;
     pointer-events: none; /* This will also prevent interactions with the elements */
 }
