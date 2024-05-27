@@ -33,7 +33,12 @@ import SocialLinks from './SocialLinks.vue';
 
                 <!-- Follow me on -->
                 <SocialLinks />
+
             </section>
+                <!-- Copyright 2024 -->
+                <section class="copyRight" p-sm  w-full flex justify-center>
+                    <p text-sm font-300f>&copy; 2024 BRNK. All rights reserved.</p>
+                </section>
         </section>
     </div>
 </template>
