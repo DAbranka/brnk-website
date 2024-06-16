@@ -3,7 +3,7 @@
 <template>
     <div>
         <section>
-            <video class="mobileBgVideo" autoplay muted loop>
+            <video class="mobileBgVideo" autoplay muted loop @contextmenu.prevent>
                 <source
                     class="mobileBgVideo__source"
                     src="@/assets/video/brrrnk_hero_bg_video.mp4"
