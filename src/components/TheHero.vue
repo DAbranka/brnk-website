@@ -96,7 +96,7 @@ const currentComponent = computed(() =>
 
             <!-- PreLoader Video -->
             <section class="preLoader__vdo">
-                <video autoplay muted loop>
+                <video autoplay muted loop @contextmenu.prevent>
                     <source
                         src="@/assets/video/BRNK_LOGO_PreLoader_Animation.mp4"
                         type="video/mp4"
