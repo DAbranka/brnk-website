@@ -29,12 +29,12 @@ const isZoomedIn = ref(false);
 const selectedIndex = ref(0);
 const selectedProjectIndex = ref(0);
 
-
-
 // * Function to show project details
 const showDetails = (project) => {
     showDetailCard.value = true;
-    selectedProjectIndex.value = showDetailCard.value ? projects.value.findIndex((p) => p.id === project.id) : 0;
+    selectedProjectIndex.value = showDetailCard.value
+        ? projects.value.findIndex((p) => p.id === project.id)
+        : 0;
     selectedProject.value = project;
     document.body.classList.add('no-scroll'); // Disable body scroll
 };
@@ -89,8 +89,8 @@ const showNextProject = () => {
     if (selectedProjectIndex.value < projects.value.length - 1) {
         selectedProjectIndex.value++;
         selectedProject.value = projects.value[selectedProjectIndex.value];
-    };
-}
+    }
+};
 
 // * Function to show the previous project in the projects array.
 const showPrevProject = () => {
@@ -159,11 +159,28 @@ watch(selectedProject, () => {
         <!-- Projects Grid Section -->
         <section class="projectSection">
             <section class="projectSection--grid" my-5 px-15>
-                <div v-for="project in projects" :key="project.id" :class="getImageClasses(project)" class="projectSection__cardsWrap" @click="showDetails(project)">
-                    <div class="projectSection__cardTitle" w-full h-full px-6xl text-white font-bold flex items-center justify-center @contextmenu.prevent>
+                <div
+                    v-for="project in projects"
+                    :key="project.id"
+                    :class="getImageClasses(project)"
+                    class="projectSection__cardsWrap"
+                    @click="showDetails(project)"
+                >
+                    <div
+                        class="projectSection__cardTitle"
+                        w-full
+                        h-full
+                        px-6xl
+                        text-white
+                        font-bold
+                        flex
+                        items-center
+                        justify-center
+                        @contextmenu.prevent
+                    >
                         <p text-center>{{ project.name }}</p>
                     </div>
-                    <img :src="project.thumb" alt="Image" @contextmenu.prevent/>
+                    <img :src="project.thumb" alt="Image" @contextmenu.prevent />
                 </div>
             </section>
         </section>
@@ -173,27 +190,51 @@ watch(selectedProject, () => {
             <button class="prev" @click="showPrevProject">&#10094;</button>
             <article class="modal-content" w-7xl z-20 @click.stop>
                 <!-- Close -->
-                <span class="closeContainer" @click="closeDetails" >
-                    <span class="closeContent">
-                        &times;
-                    </span>
+                <span class="closeContainer" @click="closeDetails">
+                    <span class="closeContent"> &times; </span>
                 </span>
 
                 <!-- HEAD TITLE -->
                 <h2>{{ selectedProject.name }}</h2>
 
+                <!-- DATE -->
+                <section class="modal-content-date" flex justify-between items-center>
+                    <hr w-full />
+                    <div class="modal-content-dateSection">
+                        <p>{{ selectedProject.date }}</p>
+                    </div>
+                </section>
+
                 <!-- VIDEO -->
                 <div v-if="selectedProject.video">
-
-                <video class="modal-content__video" v-for="(video, index) in selectedProject.video" :key="index"  autoplay loop muted controls controlsList="nodownload" @contextmenu.prevent>
-                    <source :src="video" type="video/mp4" />
-                </video>
+                    <video
+                        class="modal-content__video"
+                        v-for="(video, index) in selectedProject.video"
+                        :key="index"
+                        autoplay
+                        loop
+                        muted
+                        controls
+                        controlsList="nodownload"
+                        @contextmenu.prevent
+                    >
+                        <source :src="video" type="video/mp4" />
+                    </video>
                 </div>
 
                 <!-- IMAGE GALLERY -->
-                <section :class="{'few-images': isFewImages, 'image-gallery': !isFewImages}" v-if="selectedProject.image && selectedProject.image.length > 0">
+                <section
+                    :class="{ 'few-images': isFewImages, 'image-gallery': !isFewImages }"
+                    v-if="selectedProject.image && selectedProject.image.length > 0"
+                >
                     <div v-for="(image, index) in selectedProject.image" :key="index">
-                        <img :src="image" alt="Image" class="zoomable" @click="openFullscreenImage(image)" @contextmenu.prevent/>
+                        <img
+                            :src="image"
+                            alt="Image"
+                            class="zoomable"
+                            @click="openFullscreenImage(image)"
+                            @contextmenu.prevent
+                        />
                     </div>
                 </section>
 
@@ -207,7 +248,14 @@ watch(selectedProject, () => {
         <div v-if="showFullscreenImage" class="fullscreen-modal" @click.self="closeFullscreenImage">
             <div class="fullscreen-content" @click.self="closeFullscreenImage">
                 <button class="prev" @click="showPrevImage">&#10094;</button>
-                <img :src="selectedImage" alt="Full Screen Image" class="zoomable-image" :class="{'zoomed-in': isZoomedIn}" @click="toggleZoom" @contextmenu.prevent/>
+                <img
+                    :src="selectedImage"
+                    alt="Full Screen Image"
+                    class="zoomable-image"
+                    :class="{ 'zoomed-in': isZoomedIn }"
+                    @click="toggleZoom"
+                    @contextmenu.prevent
+                />
                 <button class="next" @click="showNextImage">&#10095;</button>
             </div>
         </div>
@@ -215,7 +263,6 @@ watch(selectedProject, () => {
 </template>
 
 <style scoped>
-
 .projectSection {
     padding: 0 0 6rem 0;
 }
@@ -255,10 +302,13 @@ watch(selectedProject, () => {
     position: relative;
     overflow: hidden;
     border-radius: 20px;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition:
+        transform 0.3s ease-in-out,
+        opacity 0.3s ease-in-out,
+        box-shadow 0.3s ease-in-out;
 }
 
-.projectSection__cardsWrap:hover{
+.projectSection__cardsWrap:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     transform: translateY(-5px);
     transition: 0.3s ease-in-out;
@@ -270,24 +320,26 @@ watch(selectedProject, () => {
     transform: scale(1.15);
     z-index: -1;
     opacity: 1; /* Default opacity for cards */
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition on hover and hover-out */
+    transition:
+        transform 0.3s ease-in-out,
+        opacity 0.3s ease-in-out; /* Smooth transition on hover and hover-out */
 }
 
 .projectSection__cardsWrap:hover img {
     transform: scale(1);
 }
 
-.projectSection__cardsWrap:active{
-        transform: scale(0.9);
-        transition: transform 0.3s ease-in-out;
-    }
+.projectSection__cardsWrap:active {
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+}
 
 /* CARDS TITLE */
 .projectSection__cardTitle p {
     font-size: 4.5rem;
 }
 
-.projectSection__cardTitle{
+.projectSection__cardTitle {
     position: absolute;
     top: 0;
     left: 0;
@@ -299,7 +351,7 @@ watch(selectedProject, () => {
     /* pointer-events: none; */
 }
 
-.projectSection__cardTitle:hover{
+.projectSection__cardTitle:hover {
     position: absolute;
     top: 0;
     left: 0;
@@ -358,17 +410,33 @@ watch(selectedProject, () => {
     color: white;
 }
 
-.modal-content h2{
-    padding: 12rem 15rem 7rem 15rem;
+.modal-content h2 {
+    padding: 12rem 15rem 1rem 15rem;
     font-size: 5rem;
 }
 
-.modal-content p{
+.modal-content p {
     padding: 12rem 15rem;
     font-size: 3rem;
 }
 
-.modal-content img{
+.modal-content-date {
+    padding: 2rem 15rem;
+}
+
+.modal-content-date p {
+    padding: 0;
+    font-size: 1.5rem;
+}
+
+.modal-content-dateSection {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content img {
     width: 100%;
     height: 100%;
     vertical-align: middle;
@@ -376,7 +444,7 @@ watch(selectedProject, () => {
     pointer-events: all;
 }
 
-.modal-content video{
+.modal-content video {
     width: 100%;
     height: 100%;
     margin-bottom: 2rem;
@@ -454,7 +522,8 @@ watch(selectedProject, () => {
 }
 
 /* Navigation Buttons */
-.prev, .next {
+.prev,
+.next {
     cursor: pointer;
     position: fixed;
     width: auto;
@@ -479,7 +548,8 @@ watch(selectedProject, () => {
     left: 0;
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -508,24 +578,24 @@ watch(selectedProject, () => {
         object-fit: cover;
         overflow: hidden;
         /* border-radius: 20px; */
-}
+    }
 
     /* CARDS WRAP */
-    .projectSection__cardsWrap{
+    .projectSection__cardsWrap {
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
         transition: 0.3s ease-in-out;
     }
 
-    .projectSection__cardsWrap:hover{
+    .projectSection__cardsWrap:hover {
         transform: translateY(0);
         transition: 0.3s ease-in-out;
     }
 
     .projectSection__cardsWrap img {
         transform: scale(1);
-}
+    }
 
-    .projectSection__cardsWrap:active{
+    .projectSection__cardsWrap:active {
         transform: scale(0.9);
         transition: 0.3s ease-in-out;
     }
@@ -556,7 +626,7 @@ watch(selectedProject, () => {
 
     /* LATEST WORK TITLE */
     .latestWorkTitle {
-        padding: 0.5rem 0 ;
+        padding: 0.5rem 0;
     }
 
     .latestWorkTitle--slide p {
@@ -576,6 +646,28 @@ watch(selectedProject, () => {
         margin: 0;
     }
 
+    .modal-content-date {
+        padding: 1rem 2rem;
+        font-size: 0.8rem;
+        padding: 1rem 2rem 2rem 2rem;
+        /* background: blue; */
+        width: 100%;
+    }
+
+    .modal-content :nth-child(3) div {
+        padding: 0;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        width: 40%;
+    }
+
+    .modal-content :nth-child(3) p {
+        font-size: 0.8rem;
+        padding: 0;
+        /* background: red; */
+    }
+
     .closeContainer {
         display: flex;
         justify-content: flex-end;
@@ -588,16 +680,17 @@ watch(selectedProject, () => {
         margin: 1rem 2rem 0 0;
     }
 
-    .modal-content h2{
-        padding: 0 2rem 2rem 2rem;
+    .modal-content h2 {
+        padding: 0 2rem;
         font-size: 2rem;
     }
 
-    .modal-content p{
+    .modal-content p {
         padding: 5rem 3rem 5rem 3rem;
         font-size: 1.3rem;
     }
-    .modal-content img{
+
+    .modal-content img {
         width: 100%;
         height: 100%;
         vertical-align: middle;
@@ -605,7 +698,8 @@ watch(selectedProject, () => {
         pointer-events: all;
     }
 
-    .prev, .next {
+    .prev,
+    .next {
         display: none;
     }
 
@@ -630,7 +724,7 @@ watch(selectedProject, () => {
         padding: 0 0 0 0;
     }
 
-    .few-images{
+    .few-images {
         margin-bottom: 0;
     }
 }

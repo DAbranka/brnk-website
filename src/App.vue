@@ -72,13 +72,11 @@ window.addEventListener('scroll', function () {
 });
 
 // * Prevent dragging of images and videos
-document.addEventListener('dragstart', function(event) {
+document.addEventListener('dragstart', function (event) {
     if (event.target.nodeName === 'IMG' || event.target.nodeName === 'VIDEO') {
         event.preventDefault();
     }
 });
-
-
 </script>
 
 <template>
@@ -150,7 +148,7 @@ html {
     scroll-padding-top: var(--navbar-height, 3rem);
 }
 
-body.no-scroll{
+body.no-scroll {
     overflow: hidden;
 }
 
@@ -158,7 +156,7 @@ body.no-scroll{
     transition: top 0.3s ease-in-out 0.1s;
 }
 
-img{
+img {
     -webkit-user-drag: none;
     pointer-events: none; /* This will also prevent interactions with the elements */
 }

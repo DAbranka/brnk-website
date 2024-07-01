@@ -52,14 +52,14 @@ onMounted(() => {
     gsap.to('.preLoader__vdo', {
         duration: 0.25,
         delay: 4,
-        opacity: 0,
+        opacity: 0
     });
 
     // * GSAP Counter Fade Out animation
     gsap.to('.preLoader__counterContent', {
         duration: 0.25,
         delay: 4,
-        opacity: 0,
+        opacity: 0
     });
 
     // * GSAP PreLoader Hide animation
@@ -67,7 +67,7 @@ onMounted(() => {
         duration: 1,
         delay: 4.3,
         top: '-150%',
-        ease: 'power2.inOut',
+        ease: 'power2.inOut'
     });
 
     // ----------------------------------------------//

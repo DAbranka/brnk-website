@@ -3,7 +3,9 @@
         <!-- TEXT ENG -->
         <article class="aboutTxt--grid" text-white>
             <p>
-                David Abranka, the creative mind behind BRNK®, is a 3D artist and motion designer based in Liège, Belgium. With a passion for 3D modeling and animation, he has been creating digital content as a self-taught artist since 2013.
+                David Abranka, the creative mind behind BRNK®, is a 3D artist and motion designer
+                based in Liège, Belgium. With a passion for 3D modeling and animation, he has been
+                creating digital content as a self-taught artist since 2013.
             </p>
 
             <!-- <p>He is a self-taught artist who has been creating digital content since 2013.</p> -->
