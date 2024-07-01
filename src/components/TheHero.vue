@@ -55,6 +55,13 @@ onMounted(() => {
         opacity: 0,
     });
 
+    // * GSAP Counter Fade Out animation
+    gsap.to('.preLoader__counterContent', {
+        duration: 0.25,
+        delay: 4,
+        opacity: 0,
+    });
+
     // * GSAP PreLoader Hide animation
     gsap.to('.preLoader', {
         duration: 1,
@@ -85,14 +92,14 @@ const currentComponent = computed(() =>
     <div class="preLoader" overflow-hidden>
         <div class="preLoader__content" flex justify-center overflow-hidden>
             <!-- PreLoader Counter -->
-            <!-- <div class="preLoader__counterContent" flex>
-                <div class="preLoader__counter" text-9xl flex>
+            <div class="preLoader__counterContent" flex justify-end items-end px-5 w-full h-full>
+                <div class="preLoader__counter">
                     <p>0</p>
                 </div>
-                <div class="preLoader__percent" text-9xl flex>
+                <div class="preLoader__percent">
                     <p>%</p>
                 </div>
-            </div> -->
+            </div>
 
             <!-- PreLoader Video -->
             <section class="preLoader__vdo">
@@ -167,7 +174,8 @@ const currentComponent = computed(() =>
 .preLoader__counter,
 .preLoader__percent {
     color: rgb(51, 51, 51);
-    font-size: 36vw;
+    font-size: 8vw;
+    font-weight: 700;
 }
 
 /* CSS FOR PHONE SCREEN */

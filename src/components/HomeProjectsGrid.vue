@@ -3,7 +3,8 @@ import { useProjectsImg } from '@/composables/useProjectsImg';
 import { ref, onMounted, onUnmounted, computed, watch } from 'vue';
 import mediumZoom from 'medium-zoom';
 
-const { projects } = useProjectsImg();
+const { sortedProjects } = useProjectsImg();
+const projects = ref(sortedProjects);
 
 const getImageClasses = (project) => {
     const classes = [];

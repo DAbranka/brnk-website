@@ -88,7 +88,52 @@ export function useProjectsImg() {
             height: '601',
             date: '2024-02-22',
             description: 'Made this for my 30th birthday. I wanted to make something that was a little bit abstract and surreal.'
+        },
+        {
+            id: '7',
+            name: 'Mr Pepper Head',
+            type: 'media',
+            thumb: '/img/Mr-Pepper-Head_3_4.png',
+            image: [
+                '/img/Mr-Pepper-Head_face.png',
+                '/img/Mr-Pepper-Head_back.png',
+                '/img/Mr-Pepper-Head_3_4.png',
+            ],
+            width: '601',
+            height: '601',
+            date: '2020-06-27',
+            description: 'I made this character to practice my sculpting skills in Cinema 4D. I wanted to make a character that was a little bit abstract and surreal. I think it turned out pretty cool.'
+        },
+        {
+            id: '8',
+            name: 'HOLOGRAPHIK Motion Design Study',
+            type: 'media',
+            thumb: '/img/[Thumb]HOLOGRAPHIK Motion Design.png',
+            video: [
+                '/videos/HOLOGRAPHIK Motion Design.mp4',
+            ],
+            width: '601',
+            height: '601',
+            date: '2023-12-23',
+            description:'This Holographik motion design was only made for study purpose in After Effects.'
+        },
+        {
+            id: '9',
+            name: 'Washed Motion Design',
+            type: 'media',
+            thumb: '/img/[Thumb]washed.png',
+            video: [
+                '/videos/washed.mp4',
+            ],
+            width: '601',
+            height: '601',
+            date: '2021-02-02',
+            description: 'Motion design experiment, combining 2D and 3D on Cinema 4D and After Effects.'
         }
     ]);
-    return { projects };
+
+    const sortedProjects = projects.value.sort((a, b) => {
+        return new Date(b.date) - new Date(a.date);
+    });
+    return { projects, sortedProjects };
 }

@@ -23,6 +23,6 @@ export default defineConfig({
     },
   },
   shortcuts: {
-    'navLink': 'text-1xl text-black font-700 mx-1 bg-gray-3 px-3 py-1 rounded-3xl hover:bg-black hover:text-white transition-colors duration-300',
+    'navLink': 'text-black font-700 mx-1 bg-gray-3 px-3 py-1 rounded-3xl hover:bg-black hover:text-white transition-colors duration-300',
   },
 })
