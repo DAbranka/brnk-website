@@ -92,14 +92,14 @@ const currentComponent = computed(() =>
     <div class="preLoader" overflow-hidden>
         <div class="preLoader__content" flex justify-center overflow-hidden>
             <!-- PreLoader Counter -->
-            <div class="preLoader__counterContent" flex justify-end items-end px-5 w-full h-full>
+            <!-- <div class="preLoader__counterContent" flex justify-end items-end px-5 w-full h-full>
                 <div class="preLoader__counter">
                     <p>0</p>
                 </div>
                 <div class="preLoader__percent">
                     <p>%</p>
                 </div>
-            </div>
+            </div> -->
 
             <!-- PreLoader Video -->
             <section class="preLoader__vdo">
