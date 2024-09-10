@@ -124,7 +124,19 @@ export function useProjectsImg() {
             date: '2021-02-02',
             description:
                 'Motion design experiment, combining 2D and 3D on Cinema 4D and After Effects.'
-        }
+        },
+        {
+            id: '10',
+            name: 'BRNK Vitrine',
+            type: 'media',
+            thumb: '/img/[Thumb]BRNK_Vitrine_AME.png',
+            video: ['/videos/BRNK_VITRINE_AME.mp4'],
+            width: '601',
+            height: '601',
+            date: '2024-09-07',
+            description:
+                'First render of the series that I decided to realize every week to practice my 3D skills.'
+        },
     ]);
 
     const sortedProjects = projects.value.sort((a, b) => {
