@@ -87,22 +87,6 @@ export function useProjectsImg() {
         },
         {
             id: '7',
-            name: 'Mr Pepper Head',
-            type: 'media',
-            thumb: '/img/Mr-Pepper-Head_3_4.png',
-            image: [
-                '/img/Mr-Pepper-Head_face.png',
-                '/img/Mr-Pepper-Head_back.png',
-                '/img/Mr-Pepper-Head_3_4.png'
-            ],
-            width: '601',
-            height: '601',
-            date: '2020-06-27',
-            description:
-                'I made this character to practice my sculpting skills in Cinema 4D. My niece called him Mr. Pepper Head.'
-        },
-        {
-            id: '8',
             name: 'HOLOGRAPHIK Motion Design Study',
             type: 'media',
             thumb: '/img/[Thumb]HOLOGRAPHIK Motion Design.png',
@@ -114,7 +98,7 @@ export function useProjectsImg() {
                 'This Holographik motion design was only made for study purpose in After Effects.'
         },
         {
-            id: '9',
+            id: '8',
             name: 'Washed Motion Design',
             type: 'media',
             thumb: '/img/[Thumb]washed.png',
@@ -126,7 +110,7 @@ export function useProjectsImg() {
                 'Motion design experiment, combining 2D and 3D on Cinema 4D and After Effects.'
         },
         {
-            id: '10',
+            id: '9',
             name: 'BRNK Vitrine',
             type: 'media',
             thumb: '/img/[Thumb]BRNK_Vitrine_AME.png',
