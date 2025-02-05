@@ -31,7 +31,7 @@
                         <!-- YOUTUBE -->
                         <li>
                             <a
-                                href="https://www.youtube.com/channel/UCkVtFn_SuLY3FF_jLGFX2GQ"
+                                href="https://www.youtube.com/@6RnKilL"
                                 target="_blank"
                             >
                                 <img src="@/assets/img/icons/youtube.svg" w-8 alt="Youtube" />

@@ -121,6 +121,56 @@ export function useProjectsImg() {
             description:
                 'First render of the series that I decided to realize every week to practice my 3D skills.'
         },
+        {
+            id: '10',
+            name: 'NEW AVATAR',
+            type: 'media',
+            thumb: '/img/1224 - 003 - [EXO] BRKILL AVATAR.png',
+            image: [
+                '/img/1224 - 003 - [EXO] BRKILL AVATAR.png',
+                '/img/1224 - 003 - [EXO] BRKILL AVATAR 001.png',
+                '/img/1224 - 003 - [EXO] BRKILL AVATAR 002.png',
+                '/img/1224 - 003 - [EXO] BRKILL AVATAR 003.png'
+            ],
+            width: '601',
+            height: '601',
+            date: '2024-12-15',
+            description:
+                '3D modelisation of my avatar made in blender.'
+        },
+        {
+            id: '11',
+            name: 'Stylised Character Modeling',
+            type: 'media',
+            thumb: '/img/006 - Stylised Character Modeling.png',
+            image: [
+                '/img/006 - Stylised Character Modeling.png',
+                '/img/006 - Stylised Character Modeling 001.png',
+                '/img/006 - Stylised Character Modeling 002.png',
+                '/img/006 - Stylised Character Modeling 003.png',
+                '/img/006 - Stylised Character Modeling 004.png'
+            ],
+            width: '601',
+            height: '601',
+            date: '2024-11-24',
+            description:
+                'Learned how to create stylised character modeling through Keelan Jone modeling course.'
+        },
+        {
+            id: '12',
+            name: 'BEETO',
+            type: 'media',
+            thumb: '/img/1224 - 001 - [EXO] Character MOD BEETO.png',
+            image: [
+                '/img/1224 - 001 - [EXO] Character MOD BEETO.png',
+                '/img/1224 - 001 - [EXO] Character MOD BEETO 2.jpg',
+            ],
+            width: '601',
+            height: '601',
+            date: '2024-11-29',
+            description:
+                'Made this modeling based on Quang Dinh Ngo characters which each of them is a student learning about the professions. BEETO was the GEOLOGY - GEOPHYSICS.'
+        },
     ]);
 
     const sortedProjects = projects.value.sort((a, b) => {
