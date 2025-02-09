@@ -186,7 +186,7 @@ export function useProjectsImg() {
             height: '601',
             date: '2025-02-09',
             description:
-                'Made this modeling based on Quang Dinh Ngo characters which each of them is a student learning about the professions. BEETO was the GEOLOGY - GEOPHYSICS.'
+                'Made this modeling based on one of my illustration.'
         },
     ]);
 
