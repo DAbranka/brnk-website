@@ -171,6 +171,23 @@ export function useProjectsImg() {
             description:
                 'Made this modeling based on Quang Dinh Ngo characters which each of them is a student learning about the professions. BEETO was the GEOLOGY - GEOPHYSICS.'
         },
+        {
+            id: '13',
+            name: 'GOOD BOY',
+            type: 'media',
+            thumb: '/img/0125 - 001 - GOOD BOY.png',
+            image: [
+                '/img/0125 - 001 - GOOD BOY.png',
+                '/img/0125 - 001 - [REF] GOOD BOY.jpg',
+                '/img/0125 - 001 - [SCREEN] GOOD BOY - 001.png',
+                '/img/0125 - 001 - [SCREEN] GOOD BOY - 002.png',
+            ],
+            width: '601',
+            height: '601',
+            date: '2025-02-09',
+            description:
+                'Made this modeling based on Quang Dinh Ngo characters which each of them is a student learning about the professions. BEETO was the GEOLOGY - GEOPHYSICS.'
+        },
     ]);
 
     const sortedProjects = projects.value.sort((a, b) => {
