@@ -21,19 +21,14 @@ export function useProjectsImg() {
         },
         {
             id: '2',
-            name: 'Abstract 3D Shapes',
+            name: 'BRNK Abstract Objects',
             type: 'media',
-            thumb: '/img/0324 - 004 - PINK SPRING.png',
-            image: [
-                '/img/0324 - 004 - PINK SPRING.png',
-                '/img/0324 - 005 - ORANGE SHAPE.png',
-                '/img/0324 - 008 - GREEN STAR.png'
-            ],
+            thumb: '/img/BRNK Abstract Objects Thumbnail.png',
+            video: ['/videos/0324 - 002 - Rigid Body Abstracct Objects.mp4'],
             width: '601',
             height: '601',
-            date: '2024-03-11',
-            description:
-                'I made this serie of abstract object to practice my modeling skills in Blender and having a library of objects to use in future projects.'
+            date: '2024-02-27',
+            description: 'Made this render to practice some rigid body simulations in Blender.'
         },
         {
             id: '3',
