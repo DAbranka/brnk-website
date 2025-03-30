@@ -21,18 +21,6 @@ export function useProjectsImg() {
         },
         {
             id: '2',
-            name: 'Soborg Chair',
-            type: 'media',
-            thumb: '/img/SOBORG_CHAIR_002.png',
-            image: ['/img/SOBORG_CHAIR_002.png'],
-            width: '601',
-            height: '601',
-            date: '2024-03-17',
-            description:
-                'Modeling this chair was a challenge, but I learned a lot. Thanks again to Andrew Price.'
-        },
-        {
-            id: '3',
             name: 'Abstract 3D Shapes',
             type: 'media',
             thumb: '/img/0324 - 004 - PINK SPRING.png',
@@ -48,18 +36,7 @@ export function useProjectsImg() {
                 'I made this serie of abstract object to practice my modeling skills in Blender and having a library of objects to use in future projects.'
         },
         {
-            id: '4',
-            name: 'BRNK Abstract Objects',
-            type: 'media',
-            thumb: '/img/BRNK Abstract Objects Thumbnail.png',
-            video: ['/videos/0324 - 002 - Rigid Body Abstracct Objects.mp4'],
-            width: '601',
-            height: '601',
-            date: '2024-02-27',
-            description: 'Made this render to practice some rigid body simulations in Blender.'
-        },
-        {
-            id: '5',
+            id: '3',
             name: 'Inflated Rolling Cubes',
             type: 'media',
             thumb: '/img/0124 - 001 - BRNK Blender Inflate Balloons Thumbnail.png',
@@ -74,7 +51,7 @@ export function useProjectsImg() {
                 ' I was trying some art direction with these inflated rolling cubes. Just practicing some stuff with these guys, Ash Thorp style was the inspiration here.'
         },
         {
-            id: '6',
+            id: '4',
             name: 'Happy 30th Birthday!',
             type: 'media',
             thumb: '/img/0224 - 004 - HAPPY 30.png',
@@ -86,7 +63,7 @@ export function useProjectsImg() {
                 'Made this for my 30th birthday. I wanted to make something that was a little bit abstract and surreal.'
         },
         {
-            id: '7',
+            id: '5',
             name: 'HOLOGRAPHIK Motion Design Study',
             type: 'media',
             thumb: '/img/[Thumb]HOLOGRAPHIK Motion Design.png',
@@ -98,7 +75,7 @@ export function useProjectsImg() {
                 'This Holographik motion design was only made for study purpose in After Effects.'
         },
         {
-            id: '8',
+            id: '6',
             name: 'Washed Motion Design',
             type: 'media',
             thumb: '/img/[Thumb]washed.png',
@@ -108,85 +85,6 @@ export function useProjectsImg() {
             date: '2021-02-02',
             description:
                 'Motion design experiment, combining 2D and 3D on Cinema 4D and After Effects.'
-        },
-        {
-            id: '9',
-            name: 'BRNK Vitrine',
-            type: 'media',
-            thumb: '/img/[Thumb]BRNK_Vitrine_AME.png',
-            video: ['/videos/BRNK_VITRINE_AME.mp4'],
-            width: '601',
-            height: '601',
-            date: '2024-09-07',
-            description:
-                'First render of the series that I decided to realize every week to practice my 3D skills.'
-        },
-        {
-            id: '10',
-            name: 'NEW AVATAR',
-            type: 'media',
-            thumb: '/img/1224 - 003 - [EXO] BRKILL AVATAR.png',
-            image: [
-                '/img/1224 - 003 - [EXO] BRKILL AVATAR.png',
-                '/img/1224 - 003 - [EXO] BRKILL AVATAR 001.png',
-                '/img/1224 - 003 - [EXO] BRKILL AVATAR 002.png',
-                '/img/1224 - 003 - [EXO] BRKILL AVATAR 003.png'
-            ],
-            width: '601',
-            height: '601',
-            date: '2024-12-15',
-            description:
-                '3D modelisation of my avatar made in blender.'
-        },
-        {
-            id: '11',
-            name: 'Stylised Character Modeling',
-            type: 'media',
-            thumb: '/img/006 - Stylised Character Modeling.png',
-            image: [
-                '/img/006 - Stylised Character Modeling.png',
-                '/img/006 - Stylised Character Modeling 001.png',
-                '/img/006 - Stylised Character Modeling 002.png',
-                '/img/006 - Stylised Character Modeling 003.png',
-                '/img/006 - Stylised Character Modeling 004.png'
-            ],
-            width: '601',
-            height: '601',
-            date: '2024-11-24',
-            description:
-                'Learned how to create stylised character modeling through Keelan Jone modeling course.'
-        },
-        {
-            id: '12',
-            name: 'BEETO',
-            type: 'media',
-            thumb: '/img/1224 - 001 - [EXO] Character MOD BEETO.png',
-            image: [
-                '/img/1224 - 001 - [EXO] Character MOD BEETO.png',
-                '/img/1224 - 001 - [EXO] Character MOD BEETO 2.jpg',
-            ],
-            width: '601',
-            height: '601',
-            date: '2024-11-29',
-            description:
-                'Made this modeling based on Quang Dinh Ngo characters which each of them is a student learning about the professions. BEETO was the GEOLOGY - GEOPHYSICS.'
-        },
-        {
-            id: '13',
-            name: 'GOOD BOY',
-            type: 'media',
-            thumb: '/img/0125 - 001 - GOOD BOY.png',
-            image: [
-                '/img/0125 - 001 - GOOD BOY.png',
-                '/img/0125 - 001 - [REF] GOOD BOY.jpg',
-                '/img/0125 - 001 - [SCREEN] GOOD BOY - 001.png',
-                '/img/0125 - 001 - [SCREEN] GOOD BOY - 002.png',
-            ],
-            width: '601',
-            height: '601',
-            date: '2025-02-09',
-            description:
-                'Made this modeling based on one of my illustration.'
         },
     ]);
 
