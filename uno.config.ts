@@ -10,7 +10,7 @@ export default defineConfig({
     colors: {
         'prime': '#f1f875',
         'second': '#f1f5f9',
-        'white': '#ebebeb',
+        'white': '#F5F5F7',
         'black': '#000000',
 
       },

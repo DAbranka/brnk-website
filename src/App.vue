@@ -143,7 +143,7 @@ document.addEventListener('dragstart', function (event) {
 body,
 html {
     font-family: sans-serif;
-    background-color: #ebebeb;
+    background-color: #F5F5F7;
     scroll-behavior: smooth;
     scroll-padding-top: var(--navbar-height, 3rem);
 }
