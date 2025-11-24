@@ -18,7 +18,7 @@
                     <ul list-none invert flex justify-between items-center w-full>
                         <!-- INSTAGRAM -->
                         <li>
-                            <a href="https://www.instagram.com/brnkill/" target="_blank">
+                            <a href="https://www.instagram.com/abrnk/" target="_blank">
                                 <img src="@/assets/img/icons/instagram.svg" alt="Instagram" w-7 />
                             </a>
                         </li>
