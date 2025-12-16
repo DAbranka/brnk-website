@@ -139,6 +139,32 @@ watch(selectedProject, () => {
         video.load();
     }
 });
+
+// * Handle mouse enter on project card to play video preview
+const handleMouseEnter = (project, event) => {
+    if (project.video && project.video.length > 0) {
+        const card = event.currentTarget;
+        const video = card.querySelector('.projectSection__cardVideo');
+        if (video) {
+            video.currentTime = 0;
+            video.play().catch((error) => {
+                console.log('Erreur lors de la lecture de la vidéo:', error);
+            });
+        }
+    }
+};
+
+// * Handle mouse leave on project card to pause video preview
+const handleMouseLeave = (project, event) => {
+    if (project.video && project.video.length > 0) {
+        const card = event.currentTarget;
+        const video = card.querySelector('.projectSection__cardVideo');
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+        }
+    }
+};
 </script>
 
 <template>
@@ -162,9 +188,14 @@ watch(selectedProject, () => {
                 <div
                     v-for="project in projects"
                     :key="project.id"
-                    :class="getImageClasses(project)"
+                    :class="[
+                        getImageClasses(project),
+                        { 'has-video': project.video && project.video.length > 0 }
+                    ]"
                     class="projectSection__cardsWrap"
                     @click="showDetails(project)"
+                    @mouseenter="handleMouseEnter(project, $event)"
+                    @mouseleave="handleMouseLeave(project, $event)"
                 >
                     <div
                         class="projectSection__cardTitle"
@@ -180,7 +211,16 @@ watch(selectedProject, () => {
                     >
                         <p text-center>{{ project.name }}</p>
                     </div>
-                    <img :src="project.thumb" alt="Image" @contextmenu.prevent />
+                    <img :src="project.thumb" alt="Image" class="projectSection__cardImage" @contextmenu.prevent />
+                    <video
+                        v-if="project.video && project.video.length > 0"
+                        :src="project.video[0]"
+                        class="projectSection__cardVideo"
+                        loop
+                        muted
+                        playsinline
+                        @contextmenu.prevent
+                    ></video>
                 </div>
             </section>
         </section>
@@ -326,6 +366,57 @@ watch(selectedProject, () => {
 }
 
 .projectSection__cardsWrap:hover img {
+    transform: scale(1);
+}
+
+.projectSection__cardImage {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    transform: scale(1.15);
+    opacity: 1; /* Image visible par défaut */
+    z-index: -1; /* Derrière le titre mais devant la vidéo */
+    transition:
+        opacity 0.3s ease-in-out,
+        transform 0.3s ease-in-out;
+}
+
+.projectSection__cardVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    opacity: 0;
+    z-index: -2;
+    transform: scale(1.15);
+    transition:
+        opacity 0.3s ease-in-out,
+        transform 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.projectSection__cardsWrap:hover .projectSection__cardVideo {
+    opacity: 1;
+    z-index: -1;
+    transform: scale(1);
+}
+
+/* Cacher l'image au hover seulement si la carte a une vidéo */
+.projectSection__cardsWrap.has-video:hover .projectSection__cardImage {
+    opacity: 0;
+    transform: scale(1);
+}
+
+/* Si pas de vidéo, garder l'image visible au hover */
+.projectSection__cardsWrap:not(.has-video):hover .projectSection__cardImage {
+    opacity: 1;
     transform: scale(1);
 }
 
@@ -592,6 +683,22 @@ watch(selectedProject, () => {
     }
 
     .projectSection__cardsWrap img {
+        transform: scale(1);
+    }
+
+    .projectSection__cardImage {
+        transform: scale(1);
+    }
+
+    .projectSection__cardVideo {
+        transform: scale(1);
+    }
+
+    .projectSection__cardsWrap:hover .projectSection__cardImage {
+        transform: scale(1);
+    }
+
+    .projectSection__cardsWrap:hover .projectSection__cardVideo {
         transform: scale(1);
     }
 
